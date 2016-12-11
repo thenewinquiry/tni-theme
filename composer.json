@@ -1,0 +1,13 @@
+{
+    "name": "misfist/tni-theme",
+    "description": "Custom child theme for The New Inquiry website",
+    "type": "cvs",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Pea",
+            "email": "pea@misfist.com"
+        }
+    ],
+    "require": {}
+}
