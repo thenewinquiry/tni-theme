@@ -9,13 +9,7 @@
  * @since 1.0.0
  */
 
-add_action( 'wp_enqueue_scripts', 'mh_magazine_lite_parent_theme_enqueue_styles' );
-
-function mh_magazine_lite_parent_theme_enqueue_styles() {
-    wp_enqueue_style( 'mh-magazine-lite-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'tni-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( 'mh-magazine-lite-style' )
-    );
-
-}
+include_once get_stylesheet_directory() . '/inc/enqueue.php';
+include_once get_stylesheet_directory() . '/inc/setup.php';
+include_once get_stylesheet_directory() . '/inc/extras.php';
+include_once get_stylesheet_directory() . '/inc/widgets/ad-widgets.php';

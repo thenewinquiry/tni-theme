@@ -1,0 +1,98 @@
+/**
+ * Layout variables
+ */
+$size__site-width: 90%;
+$size__site-main: 100%;
+$size__site-sidebar: 100%;
+
+$screen__xs: 0;
+$screen__sm: 500px;
+$screen__md: 768px;
+$screen__lg: 992px;
+$screen__xl: 1200px;
+
+/**
+ * Color variables
+ */
+$color__black: #282828;
+$color__white: #fff;
+
+$color__primary:        #f7941e;
+$color__primary-light:  lighten( $color__primary, 20% );
+$color__primary-dark:   #f57c00;
+$color__accent:         #e64946;
+
+$color__gray-lightest:  #f5f5f5;
+$color__gray-light:     #e0e0e0;
+$color__gray:           #9e9e9e;
+$color__gray-dark:      #616161;
+$color__gray-darkest:   #212121;
+
+$color__button-primary:     $color__primary;
+$color__button-secondary:   #95a5a6;
+$color__success:            #1abc9c;
+$color__info:               #34495e;
+$color__warning:            #f1c40f;
+$color__danger:             #e74c3c;
+
+/* Social Media - http://www.paulund.co.uk/social-media-colours */
+$color__facebook:       #3b5998;
+$color__twitter:        #00aced;
+$color__linkedin:       #007bb6;
+$color__google-plus:    #dd4b39;
+$color__youtube:        #bb0000;
+
+$color__background:     $color__white;
+$color__foreground:     $color__black;
+
+$color__link:           $color__primary;
+$color__link-hover:     darken($color__link, 10%);
+
+$color__text-primary:   $color__foreground;
+$color__text-secondary: #757575;
+$color__text-inverted:  $color__background;
+
+$color__border:         #bdbdbd;
+
+/**
+ * Typography variables
+ */
+$font__sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font__serif:       Georgia, "Times New Roman", Times, serif;
+$font__mono:        Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__main:        $font__sans-serif;
+$font__heading:     $font__sans-serif;
+$font__code:        $font__mono;
+$font__pre:         "Courier 10 Pitch", Courier, monospace;
+
+$font__size-h1:         3em;
+$font__size-h2:         2.25em;
+$font__size-h3:         1.75em;
+$font__size-h4:         1.375em;
+$font__size-h5:         1.125em;
+$font__size-h6:         1em;
+$font__size-small:      .875;
+$font__size-smaller:    .75;
+$font__size-smallest:   .6875;
+
+$font__weight-default:  400;
+$font__weight-bold:     700;
+
+$spacing__body:        1.5;
+$spacing__pre:         1.6;
+$spacing__headings:    1.2;
+
+$spacing__triple:  3;
+$spacing__double:  2;
+$spacing__base:    1;
+$spacing__half:    .5;
+$spacing__quarter: .25;
+
+/**
+ * Elements
+ */
+$element__border-radius-base: 0;
+$element__border-radius-small: $element__border-radius-base;
+$element__border-radius-large: $element__border-radius-base;
+
+$element__widget-radius: $element__border-radius-base;
