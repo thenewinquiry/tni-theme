@@ -4,13 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package kale
+ * @package mh-magazine-lite
  * @subpackage tni
  * @since 1.0.0
  */
 
-require_once( trailingslashit( get_stylesheet_directory() ) . 'inc/setup.php' );
-
-require_once( trailingslashit( get_stylesheet_directory() ) . 'inc/enqueue.php' );
-
-require_once( trailingslashit( get_stylesheet_directory() ) . 'inc/extras.php' );
+include_once get_stylesheet_directory() . '/inc/enqueue.php';
+include_once get_stylesheet_directory() . '/inc/setup.php';
+include_once get_stylesheet_directory() . '/inc/extras.php';
+include_once get_stylesheet_directory() . '/inc/widgets/ad-widgets.php';

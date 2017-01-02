@@ -1,10 +1,39 @@
 /*
 Theme Name:     The New Inquiry
 Theme URI:      https://github.com/misfist/tni-theme
-Description:    Kale child theme.
+Description:    Custom theme for The New Inquiry.
 Author:         Pea
 Author URI:     https://github.com/misfist
-Template:       kale
+Template:       mh-magazine-lite
 Version:        1.0.0
 Text Domain:    tni
 */
+/**
+ * Layout variables
+ */
+/**
+ * Color variables
+ */
+/* Social Media - http://www.paulund.co.uk/social-media-colours */
+/**
+ * Typography variables
+ */
+/**
+ * Elements
+ */
+.mh-footer .mh-footer-nav {
+  text-transform: uppercase; }
+  .mh-footer .mh-footer-nav li {
+    float: left;
+    position: relative;
+    font-weight: 700; }
+    .mh-footer .mh-footer-nav li a {
+      display: block;
+      color: #fff;
+      padding: 10px 20px; }
+
+.mh-site-logo {
+  padding: 0; }
+
+.header-widget .mh-widget {
+  padding: 20px; }

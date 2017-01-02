@@ -1,0 +1,20 @@
+/*
+Theme Name:     The New Inquiry
+Theme URI:      https://github.com/misfist/tni-theme
+Description:    Custom theme for The New Inquiry.
+Author:         Pea
+Author URI:     https://github.com/misfist
+Template:       mh-magazine-lite
+Version:        1.0.0
+Text Domain:    tni
+*/
+
+@import 'variables';
+@import 'mixins';
+@import 'common';
+@import 'layout';
+@import 'navigation';
+@import 'forms';
+@import 'media';
+@import 'header';
+@import 'typography';

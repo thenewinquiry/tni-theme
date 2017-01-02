@@ -1,0 +1,18 @@
+
+.mh-footer {
+  .mh-footer-nav {
+    text-transform: uppercase;
+
+    li {
+      float: left;
+      position: relative;
+      font-weight: 700;
+
+      a {
+        display: block;
+        color: $color__white;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
