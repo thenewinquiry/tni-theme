@@ -6,7 +6,9 @@
 			<div class="mh-col-1-1 mh-widget-col-1 mh-footer-area">
 				<nav class="mh-navigation mh-footer-nav mh-container mh-container-inner clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu( array(
-						'theme_location' => 'footer'
+						'theme_location' 	=> 'footer',
+						'depth'				=> 1,
+						'fallback_cb'		=> false
 					)); ?>
 				</nav>
 			</div>
@@ -34,11 +36,15 @@
 		</div>
 	</footer>
 <?php } ?>
+
+<?php if ( is_active_sidebar( 'copyleft' ) ) { ?>
 <div class="mh-copyright-wrap">
 	<div class="mh-container mh-container-inner clearfix">
-		<p class="mh-copyright"></p>
+		<?php dynamic_sidebar( 'copyleft' ); ?>
 	</div>
 </div>
+<?php } ?>
+
 <?php mh_after_footer(); ?>
 <?php wp_footer(); ?>
 </body>
