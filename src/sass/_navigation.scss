@@ -1,7 +1,47 @@
+.mh-main-nav-wrap {
+  background-color: transparent;
+}
+
+.mh-main-nav {
+  border-bottom: none;
+  border-bottom-width: 0;
+  font-family: $font__sans-serif;
+  @include font-size($font__size-small);
+
+  li {
+
+    &:hover {
+      background-color: transparent;
+      a {
+        color: $color__text-light;
+      }
+    }
+    a {
+      color: $color__text-light;
+    }
+
+    ul li:hover > ul {
+      background-color: transparent;
+      a {
+        color: $color__text-light;
+      }
+    }
+  }
+
+  .menu > .current-menu-item {
+    background-color: transparent;
+    border-bottom: 1px solid $color__gray;
+  }
+}
 
 .mh-footer {
+  color: $color__text-light;
+
   .mh-footer-nav {
     text-transform: uppercase;
+    font-family: $font__sans-serif;
+
+    @include font-size($font__size-small);
 
     li {
       float: left;
@@ -10,9 +50,10 @@
 
       a {
         display: block;
-        color: $color__white;
+        color: $color__text-light;
         padding: 10px 20px;
       }
     }
   }
+
 }

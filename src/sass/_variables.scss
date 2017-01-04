@@ -1,29 +1,29 @@
 /**
  * Layout variables
  */
-$size__site-width: 90%;
-$size__site-main: 100%;
-$size__site-sidebar: 100%;
+$size__site-width: 1080px;
+$size__site-main: 65.83%;
+$size__site-sidebar: 31.66%;
 
 $screen__xs: 0;
-$screen__sm: 500px;
-$screen__md: 768px;
-$screen__lg: 992px;
-$screen__xl: 1200px;
+$screen__sm: 300px;
+$screen__md: 620px;
+$screen__lg: 767px;
+$screen__xl: 900px;
 
 /**
  * Color variables
  */
-$color__black: #282828;
+$color__black: #2a2a2a;
 $color__white: #fff;
 
-$color__primary:        #f7941e;
+$color__primary:        #8FAFC6;
 $color__primary-light:  lighten( $color__primary, 20% );
 $color__primary-dark:   #f57c00;
-$color__accent:         #e64946;
+$color__accent:         #E50102;
 
 $color__gray-lightest:  #f5f5f5;
-$color__gray-light:     #e0e0e0;
+$color__gray-light:     #aeaeae;
 $color__gray:           #9e9e9e;
 $color__gray-dark:      #616161;
 $color__gray-darkest:   #212121;
@@ -48,8 +48,9 @@ $color__foreground:     $color__black;
 $color__link:           $color__primary;
 $color__link-hover:     darken($color__link, 10%);
 
-$color__text-primary:   $color__foreground;
-$color__text-secondary: #757575;
+$color__text-primary:   $color__gray-dark;
+$color__text-dark:      $color__black;
+$color__text-light:     $color__gray-light;
 $color__text-inverted:  $color__background;
 
 $color__border:         #bdbdbd;
@@ -58,7 +59,7 @@ $color__border:         #bdbdbd;
  * Typography variables
  */
 $font__sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font__serif:       Georgia, "Times New Roman", Times, serif;
+$font__serif:       Garamond, "Times New Roman", Times, Georgia, serif;
 $font__mono:        Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__main:        $font__sans-serif;
 $font__heading:     $font__sans-serif;

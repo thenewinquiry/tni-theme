@@ -1,0 +1,45 @@
+.single {
+  .mh-content {
+    width: 100%;
+  }
+}
+
+.archive {
+
+  .mh-content {
+    width: 100%;
+  }
+
+  .articles-list {
+    .mh-loop-item {}
+  }
+
+  .mh-loop-pagination {}
+
+}
+
+.page-template-page-blogs {
+  .mh-content {
+    width: 100%;
+  }
+}
+
+
+.archive,
+.page-template-page-blogs {
+  .articles-list {
+    * {
+      box-sizing: border-box;
+    }
+
+    @include breakpoint(md) {
+      @include columns(2);
+    }
+    @include breakpoint(lg)  {
+      @include columns(3);
+    }
+    @include breakpoint(xl) {
+      @include columns(4);
+    }
+  }
+}

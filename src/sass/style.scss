@@ -13,8 +13,12 @@ Text Domain:    tni
 @import 'mixins';
 @import 'common';
 @import 'layout';
+@import 'typography';
 @import 'navigation';
+@import 'posts';
+@import 'widgets';
 @import 'forms';
 @import 'media';
 @import 'header';
-@import 'typography';
+@import 'footer';
+@import 'plugins';

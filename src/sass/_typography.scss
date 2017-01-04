@@ -1,0 +1,25 @@
+body {
+  font-size: 16px;
+  color: $color__text-primary;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font__sans-serif;
+  color: $color__text-dark;
+}
+
+h3.entry-title {
+  font-family: $font__serif;
+  font-style: italic;
+}
+
+.entry-meta {
+  font-family: $font__sans-serif;
+}
+
+.wp-caption-text {
+  font-size: 1em;
+}

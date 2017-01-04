@@ -1,0 +1,68 @@
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media screen and (min-width: $screen__xs)  { @content; }
+  }
+  @if $point == sm {
+    @media screen and (min-width: $screen__sm) { @content; }
+  }
+  @if $point == md {
+    @media screen and (min-width: $screen__md) { @content; }
+  }
+  @if $point == lg {
+    @media screen and (min-width: $screen__lg) { @content; }
+  }
+  @else if $point == xl {
+    @media screen and (min-width: $screen__xl) { @content; }
+  }
+}
+
+$def-pad: 2rem;
+@mixin columns($col-number) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% + #{$def-pad});
+  margin-left: calc((#{$def-pad} / 2)* -1);
+  >*{
+    flex: $col-number 1 (100% / $col-number);
+    max-width: 100% / $col-number;
+    padding: $def-pad / 2;
+  }
+}
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+/**
+ * Lists
+ */
+@mixin no-bullets() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,30 @@
+input[type="submit"] {
+  background-color: $color__accent;
+}
+
+
+a {
+  &.button {
+    display: inline-block;
+    min-width: 150px;
+    font-weight: 700;
+    color: $color__white;
+    padding: 10px 15px;
+    background-color: $color__accent;
+    cursor: pointer;
+    text-transform: uppercase;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    border: 0;
+    text-align: center;
+
+    &:hover {
+      background: $color__black;
+    }
+
+    &.subscribe {
+      display: block;
+    }
+  }
+}

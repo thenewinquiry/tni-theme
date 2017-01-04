@@ -1,0 +1,20 @@
+.mh-footer,
+.mh-copyright-wrap {
+  background: $color__white;
+  color: $color__gray-light;
+  a {
+    color: $color__gray-light;
+  }
+}
+
+.mh-footer {
+  border-top: none;
+
+  .mh-footer-widgets {
+    border-top: 1px solid $color__gray-light;
+  }
+}
+
+.mh-copyright-wrap {
+  border-top: none;
+}

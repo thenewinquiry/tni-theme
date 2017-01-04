@@ -1,0 +1,50 @@
+.single {
+
+  .entry-content {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: $font__serif;
+  }
+
+  h1.entry-title {
+    text-align: center;
+    font-family: $font__serif;
+  }
+
+  .entry-meta {
+    text-align: center;
+  }
+
+  .entry-thumbnail {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      width: initial;
+    }
+  }
+
+  .wp-caption-text {
+    text-align: right;
+    font-style: italic;
+    margin-bottom: 5em;
+  }
+}
+
+.archive {
+  .mh-loop-item {
+    .mh-loop-thumb {
+      float: none;
+      margin-right: 0;
+      max-width: 100%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  #mh-mobile .mh-posts-focus-thumb-small {
+    max-width: 100%;
+  }
+}
