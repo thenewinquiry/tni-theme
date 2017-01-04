@@ -16,6 +16,8 @@
         ) );
         ?>
         <?php if( !empty( $terms ) ) : ?>
+            <div class="articles-list">
+
             <?php foreach( $terms as $term ) : ?>
 
                 <?php $term_link = get_term_link( $term ); ?>
@@ -58,6 +60,8 @@
                 </article>
 
             <?php endforeach; ?>
+
+            </div>
         <?php endif; ?>
 	</div>
 	<?php get_sidebar(); ?>
