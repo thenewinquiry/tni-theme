@@ -13,7 +13,7 @@ function tni_setup() {
     register_sidebar( array(
             'name' => esc_html__( 'Header', 'tni' ),
             'id' => 'header',
-            'description' => esc_html__( 'Header widget', 'mh-magazine-lite' ),
+            'description' => esc_html__( 'Header widget', 'tni' ),
             'before_widget' => '<div id="%1$s" class="mh-widget %2$s">', 'after_widget' => '</div>',
             'before_title' => '',
             'after_title' => ''
@@ -22,10 +22,11 @@ function tni_setup() {
     register_sidebar( array(
             'name' => esc_html__( 'Copyright', 'tni' ),
             'id' => 'copyleft',
-            'description' => esc_html__( 'Copyright information in footer', 'mh-magazine-lite' ),
-            'before_widget' => '<div id="%1$s" class="mh-widget %2$s">', 'after_widget' => '</div>',
-            'before_title' => '',
-            'after_title' => ''
+            'description' => esc_html__( 'Copyright information in footer', 'tni' ),
+            'before_widget' => '<div id="%1$s" class="mh-copyright">',
+            'after_widget' => '</div>',
+            'before_title' => '<div class="screen-reader-text">',
+            'after_title' => '</div>'
         )
     );
 
