@@ -7,13 +7,29 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: $font__sans-serif;
+  font-family: $font__droid-serif;
   color: $color__text-dark;
 }
 
-h3.entry-title {
-  font-family: $font__serif;
+.entry-title {
+  font-family: $font__droid-serif;
+  font-weight: normal;
   font-style: italic;
+}
+
+h1.entry-title {
+  font-size: 2.7em;
+}
+
+.entry-subhead {
+  font-family: $font__pt-sans;
+  font-weight: 100;
+  font-size: 1.3em;
+  letter-spacing: 0.7px;
+}
+
+.entry-content {
+  font-family: $font__serif;
 }
 
 .entry-meta {
@@ -21,5 +37,6 @@ h3.entry-title {
 }
 
 .wp-caption-text {
-  font-size: 1em;
+  font-family: $font__serif;
+  font-size: .8em;
 }

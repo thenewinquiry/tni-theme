@@ -17,7 +17,7 @@ $screen__xl: 900px;
 $color__black: #2a2a2a;
 $color__white: #fff;
 
-$color__primary:        #8FAFC6;
+$color__primary:        #598fb6;
 $color__primary-light:  lighten( $color__primary, 20% );
 $color__primary-dark:   #f57c00;
 $color__accent:         #E50102;
@@ -48,23 +48,28 @@ $color__foreground:     $color__black;
 $color__link:           $color__primary;
 $color__link-hover:     darken($color__link, 10%);
 
-$color__text-primary:   $color__gray-dark;
+$color__text-primary:   #333333;
 $color__text-dark:      $color__black;
-$color__text-light:     $color__gray-light;
+$color__text-light:     $color__gray;
 $color__text-inverted:  $color__background;
 
 $color__border:         #bdbdbd;
 
 /**
- * Typography variables
+ * Typography Variables
  */
-$font__sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font__serif:       Garamond, "Times New Roman", Times, Georgia, serif;
+$font__sans-serif:  Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$font__serif:       Georgia, serif;
 $font__mono:        Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__main:        $font__sans-serif;
-$font__heading:     $font__sans-serif;
+
 $font__code:        $font__mono;
 $font__pre:         "Courier 10 Pitch", Courier, monospace;
+
+$font__droid-serif: 'Droid Serif', $font__serif;
+$font__pt-sans:     'PT Sans', $font__sans-serif;
+$font__kanit-sans:  'Kanit', $font__sans-serif;
+
+$font__heading:     $font__sans-serif;
 
 $font__size-h1:         3em;
 $font__size-h2:         2.25em;

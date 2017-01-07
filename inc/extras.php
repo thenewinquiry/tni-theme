@@ -54,37 +54,6 @@ function tni_custom_post_author_archive( $query ) {
 }
 add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
 
-/**
- * Override Parent Meta Display
- * On Archive Pages
- *
- * @since 1.0.0
- *
- * @return void
- */
-function mh_magazine_lite_loop_meta() {
-    echo '<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>' . get_the_date() . '</span>' . "\n";
-    if (in_the_loop()) {
-        echo '<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>' . "\n";
-    }
-}
-
-/**
- * Override Parent Meta Display
- * On Archive Pages
- *
- * @since 1.0.0
- *
- * @return void
- */
-function mh_magazine_lite_post_meta() {
-	echo '<p class="mh-meta entry-meta">' . "\n";
-		echo '<span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . get_the_date() . '</a></span>' . "\n";
-		echo '<span class="entry-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>' . "\n";
-		echo '<span class="entry-meta-categories"><i class="fa fa-folder-open-o"></i>' . get_the_category_list(', ', '') . '</span>' . "\n";
-	echo '</p>' . "\n";
-}
-add_action('mh_post_header', 'mh_magazine_lite_post_meta');
 
 /**
  * Override Parent Featured Image

@@ -16,7 +16,7 @@ Text Domain:    tni
  */
 /* Social Media - http://www.paulund.co.uk/social-media-colours */
 /**
- * Typography variables
+ * Typography Variables
  */
 /**
  * Elements
@@ -25,15 +25,47 @@ Text Domain:    tni
  * Lists
  */
 body {
-  background-color: #fff; }
+  background-color: #fff;
+  color: #333333; }
 
 .mh-container-outer {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none; }
 
+a {
+  color: #598fb6; }
+
 a.mh-excerpt-more {
-  color: #8FAFC6; }
+  color: #598fb6; }
+
+.wp-caption-text {
+  font-weight: normal;
+  font-style: italic;
+  color: #9e9e9e; }
+
+.entry-meta {
+  font-family: "PT Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 0.85em;
+  padding-right: 0;
+  padding-left: 0;
+  border-top: none;
+  border-bottom: none; }
+
+.entry-meta-author a,
+.entry-meta-date {
+  text-transform: uppercase; }
+
+.first-word {
+  color: #2a2a2a;
+  font-size: 200%;
+  font-family: "Kanit", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  letter-spacing: 0.7px;
+  line-height: 1em;
+  padding-right: 4px;
+  font-weight: 800; }
 
 .single .mh-content {
   width: 100%; }
@@ -92,24 +124,38 @@ a.mh-excerpt-more {
 
 body {
   font-size: 16px;
-  color: #616161; }
+  color: #333333; }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Serif", Georgia, serif;
   color: #2a2a2a; }
 
-h3.entry-title {
-  font-family: Garamond, "Times New Roman", Times, Georgia, serif;
+.entry-title {
+  font-family: "Droid Serif", Georgia, serif;
+  font-weight: normal;
   font-style: italic; }
 
+h1.entry-title {
+  font-size: 2.7em; }
+
+.entry-subhead {
+  font-family: "PT Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1.3em;
+  letter-spacing: 0.7px; }
+
+.entry-content {
+  font-family: Georgia, serif; }
+
 .entry-meta {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
 
 .wp-caption-text {
-  font-size: 1em; }
+  font-family: Georgia, serif;
+  font-size: .8em; }
 
 .mh-main-nav-wrap {
   background-color: transparent; }
@@ -117,28 +163,37 @@ h3.entry-title {
 .mh-main-nav {
   border-bottom: none;
   border-bottom-width: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-size: 0.875rem; }
-  .mh-main-nav li:hover {
-    background-color: transparent; }
-    .mh-main-nav li:hover a {
-      color: #aeaeae; }
-  .mh-main-nav li a {
-    color: #aeaeae; }
-  .mh-main-nav li ul li:hover > ul {
-    background-color: transparent; }
-    .mh-main-nav li ul li:hover > ul a {
-      color: #aeaeae; }
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  .mh-main-nav li {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #9e9e9e;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    line-height: 1.5em;
+    font-weight: 300; }
+    .mh-main-nav li:hover {
+      background-color: transparent; }
+      .mh-main-nav li:hover a {
+        color: #9e9e9e; }
+    .mh-main-nav li a {
+      color: #9e9e9e; }
+    .mh-main-nav li ul li:hover > ul {
+      background-color: transparent; }
+      .mh-main-nav li ul li:hover > ul a {
+        color: #9e9e9e; }
   .mh-main-nav .menu > .current-menu-item {
     background-color: transparent;
-    border-bottom: 1px solid #9e9e9e; }
+    font-weight: 700; }
+    .mh-main-nav .menu > .current-menu-item a {
+      padding-bottom: 6px;
+      border-bottom: 3px solid #2a2a2a;
+      color: #2a2a2a; }
 
 .mh-footer {
-  color: #aeaeae; }
+  color: #9e9e9e; }
   .mh-footer .mh-footer-nav {
     text-transform: uppercase;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 14px;
     font-size: 0.875rem; }
     .mh-footer .mh-footer-nav li {
@@ -147,33 +202,66 @@ h3.entry-title {
       font-weight: 700; }
       .mh-footer .mh-footer-nav li a {
         display: block;
-        color: #aeaeae;
+        color: #9e9e9e;
         padding: 10px 20px; }
 
-.single .entry-content {
-  width: 85%;
-  margin-right: auto;
-  margin-left: auto;
-  font-family: Garamond, "Times New Roman", Times, Georgia, serif; }
+.slicknav_menu .slicknav_icon-bar {
+  background-color: #2a2a2a;
+  font-size: 16px; }
 
-.single h1.entry-title {
-  text-align: center;
-  font-family: Garamond, "Times New Roman", Times, Georgia, serif; }
+.slicknav_menu a {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #2a2a2a;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  line-height: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase; }
+  .slicknav_menu a:hover, .slicknav_menu a:focus {
+    color: #2a2a2a; }
+
+/**
+ * Single Post
+ */
+.single .post {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto; }
+
+.single .entry-subhead {
+  margin-top: .5em;
+  margin-bottom: .5em; }
+
+.single .entry-content {
+  line-height: 1.5em;
+  font-family: Georgia, serif;
+  font-size: 1.26rem; }
+  .single .entry-content p,
+  .single .entry-content blockquote,
+  .single .entry-content li {
+    line-height: 1.5em;
+    font-size: 1.26rem; }
 
 .single .entry-meta {
-  text-align: center; }
+  padding-right: 0;
+  padding-left: 0;
+  border-top: none;
+  border-bottom: none; }
 
-.single .entry-thumbnail {
-  text-align: center; }
-  .single .entry-thumbnail img {
-    max-width: 100%;
-    width: initial; }
+.single .entry-meta-author a,
+.single .entry-meta-date {
+  text-transform: uppercase; }
+
+.single .entry-thumbnail img {
+  max-width: 100%;
+  width: initial; }
 
 .single .wp-caption-text {
-  text-align: right;
-  font-style: italic;
-  margin-bottom: 5em; }
+  margin-bottom: 1em; }
 
+/**
+ * Archive
+ */
 .archive .mh-loop-item .mh-loop-thumb {
   float: none;
   margin-right: 0;
@@ -184,9 +272,29 @@ h3.entry-title {
 .archive #mh-mobile .mh-posts-focus-thumb-small {
   max-width: 100%; }
 
+.archive h3.entry-title {
+  margin-top: .5em; }
+
+.page .entry-content h3 {
+  border-bottom: 1px solid #aeaeae;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #9e9e9e;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  line-height: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase; }
+
 .mh-widget-title {
   border-color: #aeaeae;
-  border-width: 1px; }
+  border-width: 1px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #9e9e9e;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  line-height: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase; }
 
 input[type="submit"] {
   background-color: #E50102; }

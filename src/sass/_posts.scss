@@ -1,23 +1,47 @@
+/**
+ * Single Post
+ */
 .single {
 
-  .entry-content {
-    width: 85%;
+  .post {
+    width: 95%;
     margin-right: auto;
     margin-left: auto;
-    font-family: $font__serif;
   }
 
-  h1.entry-title {
-    text-align: center;
+  .entry-title {}
+
+  .entry-subhead {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+
+  .entry-content {
+    line-height: 1.5em;
     font-family: $font__serif;
+    font-size: 1.26rem;
+
+    p,
+    blockquote,
+    li {
+      line-height: 1.5em;
+      font-size: 1.26rem;
+    }
   }
 
   .entry-meta {
-    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .entry-meta-author a,
+  .entry-meta-date {
+    text-transform: uppercase;
   }
 
   .entry-thumbnail {
-    text-align: center;
 
     img {
       max-width: 100%;
@@ -26,12 +50,13 @@
   }
 
   .wp-caption-text {
-    text-align: right;
-    font-style: italic;
-    margin-bottom: 5em;
+    margin-bottom: 1em;
   }
 }
 
+/**
+ * Archive
+ */
 .archive {
   .mh-loop-item {
     .mh-loop-thumb {
@@ -46,5 +71,9 @@
   }
   #mh-mobile .mh-posts-focus-thumb-small {
     max-width: 100%;
+  }
+
+  h3.entry-title {
+    margin-top: .5em;
   }
 }

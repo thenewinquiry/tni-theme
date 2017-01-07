@@ -1,0 +1,16 @@
+.page {
+  .entry-content {
+
+    h3 {
+      border-bottom: 1px solid $color__gray-light;
+      font-family: $font__sans-serif;
+      color: $color__text-light;
+      font-size: 14px;
+      letter-spacing: 1.2px;
+      line-height: 1.5em;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+  }
+}
