@@ -1,5 +1,6 @@
 body {
   background-color: $color__white;
+  color: $color__text-primary;
 }
 
 .mh-container-outer {
@@ -8,7 +9,42 @@ body {
   box-shadow: none;
 }
 
+a {
+  color: $color__link;
+}
 
 a.mh-excerpt-more {
   color: $color__link;
+}
+
+.wp-caption-text {
+  font-weight: normal;
+  font-style: italic;
+  color: $color__text-light;
+}
+
+.entry-meta {
+  font-family: $font__pt-sans;
+  font-size: 0.85em;
+  padding-right: 0;
+  padding-left: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+.entry-meta-author a,
+.entry-meta-date {
+  text-transform: uppercase;
+}
+
+.first-word {
+  color: $color__black;
+  font-size: 200%;
+  font-family: $font__kanit-sans;
+  text-transform: uppercase;
+  font-size: 50px;
+	letter-spacing: 0.7px;
+	line-height: 1em;
+	padding-right: 4px;
+  font-weight: 800;
 }

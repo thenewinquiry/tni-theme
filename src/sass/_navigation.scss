@@ -6,9 +6,15 @@
   border-bottom: none;
   border-bottom-width: 0;
   font-family: $font__sans-serif;
-  @include font-size($font__size-small);
 
   li {
+
+    font-family: $font__sans-serif;
+  	color: $color__text-light;
+  	font-size: 10px;
+  	letter-spacing: 1.2px;
+  	line-height: 1.5em;
+  	font-weight: 300;
 
     &:hover {
       background-color: transparent;
@@ -30,7 +36,13 @@
 
   .menu > .current-menu-item {
     background-color: transparent;
-    border-bottom: 1px solid $color__gray;
+    font-weight: 700;
+
+    a {
+      padding-bottom: 6px;
+      border-bottom: 3px solid $color__black;
+      color: $color__black;
+    }
   }
 }
 
@@ -56,4 +68,27 @@
     }
   }
 
+}
+
+.slicknav_menu {
+
+  .slicknav_icon-bar {
+    background-color: $color__black;
+    font-size: 16px;
+  }
+
+  a {
+    font-family: $font__sans-serif;
+    color: $color__black;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    line-height: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      color: $color__black;
+    }
+  }
 }
