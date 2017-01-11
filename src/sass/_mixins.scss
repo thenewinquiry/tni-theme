@@ -52,10 +52,21 @@ $def-pad: 2rem;
   }
 }
 
-
 // Clear after (not all clearfix need this also)
 @mixin clearfix-after() {
-	clear: both;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin clearfix-before() {
+  &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 /**

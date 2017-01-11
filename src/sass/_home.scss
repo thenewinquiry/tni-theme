@@ -1,1 +1,21 @@
-.mh-home-columns {}
+.mh-home-columns {
+  .post {
+    h3.entry-title {
+      margin-top: .5em;
+    }
+
+    .mh-loop-content {
+      @include clearfix-before;
+    }
+    
+    .mh-loop-thumb {
+      width: 100%;
+      max-height: 225px;
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
