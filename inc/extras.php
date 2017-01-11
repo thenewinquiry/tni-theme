@@ -9,6 +9,14 @@
  * @since 1.0.0
  */
 
+function tni_blog_author_box() {
+    $mh_author_box_ID = get_the_author_meta('ID');
+    if( is_tax( 'blog-types' ) ) {
+        get_template_part( 'content', 'author-box' );
+    }
+}
+add_action( 'mh_after_post_content', 'tni_blog_author_box' );
+
 /**
  * Modify Archive Title
  *
