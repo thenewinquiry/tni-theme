@@ -14,6 +14,11 @@
 			<div class="articles-list">
 				<?php mh_magazine_lite_loop_layout(); ?>
 			</div>
+			<?php if( is_tax( 'blog-types' ) ) : ?>
+				<footer class="page-footer">
+					<?php tni_blog_author_box(); ?>
+				</footer>
+			<?php endif; ?>
 			<?php mh_magazine_lite_pagination(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
