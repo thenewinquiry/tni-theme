@@ -30,6 +30,15 @@ function tni_setup() {
         )
     );
 
+    add_theme_support( 'infinite-scroll', array(
+        // 'type'           => 'scroll',
+        'footer_widgets' => true,
+        'container'      => 'mh-loop',
+        // 'wrapper'        => true,
+        // 'render'         => false,
+        // 'posts_per_page' => false,
+    ) );
+
     register_nav_menu(
         'social', esc_html__( 'Social Menu', 'tni' )
     );
