@@ -44,7 +44,6 @@ gulp.task( 'styles', function() {
     } )
     .pipe( plumber( { errorHandler: onError } ) )
     .pipe( sass() )
-    // .pipe( gulp.dest( './' ) )
     .pipe(postcss([
         autoprefixer({
             browsers: ['last 2 version']
@@ -53,7 +52,6 @@ gulp.task( 'styles', function() {
             sort: true
         }),
     ]))
-    // .pipe(sourcemaps.init())
     .pipe( minifycss() )
     .pipe(sourcemaps.write())
     .pipe( rename( { suffix: '.min' } ) )
