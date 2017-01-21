@@ -25,14 +25,6 @@ if ( have_posts() ) : ?>
 		'taxonomy' 	=> 'blog-types',
 		'number'	=> 0
 	));
-	/**
-	 * get_categories();
-	 * get the post meta
-	 * image
-	 * author
-	 * title
-	 * link
-	 */
 	?>
 
 	<section id="primary" class="content-archive content-area">
