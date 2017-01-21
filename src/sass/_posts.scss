@@ -9,8 +9,6 @@
     margin-left: auto;
   }
 
-  .entry-title {}
-
   .entry-subhead {
     margin-top: .5em;
     margin-bottom: .5em;
@@ -54,26 +52,16 @@
   }
 }
 
-/**
- * Archive
- */
-.archive {
-  .mh-loop-item {
-    .mh-loop-thumb {
-      float: none;
-      margin-right: 0;
-      max-width: 100%;
-
-      img {
-        max-width: 100%;
+.post-layout-four-columns {
+  .post-wrapper {
+    .type-post,
+    .type-blogs,
+    .type-magazines {
+      .entry-title {
+        margin-top: .25em;
+        font-size: 1.45em;
+        line-height: 1.2;
       }
     }
-  }
-  #mh-mobile .mh-posts-focus-thumb-small {
-    max-width: 100%;
-  }
-
-  h3.entry-title {
-    margin-top: .5em;
   }
 }

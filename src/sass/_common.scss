@@ -3,18 +3,11 @@ body {
   color: $color__text-primary;
 }
 
-.mh-container-outer {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-
 a {
-  color: $color__link;
-}
-
-a.mh-excerpt-more {
-  color: $color__link;
+  &:hover,
+  &:focus {
+    color: $color__link;
+  }
 }
 
 .wp-caption-text {
@@ -30,11 +23,40 @@ a.mh-excerpt-more {
   padding-left: 0;
   border-top: none;
   border-bottom: none;
+
+  a,
+  a:link,
+  a:visited {
+    color: $color__link;
+  }
+
+  span {
+    display: block;
+    &:after {
+      content: none;
+    }
+  }
 }
 
-.entry-meta-author a,
-.entry-meta-date {
+.more-link,
+.more-link:link,
+.more-link:visited {
+  padding: 0;
+  background-color: transparent;
+  font-family: $font__pt-sans;
+  color: $color__gray;
+  font-weight: normal;
+  text-decoration: underline;
   text-transform: uppercase;
+}
+
+.meta-category,
+.meta-author a {
+  text-transform: uppercase;
+}
+
+.screen-reader-text {
+  @include visually-hidden;
 }
 
 .first-word {

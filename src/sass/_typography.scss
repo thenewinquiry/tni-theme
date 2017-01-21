@@ -1,5 +1,6 @@
 body {
   font-size: 16px;
+  font-family: $font__sans-serif;
   color: $color__text-primary;
 }
 
@@ -9,6 +10,17 @@ h3,
 h4 {
   font-family: $font__droid-serif;
   color: $color__text-dark;
+}
+
+.page-header {
+  text-align: center;
+  .archive-title {
+    font-family: $font__pt-sans;
+    color: $color__gray;
+    font-weight: normal;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
 }
 
 .entry-title {
@@ -33,7 +45,9 @@ h1.entry-title {
 }
 
 .entry-meta {
-  font-family: $font__sans-serif;
+  font-family: $font__pt-sans;
+  font-size: 0.7em;
+	letter-spacing: 0.3px;
 }
 
 .wp-caption-text {

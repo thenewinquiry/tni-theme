@@ -1,94 +1,147 @@
-.mh-main-nav-wrap {
-  background-color: transparent;
+nav ul {
+  @include no-bullets;
 }
 
-.mh-main-nav {
-  border-bottom: none;
-  border-bottom-width: 0;
-  font-family: $font__sans-serif;
+.primary-navigation,
+.main-navigation-menu {
+  float: none;
+}
+
+.main-navigation-menu {
+
+  width: 100%;
 
   li {
-
-    font-family: $font__sans-serif;
-  	color: $color__text-light;
-  	font-size: 10px;
-  	letter-spacing: 1.2px;
-  	line-height: 1.5em;
-  	font-weight: 300;
-
-    &:hover {
-      background-color: transparent;
-      a {
-        color: $color__text-light;
-      }
-    }
-    a {
-      color: $color__text-light;
-    }
-
-    ul li:hover > ul {
-      background-color: transparent;
-      a {
-        color: $color__text-light;
-      }
-    }
-  }
-
-  .menu > .current-menu-item {
-    background-color: transparent;
-    font-weight: 700;
-
-    a {
-      padding-bottom: 6px;
-      border-bottom: 3px solid $color__black;
-      color: $color__black;
-    }
-  }
-}
-
-.mh-footer {
-  color: $color__text-light;
-
-  .mh-footer-nav {
     text-transform: uppercase;
-    font-family: $font__sans-serif;
+    text-align: left;
 
-    @include font-size($font__size-small);
+    a {
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    a,
+    a:link,
+    a:visited {
+      color: $color__gray;
+    }
+    a:hover,
+    a:focus {
+      color: darken( $color__gray, 10% );
+    }
+
+    &.current-menu-item > a {
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 3px solid $color__black;
+    }
+  }
+
+  @include breakpoint(md) {
+    display: flex !important;
+    justify-content: space-between;
 
     li {
-      float: left;
-      position: relative;
-      font-weight: 700;
+      float: none;
+      flex-grow: 1;
+      flex-shrink: 1;
+      text-align: center;
 
-      a {
-        display: block;
-        color: $color__text-light;
-        padding: 10px 20px;
+      &:first-child {
+        a {
+          padding-left: 0;
+        }
       }
+      &:last-child {
+        text-align: right;
+        a {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .menu-search-icon {
+    .screen-reader-text:before {}
+
+    .icon-search:before {
+      font-family: 'FontAwesome';
+      content: '\f002';
     }
   }
 
 }
 
-.slicknav_menu {
+.social-navigation-menu {
 
-  .slicknav_icon-bar {
-    background-color: $color__black;
-    font-size: 16px;
+  display: flex;
+  justify-content: center;
+
+  li {
+    margin-right: 1em;
   }
 
-  a {
-    font-family: $font__sans-serif;
-    color: $color__black;
-    font-size: 10px;
-    letter-spacing: 1.2px;
-    line-height: 1.5em;
-    font-weight: 300;
-    text-transform: uppercase;
+  @include breakpoint(lg) {
+    justify-content: flex-end;
+  }
 
-    &:hover,
-    &:focus {
-      color: $color__black;
+  .fa,
+  .icon {
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    font-style: normal;
+    color: $color__text-light;
+  }
+
+  a[href*='facebook.com'] .fa:before,
+  a[href*='facebook.com'] .icon:before {
+    content: '\f09a';
+  }
+  a[href*='twitter.com'] .fa:before,
+  a[href*='twitter.com'] .icon:before {
+    content: '\f099';
+  }
+  a[href*='tumblr.com'] .fa:before,
+  a[href*='tumblr.com'] .icon:before {
+    content: '\f173';
+  }
+  a[href*='instagram.com'] .fa:before,
+  a[href*='instagram.com'] .icon:before {
+    content: '\f16d';
+  }
+  a[href*='feed'] .fa:before,
+  a[href*='rss'] .fa:before,
+  a[href*='feed'] .icon:before,
+  a[href*='rss'] .icon:before {
+    content: '\f09e';
+  }
+
+}
+
+.main-navigation-toggle {
+  min-width: auto;
+  padding: 0;
+  &:after {
+    color: $color__gray;
+  }
+  &:hover:after,
+  &:focus:after {
+    color: $color__gray;
+  }
+}
+
+.post-navigation {
+  .nav-links {
+    a,
+    a:link,
+    a:visited {
+      padding: 0;
+      background-color: transparent;
+      font-family: $font__pt-sans;
+      color: $color__gray;
+      font-weight: normal;
+      text-decoration: underline;
+      text-transform: uppercase;
     }
   }
 }

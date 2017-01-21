@@ -1,13 +1,13 @@
 {
-  "name": "vantage-custom",
+  "name": "tni",
   "version": "0.1.0",
   "author": "Pea Glocal <pea@glocal.coop>",
-  "homepage": "https://git.glocal.coop/wordpress-development/vantage-custom",
+  "homepage": "https://github.com/misfist/tni-theme",
   "private": true,
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://git.glocal.coop/wordpress-development/vantage-custom.git"
+    "url": "https://github.com/misfist/tni-theme.git"
   },
   "license": [
     {

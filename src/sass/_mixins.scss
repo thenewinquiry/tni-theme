@@ -11,10 +11,17 @@
   @if $point == lg {
     @media screen and (min-width: $screen__lg) { @content; }
   }
-  @else if $point == xl {
+  @if $point == xlg {
     @media screen and (min-width: $screen__xl) { @content; }
   }
+  @if $point == xxlg {
+    @media screen and (min-width: $screen__xxl) { @content; }
+  }
+  @else if $point == xxxl {
+    @media screen and (min-width: $screen__xxxl) { @content; }
+  }
 }
+
 
 $def-pad: 2rem;
 @mixin columns($col-number) {
@@ -76,4 +83,23 @@ $def-pad: 2rem;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/**
+ * Screen Reader Text
+ */
+@mixin visually-hidden() {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute !important;
+}
+
+@mixin visually-displayed() {
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: initial;
+  position: initial !important;
 }
