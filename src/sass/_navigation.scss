@@ -40,6 +40,7 @@ nav ul {
   @include breakpoint(md) {
     display: flex !important;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     li {
       float: none;
@@ -48,15 +49,10 @@ nav ul {
       text-align: center;
 
       &:first-child {
-        a {
-          padding-left: 0;
-        }
+        a {}
       }
       &:last-child {
-        text-align: right;
-        a {
-          padding-right: 0;
-        }
+        a {}
       }
     }
   }

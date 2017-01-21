@@ -36,21 +36,3 @@ a.button {
     min-width: inherit;
   }
 }
-
-.infinite-scroll {
-  #infinite-handle {
-    span {
-      background-color: transparent;
-      color: $color__gray;
-      text-transform: uppercase;
-      font-size: 2.5em;
-      font-family: $font__pt-sans;
-      font-weight: 300;
-
-      &:hover,
-      &focus {
-        background-color: transparent;
-      }
-    }
-  }
-}

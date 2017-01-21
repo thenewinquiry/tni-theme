@@ -32,3 +32,9 @@
 .newsletter-city {
   @include visually-hidden;
 }
+
+.header-widget {
+  .widget_mc4wp_form_widget {
+    margin-bottom: 0;
+  }
+}

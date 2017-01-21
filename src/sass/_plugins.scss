@@ -1,5 +1,23 @@
-.mh-widget .mc4wp-form {
-  li {
-    margin-bottom: .5em;
+
+/**
+ * JetPack Infinite Scroll
+ */
+.infinite-scroll {
+  #infinite-handle {
+    span {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      background-color: transparent;
+      color: $color__gray;
+      text-transform: uppercase;
+      font-size: 2.5em;
+      font-family: $font__pt-sans;
+      font-weight: 300;
+
+      &:hover,
+      &focus {
+        background-color: transparent;
+      }
+    }
   }
 }

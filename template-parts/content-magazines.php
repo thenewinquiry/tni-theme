@@ -15,18 +15,15 @@
 
 		<header class="entry-header">
 
-			<?php // Get theme options from database.
-		    $theme_options = gridbox_theme_options(); ?>
-
-			<?php if( true === $theme_options['meta_category'] && !is_category() ) : ?>
-				<div class="entry-meta">
-					<?php echo gridbox_meta_category(); ?>
-				</div>
-			<?php endif; ?>
-
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-			<?php gridbox_entry_meta(); ?>
+			<?php if( function_exists( 'gridbox_meta_date' ) ) : ?>
+
+				<div class="entry-meta">
+					<?php echo gridbox_meta_date(); ?>
+				</div>
+
+			<?php endif; ?>
 
 		</header><!-- .entry-header -->
 

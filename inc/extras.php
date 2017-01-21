@@ -110,9 +110,7 @@ function mh_magazine_lite_featured_image() {
  */
 function tni_jetpack_infinite_scroll_button_text( $settings ) {
 
-    if( is_post_type_archive( 'blogs' ) ) {
-        $settings['text'] = __( 'Load More Blogs', 'tni' );
-    } elseif( is_post_type_archive( 'magazines' ) ) {
+    if( is_post_type_archive( 'magazines' ) ) {
         $settings['text'] = __( 'Load More Issues', 'tni' );
     } else {
         $settings['text'] = __( 'Load More Articles', 'tni' );
@@ -120,6 +118,18 @@ function tni_jetpack_infinite_scroll_button_text( $settings ) {
 	return $settings;
 }
 add_filter( 'infinite_scroll_js_settings', 'tni_jetpack_infinite_scroll_button_text' );
+
+/**
+ * Disable Infinite Scroll on Blogs Listing
+ *
+ * @since 0.1.2
+ *
+ * @uses infinite_scroll_archive_supported filter
+ */
+function tni_remove_infinite_scroll_blogs_archive() {
+	return current_theme_supports( 'infinite-scroll' ) && ( !is_post_type_archive( 'blogs' ) );
+}
+add_filter( 'infinite_scroll_archive_supported', 'tni_remove_infinite_scroll_blogs_archive' );
 
 /**
  * Override Parent Image Function
@@ -140,6 +150,27 @@ function gridbox_post_image_single( $size = 'post-thumbnail' ) {
 
     }
 }
+
+/**
+ * Modify Date Display for
+ * @param  obj $the_date
+ * @param  string $d
+ * @param  obj $post
+ * @return obj modified date || $the_date
+ */
+function tni_filter_publish_dates( $the_date, $d, $post ) {
+	if ( is_int( $post) ) {
+		$post_id = $post;
+	} else {
+		$post_id = $post->ID;
+	}
+
+	if ( 'magazines' == get_post_type( $post_id ) )
+		return date( 'F Y', strtotime( $the_date ) );
+
+	return $the_date;
+}
+add_action( 'get_the_date', 'tni_filter_publish_dates', 10, 3 );
 
 /**
  * Add Filters to `meta_content`
