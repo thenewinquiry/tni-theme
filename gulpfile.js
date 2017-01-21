@@ -44,7 +44,7 @@ gulp.task( 'styles', function() {
     } )
     .pipe( plumber( { errorHandler: onError } ) )
     .pipe( sass() )
-    .pipe( gulp.dest( './' ) )
+    // .pipe( gulp.dest( './' ) )
     .pipe(postcss([
         autoprefixer({
             browsers: ['last 2 version']
@@ -53,7 +53,7 @@ gulp.task( 'styles', function() {
             sort: true
         }),
     ]))
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe( minifycss() )
     .pipe(sourcemaps.write())
     .pipe( rename( { suffix: '.min' } ) )
@@ -62,8 +62,8 @@ gulp.task( 'styles', function() {
 });
 
 gulp.task('scripts', function(){
-  return gulp.src(paths.scripts)
-      .pipe(concat('main.js'))
+  return gulp.src(paths.scripts + '/*.js')
+      .pipe(concat('app.js'))
       .pipe(sourcemaps.write())
       .pipe(gulp.dest(paths.scriptsOutput))
       .pipe( notify( { message: 'Script task complete' } ) );
@@ -83,7 +83,7 @@ gulp.task('images', function(){
 gulp.task( 'watch', function() {
     livereload.listen();
     gulp.watch( paths.styles, [ 'styles' ] );
-    gulp.watch( paths.scripts, [ 'scripts' ] );
+    gulp.watch( paths.scripts + '/*.js', [ 'scripts' ] );
     gulp.watch( paths.images, [ 'images' ] );
 } );
 

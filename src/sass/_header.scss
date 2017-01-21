@@ -1,31 +1,110 @@
-.mh-site-logo {
-  * {
-    box-sizing: border-box;
+.site-header {
+  background-color: $color__white;
+
+  &.fixed-header {
+    -webkit-box-shadow: 1px 2px 2px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1px 2px 2px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         1px 2px 2px 0px rgba(50, 50, 50, 0.5);
   }
-  padding-right: 0;
-  padding-left: 0;
+
+  .site-title {
+    margin-top: 0;
+  }
 }
 
-.header-widget {
-  .mh-widget {
-    padding: 20px;
+.header-main {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  .site-branding {
+    order: 2;
+    flex-basis: 70%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: center;
   }
+  .header-widget {
+    @include visually-hidden;
+  }
+  .social-navigation {
+    order: 3;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 20%;
+  }
+  .main-navigation-toggle {
+    order: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 10%;
+  }
+  .primary-navigation {}
 
-  .widget_wpcom_social_media_icons_widget {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  .top-search {}
 
-    ul {
+  @include breakpoint(md) {
+
+    align-items: flex-start;
+
+    .site-branding {
+      order: 1;
+      flex-basis: 30%;
+      text-align: left;
+      margin-top: 1em;
+      margin-bottom: 0;
+    }
+    .header-widget {
+      @include visually-displayed;
+      order: 2;
+      flex-basis: auto;
+      margin-top: 1em;
+      margin-bottom: 0;
+    }
+    .social-navigation {
+      order: 3;
+      flex-basis: auto;
+      /*flex-basis: 25%;*/
+      flex-grow: 1;
+      flex-shrink: 1;
       text-align: right;
+      margin-top: 1em;
+      margin-bottom: 0;
+    }
+    .primary-navigation {
+      order: 4;
+      flex-basis: 100%;
+      padding-top: 1em;
+      border-top: 1px solid $color__gray;
+    }
+    .top-search {
+      order: 5;
+      flex-basis: 100%;
     }
 
-    .genericon {
-      font-size: 120%;
-    }
   }
 
-  .mh-widget.widget_search {
-    margin-bottom: 0;
-    padding-top: 10px;
+}
+
+.site-title {
+  font-family: $font__droid-serif;
+  font-size: 2em;
+  color: $color__gray;
+  a {
+    font-weight: normal;
+    text-transform: uppercase;
+
+    &:link,
+    &:visited {
+      color: $color__gray;
+    }
   }
+}
+
+.top-search {
+  &.collapsed {
+    height: 0;
+    visibility: hidden;
+  }
+  &.expanded {}
 }

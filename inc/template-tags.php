@@ -4,44 +4,60 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package mh-magazine-lite
+ * @package gridbox
  * @subpackage tni
- * @since 1.0.0
+ * @since 0.1.0
  */
 
 /**
- * Override Parent Theme Meta
+ * Override Parent Theme Meta Entry
+ *
+ * @since 1.0.0
+ */
+function gridbox_entry_meta() {
+
+    // Get theme options from database.
+    $theme_options = gridbox_theme_options();
+
+    $postmeta = '';
+
+    // Display author unless user has deactivated it via settings.
+    if ( true === $theme_options['meta_author'] ) {
+
+        $postmeta .= gridbox_meta_author();
+
+    }
+
+    // Display date unless user has deactivated it via settings.
+    if ( true === $theme_options['meta_date'] ) {
+
+        $postmeta .= gridbox_meta_date();
+
+    }
+
+    if ( $postmeta ) {
+
+        echo '<div class="entry-meta">' . $postmeta . '</div>';
+
+    }
+}
+
+/**
+ * Override Parent Theme Author Meta
+ *
+ * @since 1.0.0
  *
  * @return void
  */
-function mh_magazine_lite_post_meta() {
-    echo sprintf( '<div class="entry-meta">
-    <div class="entry-meta-author author vcard">%s <a href="%s">%s</a></div>
-    <div class="entry-meta-date updated"><a href="%s">%s</a></div>
-    <div class="entry-meta-categories">%s</div>
-    </div>',
-        __( 'By', 'tni' ),
-        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-        esc_html( get_the_author() ),
-        esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ),
-        get_the_date(),
-        get_the_category_list( ', ', '' )
-    );
-}
-add_action( 'mh_post_header', 'mh_magazine_lite_post_meta' );
+function gridbox_meta_author() {
 
-/**
- * Override Parent Loop Meta
- * @return void
- */
-function mh_magazine_lite_loop_meta() {
-    echo '<div class="entry-meta">';
-    if (in_the_loop()) {
-        echo sprintf( '<div class="entry-meta-author author vcard">%s <a href="%s">%s</a></div>',
-            __( 'By', 'tni' ),
-            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-            esc_html( get_the_author() )
-        );
-    }
-    echo '<div class="entry-meta-date updated">' . get_the_date() . '</div></div>';
+    $author_string = sprintf( '<span class="author vcard">%s<a class="url fn n" href="%s" title="%s" rel="author">%s</a></span>',
+        __( 'By ', 'tni' ),
+        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+        esc_attr( sprintf( esc_html__( 'View all posts by %s', 'tni' ),
+        get_the_author() ) ),
+        esc_html( get_the_author() )
+    );
+
+    return '<span class="meta-author"> ' . $author_string . '</span>';
 }

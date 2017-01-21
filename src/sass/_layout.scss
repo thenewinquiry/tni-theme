@@ -1,30 +1,47 @@
-.single {
-  .mh-content {
-    width: 100%;
-  }
+.container {
+  max-width: $size__site-width;
 }
+
+.site-content {
+  padding-top: 1.5em;
+}
+
+.page-header {
+  margin-bottom: 1.5em;
+}
+
+.single {}
 
 .archive {
 
-  .mh-content {
-    width: 100%;
-  }
-
-  .articles-list {
-    .mh-loop-item {}
-  }
-
-  .mh-loop-pagination {}
+  .articles-list {}
 
 }
 
-.page-template-page-blogs {
-  .mh-content {
-    width: 100%;
-  }
+.home.post-layout-four-columns {
+   .post-wrapper {
+     .post-column {
+       width: 33.3333333333333%;
+     }
+   }
+
+   @include breakpoint(md) {
+     .site-content {
+       display: flex;
+     }
+
+     #primary {
+       flex-basis: 75%;
+     }
+     #secondary {
+       margin-left: 40px;
+       flex-basis: calc( 25% - 40px );
+     }
+   }
+
 }
 
-
+.home,
 .archive,
 .page-template-page-blogs {
   .articles-list {
@@ -37,9 +54,11 @@
     }
     @include breakpoint(lg)  {
       @include columns(3);
+      .current-issue {}
     }
     @include breakpoint(xl) {
       @include columns(4);
+      .current-issue {}
     }
   }
 }

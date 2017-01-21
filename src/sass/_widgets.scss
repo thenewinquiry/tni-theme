@@ -1,4 +1,4 @@
-.mh-widget-title {
+.widget-title {
   border-color: $color__gray-light;
   border-width: 1px;
   font-family: $font__sans-serif;
@@ -8,4 +8,27 @@
   line-height: 1.5em;
   font-weight: 300;
   text-transform: uppercase;
+}
+
+.widget_mc4wp_form_widget {
+  display: flex;
+
+  .widget-title {
+    flex-basis: 25%;
+  }
+  .mc4wp-form {}
+
+  input[type="submit"] {
+    background-color: transparent;
+    color: $color__gray;
+    text-decoration: underline;
+    font-weight: normal;
+  }
+}
+
+.newsletter-name {
+  @include visually-hidden;
+}
+.newsletter-city {
+  @include visually-hidden;
 }
