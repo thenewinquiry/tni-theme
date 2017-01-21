@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.7.1
-Version: 0.1.0
+Version: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,10 @@ Custom theme for The New Inquiry, based on MH Magazine theme.
 
 == Changelog ==
 
-= 0.1.0 January 21, 2017 =
+= 0.1.1 January 21, 2017 =
+* [WIP] - Updated homepage styling to allow for current issue ad
+
+= 0.1.0 January 20, 2017 =
 * [WIP] - Updated to use a new parent theme:
    * Added images.
    * Removed unused templates
