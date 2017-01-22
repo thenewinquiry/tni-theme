@@ -36,6 +36,22 @@ a {
   }
 }
 
+.entry-tags {
+  .meta-tags {
+    a,
+    a:link,
+    a:visited {
+      padding: 0;
+      background-color: transparent;
+      font-family: $font__pt-sans;
+      color: $color__gray;
+      font-weight: normal;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+  }
+}
+
 .more-link,
 .more-link:link,
 .more-link:visited {

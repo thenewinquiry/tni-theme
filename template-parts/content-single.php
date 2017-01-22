@@ -32,6 +32,12 @@
 
 		<?php the_content(); ?>
 
+		<?php if( is_active_sidebar( 'content-footer' ) ) : ?>
+
+			<?php dynamic_sidebar( 'content-footer' ); ?>
+
+		<?php endif; ?>
+
 		<?php wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gridbox' ),
 			'after'  => '</div>',

@@ -86,4 +86,10 @@
 
 		<?php gridbox_breadcrumbs(); ?>
 
+		<?php if( is_active_sidebar( 'page-header' ) ) : ?>
+
+			<?php dynamic_sidebar( 'page-header' ); ?>
+
+		<?php endif; ?>
+
 		<div id="content" class="site-content container clearfix">

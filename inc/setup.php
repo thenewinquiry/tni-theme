@@ -11,22 +11,46 @@
 
 function tni_setup() {
     register_sidebar( array(
-            'name' => esc_html__( 'Header', 'tni' ),
-            'id' => 'header',
-            'description' => esc_html__( 'Header widget', 'tni' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">', 'after_widget' => '</div>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>'
+        'name' => esc_html__( 'Header', 'tni' ),
+        'id' => 'header',
+        'description' => esc_html__( 'Header widget', 'tni' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
         )
     );
+
     register_sidebar( array(
-            'name' => esc_html__( 'Copyright', 'tni' ),
-            'id' => 'copyleft',
-            'description' => esc_html__( 'Copyright information in footer', 'tni' ),
-            'before_widget' => '<div id="%1$s" class="copyright">',
-            'after_widget' => '</div>',
-            'before_title' => '<div class="screen-reader-text">',
-            'after_title' => '</div>'
+        'name' => esc_html__( 'Copyright', 'tni' ),
+        'id' => 'copyleft',
+        'description' => esc_html__( 'Copyright information in footer', 'tni' ),
+        'before_widget' => '<div id="%1$s" class="copyright">',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="screen-reader-text">',
+        'after_title' => '</div>'
+        )
+    );
+
+    register_sidebar( array(
+        'name' => esc_html__( 'Above Page', 'tni' ),
+        'id' => 'page-header',
+        'description' => esc_html__( 'Displays above pages', 'tni' ),
+        'before_widget' => '<div id="%1$s" class="page-header-widget container">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 title="widget-title">',
+        'after_title' => '</h3>'
+        )
+    );
+
+    register_sidebar( array(
+        'name' => esc_html__( 'Below Content', 'tni' ),
+        'id' => 'content-footer',
+        'description' => esc_html__( 'Displays under articles', 'tni' ),
+        'before_widget' => '<div id="%1$s" class="article-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 title="widget-title">',
+        'after_title' => '</h3>'
         )
     );
 
