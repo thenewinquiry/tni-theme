@@ -21,3 +21,18 @@
     }
   }
 }
+
+#jp-relatedposts h3.jp-relatedposts-headline em {
+    font-weight: normal;
+}
+
+.jp-relatedposts-headline em {
+  font-family: $font__pt-sans;
+  color: $color__gray;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.jp-relatedposts-post-date {
+  @extend .entry-meta;
+}
