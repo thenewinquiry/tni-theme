@@ -173,6 +173,24 @@ function tni_filter_publish_dates( $the_date, $d, $post ) {
 add_action( 'get_the_date', 'tni_filter_publish_dates', 10, 3 );
 
 /**
+ * Add Class to Nav Items
+ *
+ * @since 0.1.5
+ *
+ * @param  array $classes
+ * @param  string $item
+ * @return array $classes
+ */
+function tni_nav_class( $classes, $item ){
+    $item_post_name = $item->post_name;
+    if( !empty( $item_post_name ) ) {
+        $classes[] = $item_post_name;
+    }
+    return $classes;
+}
+add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
+
+/**
  * Add Filters to `meta_content`
  * Ensures that `meta_content` is return like `the_content`
  *

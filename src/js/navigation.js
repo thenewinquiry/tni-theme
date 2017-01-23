@@ -23,12 +23,4 @@
 
   });
 
-  /**
-   * Add Social Menu Mark-up
-   */
-  // $('.header-widget .widget_nav_menu').each( function() {
-  //   $(this).find('a').wrapInner('<span class="screen-reader-text" aria-hidden="true"></span>');
-  //   $(this).find('.screen-reader-text').before('<i class="fa icon" aria-hidden="true"></i>');
-  // } );
-
 })( jQuery );

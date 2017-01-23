@@ -31,6 +31,7 @@ nav ul {
     }
 
     &.current-menu-item > a {
+      color: $color__black;
       font-weight: bold;
       text-decoration: none;
       border-bottom: 3px solid $color__black;
@@ -66,6 +67,17 @@ nav ul {
     }
   }
 
+}
+
+/**
+ * Don't add border to Past Issues link when on Current Issue
+ */
+.single-magazines .main-navigation-menu {
+  li.current-menu-item a[href$='/magazine/'] {
+    border-bottom: none;
+    color: $color__gray;
+    font-weight: normal;
+  }
 }
 
 .social-navigation-menu {
