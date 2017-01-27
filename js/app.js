@@ -4,7 +4,7 @@
    * Add Mark-up Around Search Icon
    */
   $('.main-navigation-menu .menu-search-icon a').wrapInner('<span class="screen-reader-text" aria-hidden="true"></span>');
-  $('.main-navigation-menu .menu-search-icon .screen-reader-text').before('<i class="icon icon-search" aria-hidden="true"></i>');
+
 
   /**
    * Toggle Search Expand/Collapse

@@ -101,10 +101,20 @@
   }
 }
 
+/**
+ * Show/Hide Search Bar
+ */
 .top-search {
+	transition: max-height 0.8s;
+
   &.collapsed {
-    height: 0;
     visibility: hidden;
+    opacity: 0;
+    height: 0;
+    max-height: 0;
   }
-  &.expanded {}
+  &.expanded {
+    opacity: 1;
+    max-height: 200px;
+  }
 }

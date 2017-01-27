@@ -61,9 +61,19 @@ nav ul {
   .menu-search-icon {
     .screen-reader-text:before {}
 
-    .icon-search:before {
-      font-family: 'FontAwesome';
-      content: '\f002';
+    a {
+      padding-bottom: 0;
+
+      &::before {
+        font-family: $font__icon;
+        content: '\f400';
+        display: inline-block;
+        font-size: 18px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        -webkit-font-smoothing: antialiased;
+      }
     }
   }
 
@@ -80,48 +90,87 @@ nav ul {
   }
 }
 
-.social-navigation-menu {
+#menu-social {
+  ul {
+    list-style: none;
+    margin: 0 0 25px;
+    text-align: center;
+    li {
+      display: inline-block;
+      position: relative;
+    }
+  }
+  li a {
+    &::before {
+      content: '\f408';
+      display: inline-block;
+      padding: 0 5px;
+      font-family: $font__icon;
+      font-size: 16px;
+      vertical-align: top;
+      color: $color__text-light;
+      -webkit-font-smoothing: antialiased;
+    }
+    &[href*="feed"]::before,
+    &[href*="rss"]::before {
+      content: '\f413';
+    }
+    &[href*="wordpress.org"]::before,
+    &[href*="wordpress.com"]::before {
+      content: '\f205';
+    }
+    &[href*="facebook.com"]::before {
+      content: '\f203';
+    }
+    &[href*="twitter.com"]::before {
+      content: '\f202';
+    }
+    &[href*="dribbble.com"]::before {
+      content: '\f201';
+    }
+    &[href*="plus.google.com"]::before {
+      content: '\f206';
+    }
+    &[href*="pinterest.com"]::before {
+      content: '\f210';
+    }
+    &[href*="github.com"]::before {
+      content: '\f200';
+    }
+    &[href*="tumblr.com"]::before {
+      content: '\f214';
+    }
+    &[href*="youtube.com"]::before {
+      content: '\f213';
+    }
+    &[href*="flickr.com"]::before {
+      content: '\f211';
+    }
+    &[href*="vimeo.com"]::before {
+      content: '\f212';
+    }
+    &[href*="instagram.com"]::before {
+      content: '\f215';
+    }
+    &[href*="codepen.io"]::before {
+      content: '\f216';
+    }
+    &[href*="linkedin.com"]::before {
+      content: '\f208';
+    }
+  }
+}
 
+.social-navigation-menu {
   display: flex;
   justify-content: center;
-
-  li {
-    margin-right: 1em;
-  }
 
   @include breakpoint(lg) {
     justify-content: flex-end;
   }
 
-  .fa,
-  .icon {
-    font-family: 'FontAwesome';
-    font-size: 18px;
-    font-style: normal;
-    color: $color__text-light;
-  }
-
-  a[href*='facebook.com'] .fa:before,
-  a[href*='facebook.com'] .icon:before {
-    content: '\f09a';
-  }
-  a[href*='twitter.com'] .fa:before,
-  a[href*='twitter.com'] .icon:before {
-    content: '\f099';
-  }
-  a[href*='tumblr.com'] .fa:before,
-  a[href*='tumblr.com'] .icon:before {
-    content: '\f173';
-  }
-  a[href*='instagram.com'] .fa:before,
-  a[href*='instagram.com'] .icon:before {
-    content: '\f16d';
-  }
-  a[href*='feed'] .fa:before,
-  a[href*='rss'] .fa:before,
-  a[href*='feed'] .icon:before,
-  a[href*='rss'] .icon:before {
-    content: '\f09e';
+  li {
+    margin-right: 1em;
   }
 
 }
@@ -137,6 +186,7 @@ nav ul {
     color: $color__gray;
   }
 }
+
 
 .post-navigation {
   .nav-links {

@@ -57,13 +57,13 @@ function tni_setup() {
     remove_theme_support( 'infinite-scroll' );
 
     add_theme_support( 'infinite-scroll', array(
-        'type'           => 'click',
-		'container'      => 'post-wrapper',
-		'footer_widgets' => 'footer',
-		'wrapper'        => false,
-		'render'         => 'gridbox_infinite_scroll_render',
-		'posts_per_page' => 8,
-	) );
+      'type'           => 'click',
+      'container'      => 'post-wrapper',
+      'footer_widgets' => 'footer',
+      'wrapper'        => false,
+      'render'         => 'gridbox_infinite_scroll_render',
+      'posts_per_page' => 8,
+  	) );
 
     register_nav_menus( array(
     	'social'   => esc_html__( 'Social Menu', 'tni' ),
