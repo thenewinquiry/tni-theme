@@ -152,7 +152,7 @@ function gridbox_post_image_single( $size = 'post-thumbnail' ) {
 }
 
 /**
- * Modify Date Display for
+ * Modify Date Display for Magazines
  * @param  obj $the_date
  * @param  string $d
  * @param  obj $post
@@ -191,10 +191,29 @@ function tni_nav_class( $classes, $item ){
 add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
 
 /**
+ * Remove Auto-inserted Related Posts
+ *
+ * @since 0.0.6
+ *
+ * @uses Jetpack_RelatedPosts
+ * @link https://jetpack.com/support/related-posts/customize-related-posts/
+ *
+ * @return void
+ */
+function tni_remove_jetpack_related_posts() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'tni_remove_jetpack_related_posts', 20 );
+
+/**
  * Add Filters to `meta_content`
  * Ensures that `meta_content` is return like `the_content`
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
 add_filter( 'meta_content', 'wptexturize'        );
 add_filter( 'meta_content', 'convert_smilies'    );
