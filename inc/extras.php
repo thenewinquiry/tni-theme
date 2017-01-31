@@ -210,6 +210,31 @@ function tni_remove_jetpack_related_posts() {
 add_filter( 'wp', 'tni_remove_jetpack_related_posts', 20 );
 
 /**
+ * Modify Default JetPack Related Posts Default Image
+ * @param  array $media
+ * @param  int $post_id
+ * @param  array $args
+ * @return array $media
+ */
+function tni_jetpack_related_posts_default_image( $media, $post_id, $args ) {
+    if ( $media ) {
+        return $media;
+    } else {
+        $permalink = get_permalink( $post_id );
+        $image = get_stylesheet_directory_uri() . '/images/tni-placeholder.jpg';
+        $url = apply_filters( 'jetpack_photon_url', $image );
+
+        return array( array(
+            'type'  => 'image',
+            'from'  => 'custom_fallback',
+            'src'   => esc_url( $url ),
+            'href'  => $permalink,
+        ) );
+    }
+}
+add_filter( 'jetpack_images_get_images', 'tni_jetpack_related_posts_default_image', 10, 3 );
+
+/**
  * Add Filters to `meta_content`
  * Ensures that `meta_content` is return like `the_content`
  *
