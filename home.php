@@ -12,13 +12,6 @@ get_header();
 // Get Theme Options from Database.
 $theme_options = gridbox_theme_options();
 
-// Display Featured Posts.
-if ( true === $theme_options['featured_blog'] ) :
-
-	get_template_part( 'template-parts/featured-content' );
-
-endif;
-
 // Display Blog Title.
 if ( '' !== $theme_options['blog_title'] ) : ?>
 
@@ -44,7 +37,7 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
 						<?php if( 4 == $count ) : ?>
 
-							<?php get_template_part( 'template-parts/content', 'featured-issue' ); ?>
+							<?php get_template_part( 'template-parts/content', 'home-ad' ); ?>
 
 						<?php endif; ?>
 
