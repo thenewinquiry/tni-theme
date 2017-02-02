@@ -1,9 +1,10 @@
 /**
  * Single Post
  */
+
 .single {
 
-  .post {
+  .hentry {
     max-width: $size__content-width;
     margin-right: auto;
     margin-left: auto;
@@ -13,9 +14,13 @@
     text-align: center;
   }
 
+  .entry-title {
+    display: block;
+    margin-bottom: 1em;
+  }
+
   .entry-subhead {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
   }
 
   .entry-content {
@@ -40,25 +45,21 @@
       height: auto;
     }
 
-    .wp-caption-text {
-      text-align: right;
-      color: $color__black;
-    }
   }
 
   .entry-meta {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 
     .meta-date a,
     .meta-date a:link,
     .meta-date a:visited {
-      color: $color__black;
+      color: $color__text-dark;
     }
   }
 
   .meta-category {
     a {
-      color: $color__black;
+      color: $color__text-dark;
     }
   }
 
@@ -78,9 +79,13 @@
     margin-bottom: 1em;
   }
 
+  .wp-post-image {
+    margin-bottom: 0;
+  }
+
   .content-footer-widget {
     border-top: 1px solid $color__gray-light;
-    
+
     .textwidget {
       text-align: center;
       font-family: $font__droid-serif;
@@ -95,15 +100,26 @@
     .type-post,
     .type-blogs,
     .type-magazines {
-      .entry-title {
-        margin-top: .25em;
-        font-size: 1.45em;
-        line-height: 1.2;
-      }
+
     }
   }
 }
 
 .post-column {
   margin-bottom: 1em;
+}
+
+/**
+ * Archives
+ */
+.archive {
+  .hentry {}
+  h2.entry-title {
+    margin-top: .25em;
+    font-size: 1.45em;
+    line-height: 1.2;
+  }
+  .meta-date {
+    @include visually-hidden;
+  }
 }
