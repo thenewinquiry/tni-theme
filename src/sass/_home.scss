@@ -1,34 +1,5 @@
-.home.post-layout-four-columns {
-   .post-wrapper {
-
-     .post-column {
-        width: 100%;
-     }
-
-     @include breakpoint(md) {
-       .post-column {
-          width: 50%;
-       }
-     }
-
-     @include breakpoint(lg) {
-       .post-column {
-          width: 33.3333333333333%;
-       }
-     }
-   }
-
-   @include breakpoint(md) {
-     .site-content {
-       display: flex;
-     }
-     #primary {
-       flex-basis: 75%;
-     }
-     #secondary {
-       margin-left: 40px;
-       flex-basis: calc( 25% - 40px );
-     }
-   }
-
+.home {
+  .meta-date {
+    @include visually-hidden;
+  }
 }
