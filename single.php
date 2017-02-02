@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-			<?php if ( class_exists( 'Jetpack_RelatedPosts' ) ) : ?>
+			<?php if ( class_exists( 'Jetpack_RelatedPosts' ) && 'post' == get_post_type() ) : ?>
 				<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>
 			<?php endif; ?>
 
