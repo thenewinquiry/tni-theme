@@ -9,8 +9,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php gridbox_post_image_single(); ?>
-
 	<header class="entry-header">
 
 		<?php // Get theme options from database.
@@ -33,6 +31,8 @@
 		<?php endif; ?>
 
 		<?php gridbox_entry_meta(); ?>
+
+		<?php gridbox_post_image_single( 'full' ); ?>
 
 	</header><!-- .entry-header -->
 

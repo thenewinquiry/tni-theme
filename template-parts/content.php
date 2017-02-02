@@ -31,8 +31,12 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content entry-excerpt clearfix">
-			<?php the_excerpt(); ?>
-			<?php gridbox_more_link(); ?>
+			<?php $subhead = get_post_meta( get_the_ID(), 'post_subhead', true ); ?>
+			<?php if( $subhead ) : ?>
+				<?php echo $subhead; ?>
+			<?php else : ?>
+				<?php the_excerpt(); ?>
+			<?php endif; ?>
 		</div><!-- .entry-content -->
 
 	</article>

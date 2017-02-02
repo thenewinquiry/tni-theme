@@ -11,6 +11,7 @@
 function tni_parent_theme_enqueue_styles() {
     wp_dequeue_style( 'themezee-related-posts' );
     wp_dequeue_style( 'gridbox-default-fonts' );
+    wp_deregister_style( 'jetpack_related-posts' );
 
     wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Droid+Serif|Kanit:400,700,800|PT+Sans' );
 

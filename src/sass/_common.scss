@@ -21,6 +21,7 @@ a {
   padding-left: 0;
   border-top: none;
   border-bottom: none;
+  color: $color__black;
 
   a,
   a:link,
@@ -29,7 +30,8 @@ a {
   }
 
   span {
-    display: block;
+    padding-right: .25em;
+    padding-left: .25em;
     &:after {
       content: none;
     }
