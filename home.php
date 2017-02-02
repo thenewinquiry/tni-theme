@@ -39,11 +39,20 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
 				<div id="post-wrapper" class="post-wrapper clearfix">
 
-					<?php while ( have_posts() ) : the_post();
+					<?php $count = 1; ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-						get_template_part( 'template-parts/content' );
+						<?php if( 4 == $count ) : ?>
 
-					endwhile; ?>
+							<?php get_template_part( 'template-parts/content', 'featured-issue' ); ?>
+
+						<?php endif; ?>
+
+						<?php get_template_part( 'template-parts/content' ); ?>
+
+						<?php $count++; ?>
+
+					<?php endwhile; ?>
 
 				</div>
 
