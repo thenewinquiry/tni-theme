@@ -205,6 +205,9 @@ add_filter( 'jetpack_images_get_images', 'tni_jetpack_related_posts_default_imag
 /**
  * Modify Image Markup
  * When image is inserted into post content without a caption, alter markup produced
+ *
+ * @since
+ *
  * @param  string $html
  * @param  int $id
  * @param  string $caption
@@ -226,13 +229,16 @@ function tni_modify_embedded_image_markup( $html, $id, $caption, $title, $align,
 add_filter( 'image_send_to_editor', 'tni_modify_embedded_image_markup', 10, 8 );
 
 /**
- * [tni_modify_thumbnail_markup description]
- * @param  [type] $html         [description]
- * @param  [type] $id           [description]
- * @param  [type] $thumbnail_id [description]
- * @param  [type] $size         [description]
- * @param  [type] $attr         [description]
- * @return [type]               [description]
+ * Modify Post Thumbnail Markup
+ *
+ * @since
+ *
+ * @param  string $html
+ * @param  int $id
+ * @param  int $thumbnail_id
+ * @param  string $size
+ * @param  string $attr
+ * @return string
  */
 function tni_modify_thumbnail_markup( $html, $id, $thumbnail_id, $size, $attr ) {
   if( current_theme_supports( 'html5' ) ) {
