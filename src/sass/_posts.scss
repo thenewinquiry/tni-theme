@@ -95,6 +95,120 @@
   }
 }
 
+.single-magazines {
+
+  .hentry {
+    max-width: none;
+
+    .single-post-thumbnail {
+      max-width: 100% !important;
+    }
+  }
+
+  .entry-header {
+    .issue-cover {
+      background-image: url( '../images/starburst.svg' );
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+    .single-post-thumbnail {
+      position: relative;
+
+      #starburst {
+        width: 100px;
+        height: auto;
+        position: absolute;
+        top: 180px;
+        left: -40px;
+        transform: rotate(-10deg);
+      }
+    }
+    .magazine-sidebar {}
+
+    @include breakpoint( md ) {
+      @include columns(2);
+    }
+
+  }
+
+  .entry-content {
+
+    .issue-header {}
+    .issue-content {}
+    .issue-toc {
+      &> p:first-child {
+        margin-top: 0;
+      }
+    }
+    .issue-gallery {}
+
+    .issue-content {
+      @include breakpoint( md ) {
+        @include columns(2, 3em);
+      }
+
+      p {
+        font-family: $font__serif;
+      }
+    }
+
+    .entry-title,
+    .entry-meta {
+      display: inline;
+    }
+
+    .entry-meta {
+      font-family: $font__pt-sans;
+      color: $color__text-light;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+
+    .entry-title,
+    .issue-note,
+    .issue-features {
+      color: $color__text-dark;
+      font-family: $font__kanit-sans;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      line-height: 1em;
+      padding-right: 4px;
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    .entry-title {}
+    .issue-note {}
+
+  }
+
+  .relatedposts-post-title,
+  .relatedposts-post-excerpt {
+    font-family: $font__pt-sans;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    color: $color__text-light;
+    a {
+      color: $color__text-light;
+    }
+  }
+
+  .relatedposts-post-title {
+    margin-bottom: 0;
+  }
+  .relatedposts-post-excerpt {
+    margin-top: 0;
+  }
+
+  .relatedposts-headline {
+    @include visually-hidden;
+  }
+
+
+}
+
 .post-layout-four-columns {
   .post-wrapper {
     .type-post,
