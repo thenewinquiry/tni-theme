@@ -23,8 +23,9 @@
 }
 
 
-$def-pad: 2rem;
-@mixin columns($col-number) {
+$def-pad: 2rem !default;
+@mixin columns($col-number, $def-pad: 2rem) {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
