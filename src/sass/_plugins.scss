@@ -26,13 +26,33 @@
     font-weight: normal;
 }
 
-.jp-relatedposts-headline em {
+.jp-relatedposts-headline em,
+.relatedposts-headline em {
   font-family: $font__pt-sans;
   color: $color__gray;
-  font-size: 1.5em;
+  font-size: 1.25rem;
+  font-style: normal;
   text-transform: uppercase;
 }
 
-.jp-relatedposts-post-date {
-  @extend .entry-meta;
+.jp-relatedposts-grid,
+.relatedposts-grid {
+
+  @include breakpoint( md ) {
+    @include columns(2);
+  }
+
+  @include breakpoint( lg ) {
+    @include columns(3);
+  }
+
+  @include breakpoint( xlg ) {
+    @include columns(4);
+  }
+
+}
+
+.jp-relatedposts-post-title,
+.relatedposts-post-title {
+  @extend .entry-title;
 }

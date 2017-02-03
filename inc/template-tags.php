@@ -61,3 +61,37 @@ function gridbox_meta_author() {
 
     return '<span class="meta-author"> ' . $author_string . '</span>';
 }
+
+/**
+ * Override Parent Image Function
+ *
+ * @since 1.0.0
+ *
+ * @uses gridbox_theme_options()
+ */
+function gridbox_post_image_single( $size = 'post-thumbnail' ) {
+
+    // Get theme options from database.
+    $theme_options = gridbox_theme_options();
+
+    // Display Post Thumbnail if activated.
+    if ( true === $theme_options['featured_image'] ) {
+
+        $caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+        $meta = wp_get_attachment_metadata( get_post_thumbnail_id() );
+        $width = ( !empty( $meta ) ) ? $meta['width'] : '';
+
+        echo '<figure class="single-post-thumbnail" style="max-width:' . $width . 'px">';
+
+        the_post_thumbnail( $size );
+
+        if( !empty( $caption ) ) {
+          echo sprintf( '<figcaption class="wp-caption-text">%s</figcaption>',
+            $caption
+          );
+        }
+
+        echo '</figure>';
+
+    }
+}

@@ -35,7 +35,7 @@ function tni_setup() {
     register_sidebar( array(
         'name' => esc_html__( 'Above Page', 'tni' ),
         'id' => 'page-header',
-        'description' => esc_html__( 'Displays above pages', 'tni' ),
+        'description' => esc_html__( 'Displays above pages. Can be used for vertical ad space or other purposes.', 'tni' ),
         'before_widget' => '<div id="%1$s" class="page-header-widget container">',
         'after_widget' => '</div>',
         'before_title' => '<h3 title="widget-title">',
@@ -46,8 +46,19 @@ function tni_setup() {
     register_sidebar( array(
         'name' => esc_html__( 'Below Content', 'tni' ),
         'id' => 'content-footer',
-        'description' => esc_html__( 'Displays under articles', 'tni' ),
+        'description' => esc_html__( 'Displays under articles. Can be used as a promo space.', 'tni' ),
         'before_widget' => '<div id="%1$s" class="article-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 title="widget-title">',
+        'after_title' => '</h3>'
+        )
+    );
+
+    register_sidebar( array(
+        'name' => esc_html__( 'Magazine Sidebar', 'tni' ),
+        'id' => 'magazine-single',
+        'description' => esc_html__( 'Displays on single magazine issues.', 'tni' ),
+        'before_widget' => '<div id="%1$s" class="page-header-widget container">',
         'after_widget' => '</div>',
         'before_title' => '<h3 title="widget-title">',
         'after_title' => '</h3>'

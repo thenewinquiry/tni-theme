@@ -12,10 +12,12 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+			<?php get_template_part( 'template-parts/content-single', get_post_type() ); ?>
 
-			<?php if ( class_exists( 'Jetpack_RelatedPosts' ) ) : ?>
+			<?php if ( class_exists( 'Jetpack_RelatedPosts' ) && 'post' == get_post_type() ) : ?>
 				<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>
+			<?php elseif( 'magazines' == get_post_type() ) : ?>
+				<?php get_template_part( 'template-parts/content', 'related-posts-loop' ); ?>
 			<?php endif; ?>
 
 			<?php comments_template(); ?>

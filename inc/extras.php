@@ -74,35 +74,6 @@ function tni_custom_post_author_archive( $query ) {
 }
 add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
 
-
-/**
- * Override Parent Featured Image
- *
- * @since 1.0.0
- */
-function mh_magazine_lite_featured_image() {
-    global $page, $post;
-
-    if ( has_post_thumbnail() && $page == '1' && !is_attachment() ) {
-
-        $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-
-        $output = sprintf( '<figure class="entry-thumbnail"><img src="%s" alt="%s" title="%s"></figure>',
-            esc_url( $thumbnail[0] ),
-            esc_attr( get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ) ),
-            esc_attr( get_post( get_post_thumbnail_id() )->post_title )
-        );
-
-        $caption = get_post( get_post_thumbnail_id() )->post_excerpt;
-
-        if( !empty( $caption ) ) {
-            $output .= '<figcaption class="wp-caption-text">' . wp_kses_post( $caption ) . '</figcaption>';
-        }
-
-        echo $output;
-    }
-}
-
 /**
  * Change Button Text
  * @param  array $settings
@@ -131,25 +102,6 @@ function tni_remove_infinite_scroll_blogs_archive() {
 }
 add_filter( 'infinite_scroll_archive_supported', 'tni_remove_infinite_scroll_blogs_archive' );
 
-/**
- * Override Parent Image Function
- *
- * @since 1.0.0
- *
- * @uses gridbox_theme_options()
- */
-function gridbox_post_image_single( $size = 'post-thumbnail' ) {
-
-    // Get theme options from database.
-    $theme_options = gridbox_theme_options();
-
-    // Display Post Thumbnail if activated.
-    if ( true === $theme_options['featured_image'] ) {
-
-        the_post_thumbnail( $size );
-
-    }
-}
 
 /**
  * Modify Date Display for Magazines
@@ -189,6 +141,22 @@ function tni_nav_class( $classes, $item ){
     return $classes;
 }
 add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
+
+/**
+ * Customize Related Post Options
+ * Change number of posts
+ * Hide date
+ *
+ * @since
+ * @param  array $options
+ * @return array $options modified
+ */
+function tni_jetpack_customize_related_posts( $options ) {
+    $options['size'] = 4;
+    $options['show_date'] = false;
+    return $options;
+}
+add_filter( 'jetpack_relatedposts_filter_options', 'tni_jetpack_customize_related_posts' );
 
 /**
  * Remove Auto-inserted Related Posts
@@ -233,6 +201,91 @@ function tni_jetpack_related_posts_default_image( $media, $post_id, $args ) {
     }
 }
 add_filter( 'jetpack_images_get_images', 'tni_jetpack_related_posts_default_image', 10, 3 );
+
+/**
+ * Modify Image Markup
+ * When image is inserted into post content without a caption, alter markup produced
+ *
+ * @since
+ *
+ * @param  string $html
+ * @param  int $id
+ * @param  string $caption
+ * @param  string $title
+ * @param  string $align
+ * @param  string $url
+ * @param  string $size
+ * @param  string $alt
+ * @return string $html
+ */
+function tni_modify_embedded_image_markup( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
+  if( current_theme_supports( 'html5' )  && ! $caption ) {
+    $html = sprintf( '<figure class="single-post-thumbnail">%s</figure>',
+      $html
+    );
+  }
+  return $html;
+}
+add_filter( 'image_send_to_editor', 'tni_modify_embedded_image_markup', 10, 8 );
+
+/**
+ * Modify Post Thumbnail Markup
+ *
+ * @since
+ *
+ * @param  string $html
+ * @param  int $id
+ * @param  int $thumbnail_id
+ * @param  string $size
+ * @param  string $attr
+ * @return string
+ */
+function tni_modify_thumbnail_markup( $html, $id, $thumbnail_id, $size, $attr ) {
+  if( current_theme_supports( 'html5' ) ) {
+    $html = sprintf( '<figure class="single-post-thumbnail">%s</figure>',
+      $html
+    );
+  }
+  return $html;
+}
+apply_filters( 'post_thumbnail_html', 'tni_modify_thumbnail_markup' );
+
+
+/**
+ * Modify Image Caption Markup
+ * When image is inserted into post content with a caption, alter markup produced by caption shortcode
+ *
+ * @since
+ *
+ * @param  $empty
+ * @param  array $attr
+ * @param string $content
+ * @return string $content
+ */
+function tni_modify_image_caption_markup( $empty, $attr, $content ){
+	$attr = shortcode_atts( array(
+		'id'      => '',
+		'align'   => 'alignnone',
+		'width'   => '',
+		'caption' => ''
+	), $attr );
+
+	if ( 1 > (int) $attr['width'] || empty( $attr['caption'] ) ) {
+		return '';
+	}
+
+	if ( $attr['id'] ) {
+		$attr['id'] = 'id="' . esc_attr( $attr['id'] ) . '" ';
+	}
+
+	return '<figure ' . $attr['id']
+	. 'class="single-post-thumbnail has-caption ' . esc_attr( $attr['align'] ) . '" '
+	. 'style="max-width: ' . ( 10 + (int) $attr['width'] ) . 'px;">'
+	. do_shortcode( $content )
+	. '<figcaption class="wp-caption-text">' . $attr['caption'] . '</figcaption>'
+	. '</figure>';
+}
+add_filter( 'img_caption_shortcode', 'tni_modify_image_caption_markup', 10, 3 );
 
 /**
  * Add Filters to `meta_content`

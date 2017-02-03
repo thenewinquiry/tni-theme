@@ -18,6 +18,12 @@
 
 }
 
+.no-sidebar {
+  .content-single {
+    max-width: none;
+  }
+}
+
 
 .home,
 .archive,

@@ -11,8 +11,7 @@ a {
 }
 
 .wp-caption-text {
-  font-weight: normal;
-  font-style: italic;
+  text-align: right;
   color: $color__text-light;
 }
 
@@ -21,6 +20,7 @@ a {
   padding-left: 0;
   border-top: none;
   border-bottom: none;
+  color: $color__text-dark;
 
   a,
   a:link,
@@ -28,8 +28,11 @@ a {
     color: $color__link;
   }
 
+  .meta-date {
+    padding-left: .75em;
+  }
+
   span {
-    display: block;
     &:after {
       content: none;
     }
@@ -44,7 +47,7 @@ a {
       padding: 0;
       background-color: transparent;
       font-family: $font__pt-sans;
-      color: $color__gray;
+      color: $color__text-light;
       font-weight: normal;
       text-decoration: underline;
       text-transform: uppercase;
@@ -58,7 +61,7 @@ a {
   padding: 0;
   background-color: transparent;
   font-family: $font__pt-sans;
-  color: $color__gray;
+  color: $color__text-light;
   font-weight: normal;
   text-decoration: underline;
   text-transform: uppercase;
@@ -87,13 +90,12 @@ i.icon:after {
   a:visited,
   a:hover,
   a:focus {
-    color: $color__white !important;
+    color: $color__text-inverted !important;
   }
 }
 
 .first-word {
-  color: $color__black;
-  font-size: 200%;
+  color: $color__text-dark;
   font-family: $font__kanit-sans;
   text-transform: uppercase;
   font-size: 50px;

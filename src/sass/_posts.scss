@@ -1,17 +1,26 @@
 /**
  * Single Post
  */
+
 .single {
 
-  .post {
-    width: 95%;
+  .hentry {
+    max-width: $size__content-width;
     margin-right: auto;
     margin-left: auto;
   }
 
+  .entry-header {
+    text-align: center;
+  }
+
+  .entry-title {
+    display: block;
+    margin-bottom: 1em;
+  }
+
   .entry-subhead {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
   }
 
   .entry-content {
@@ -27,15 +36,34 @@
     }
   }
 
-  .entry-meta {
-    padding-right: 0;
-    padding-left: 0;
-    border-top: none;
-    border-bottom: none;
+  .single-post-thumbnail {
+    margin-right: auto;
+    margin-left: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
   }
 
-  .entry-meta-author a,
-  .entry-meta-date {
+  .entry-meta {
+    margin-bottom: 2em;
+
+    .meta-date a,
+    .meta-date a:link,
+    .meta-date a:visited {
+      color: $color__text-dark;
+    }
+  }
+
+  .meta-category {
+    a {
+      color: $color__text-dark;
+    }
+  }
+
+  .meta-author a  {
     text-transform: uppercase;
   }
 
@@ -50,6 +78,135 @@
   .wp-caption-text {
     margin-bottom: 1em;
   }
+
+  .wp-post-image {
+    margin-bottom: 0;
+  }
+
+  .content-footer-widget {
+    border-top: 1px solid $color__gray-light;
+
+    .textwidget {
+      text-align: center;
+      font-family: $font__droid-serif;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+}
+
+.single-magazines {
+
+  .hentry {
+    max-width: none;
+
+    .single-post-thumbnail {
+      max-width: 100% !important;
+    }
+  }
+
+  .entry-header {
+    .issue-cover {
+      background-image: url( '../images/starburst.svg' );
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+    .single-post-thumbnail {
+      position: relative;
+
+      #starburst {
+        width: 100px;
+        height: auto;
+        position: absolute;
+        top: 180px;
+        left: -40px;
+        transform: rotate(-10deg);
+      }
+    }
+    .magazine-sidebar {}
+
+    @include breakpoint( md ) {
+      @include columns(2);
+    }
+
+  }
+
+  .entry-content {
+
+    .issue-header {}
+    .issue-content {}
+    .issue-toc {
+      &> p:first-child {
+        margin-top: 0;
+      }
+    }
+    .issue-gallery {}
+
+    .issue-content {
+      @include breakpoint( md ) {
+        @include columns(2, 3em);
+      }
+
+      p {
+        font-family: $font__serif;
+      }
+    }
+
+    .entry-title,
+    .entry-meta {
+      display: inline;
+    }
+
+    .entry-meta {
+      font-family: $font__pt-sans;
+      color: $color__text-light;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+
+    .entry-title,
+    .issue-note,
+    .issue-features {
+      color: $color__text-dark;
+      font-family: $font__kanit-sans;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      line-height: 1em;
+      padding-right: 4px;
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    .entry-title {}
+    .issue-note {}
+
+  }
+
+  .relatedposts-post-title,
+  .relatedposts-post-excerpt {
+    font-family: $font__pt-sans;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    color: $color__text-light;
+    a {
+      color: $color__text-light;
+    }
+  }
+
+  .relatedposts-post-title {
+    margin-bottom: 0;
+  }
+  .relatedposts-post-excerpt {
+    margin-top: 0;
+  }
+
+  .relatedposts-headline {
+    @include visually-hidden;
+  }
+
+
 }
 
 .post-layout-four-columns {
@@ -57,15 +214,26 @@
     .type-post,
     .type-blogs,
     .type-magazines {
-      .entry-title {
-        margin-top: .25em;
-        font-size: 1.45em;
-        line-height: 1.2;
-      }
+
     }
   }
 }
 
 .post-column {
   margin-bottom: 1em;
+}
+
+/**
+ * Archives
+ */
+.archive {
+  .hentry {}
+  h2.entry-title {
+    margin-top: .25em;
+    font-size: 1.45em;
+    line-height: 1.2;
+  }
+  .meta-date {
+    @include visually-hidden;
+  }
 }
