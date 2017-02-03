@@ -26,7 +26,8 @@
     font-weight: normal;
 }
 
-.jp-relatedposts-headline em {
+.jp-relatedposts-headline em,
+.relatedposts-headline em {
   font-family: $font__pt-sans;
   color: $color__gray;
   font-size: 1.25rem;
@@ -34,13 +35,14 @@
   text-transform: uppercase;
 }
 
-.jp-relatedposts-grid {
+.jp-relatedposts-grid,
+.relatedposts-grid {
 
   @include breakpoint( md ) {
     @include columns(2);
   }
 
-  @include breakpoint( xlg ) {
+  @include breakpoint( lg ) {
     @include columns(3);
   }
 
@@ -50,7 +52,7 @@
 
 }
 
-.jp-relatedposts-post-title {
+.jp-relatedposts-post-title,
+.relatedposts-post-title {
   @extend .entry-title;
-  
 }
