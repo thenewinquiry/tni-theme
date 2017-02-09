@@ -63,6 +63,28 @@ function gridbox_meta_author() {
 }
 
 /**
+ * Override Parent Archive Image Function
+ *
+ * @param string $size Post thumbnail size.
+ * @param array  $attr Post thumbnail attributes.
+ */
+function gridbox_post_image( $size = 'post-thumbnail', $attr = array() ) {
+
+  // Display Post Thumbnail.
+  if ( has_post_thumbnail() ) : ?>
+
+    <figure class="post-thumbnail">
+      <a href="<?php the_permalink(); ?>" rel="bookmark">
+        <?php the_post_thumbnail( $size, $attr ); ?>
+      </a>
+    </figure
+
+  <?php
+  endif;
+}
+
+
+/**
  * Override Parent Image Function
  *
  * @since 1.0.0

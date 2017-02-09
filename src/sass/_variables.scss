@@ -22,7 +22,7 @@ $color__white: #fff;
 
 $color__primary:        #598fb6;
 $color__primary-light:  lighten( $color__primary, 20% );
-$color__primary-dark:   #f57c00;
+$color__primary-dark:   darken( $color__primary, 20% );
 $color__accent:         #E50102;
 
 $color__gray-lightest:  #f5f5f5;
@@ -73,6 +73,7 @@ $font__icon:        'Genericons';
 $font__droid-serif: 'Droid Serif', serif;
 $font__pt-sans:     'PT Sans', $font__sans-serif;
 $font__kanit-sans:  'Kanit', $font__sans-serif;
+$font__work-sans:  'Work Sans', $font__sans-serif;
 
 $font__heading:     $font__sans-serif;
 

@@ -169,7 +169,7 @@
     .issue-note,
     .issue-features {
       color: $color__text-dark;
-      font-family: $font__kanit-sans;
+      font-family: $font__work-sans;
       text-transform: uppercase;
       letter-spacing: 0.7px;
       line-height: 1em;
@@ -226,12 +226,25 @@
 /**
  * Archives
  */
-.archive {
+.archive,
+.home {
   .hentry {}
   h2.entry-title {
     margin-top: .25em;
     font-size: 1.45em;
     line-height: 1.2;
+  }
+  .post-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+    }
   }
   .meta-date {
     @include visually-hidden;
