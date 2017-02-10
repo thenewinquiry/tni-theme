@@ -13,7 +13,7 @@ function tni_parent_theme_enqueue_styles() {
     wp_dequeue_style( 'gridbox-default-fonts' );
     wp_deregister_style( 'jetpack_related-posts' );
 
-    wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Droid+Serif|Kanit:400,700,800|PT+Sans' );
+    wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Droid+Serif|Work+Sans:900|PT+Sans' );
 
     wp_register_script( 'tni-scripts', get_stylesheet_directory_uri() . '/js/app.js', array( 'jquery' ), null, true );
 
