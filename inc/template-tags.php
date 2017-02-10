@@ -68,7 +68,7 @@ function gridbox_meta_author() {
  * @param string $size Post thumbnail size.
  * @param array  $attr Post thumbnail attributes.
  */
-function gridbox_post_image( $size = 'post-thumbnail', $attr = array() ) {
+function gridbox_post_image( $size = 'thumbnail', $attr = array() ) {
 
   // Display Post Thumbnail.
   if ( has_post_thumbnail() ) : ?>
@@ -91,7 +91,7 @@ function gridbox_post_image( $size = 'post-thumbnail', $attr = array() ) {
  *
  * @uses gridbox_theme_options()
  */
-function gridbox_post_image_single( $size = 'post-thumbnail' ) {
+function gridbox_post_image_single( $size = 'full' ) {
 
     // Get theme options from database.
     $theme_options = gridbox_theme_options();
