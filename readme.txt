@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.7.1
-Version: 0.1.8
+Version: 0.1.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
+
+= 0.1.8.2 February 10, 2017 =
+* Removed top-margin from `post-thumbnail`
+
+= 0.1.8.1 February 10, 2017 =
+* Updated `gridbox_post_image` template tag to default to `thumbnail`
+* Updated `gridbox_post_image_single` template tag to default to `full`
+* Styled archive thumbnails
+* Replaced Kanit with Work Sans Google font
 
 = 0.1.8 February 7, 2017 =
 * Style archive thumbnails
