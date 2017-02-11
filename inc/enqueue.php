@@ -9,9 +9,11 @@
  * @since 0.1.0
  */
 function tni_parent_theme_enqueue_styles() {
-    wp_dequeue_style( 'themezee-related-posts' );
-    wp_dequeue_style( 'gridbox-default-fonts' );
+
     wp_deregister_style( 'jetpack_related-posts' );
+    wp_dequeue_style( 'gridbox-default-fonts' );
+    wp_deregister_style( 'gridbox-default-fonts'  );
+    wp_dequeue_style( 'themezee-related-posts' );
 
     wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Droid+Serif|Work+Sans:900|PT+Sans' );
 
@@ -24,8 +26,9 @@ function tni_parent_theme_enqueue_styles() {
         null,
         null
     );
+
     wp_enqueue_style( 'google-fonts' );
     wp_enqueue_script( 'tni-scripts' );
 
 }
-add_action( 'wp_enqueue_scripts', 'tni_parent_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'tni_parent_theme_enqueue_styles', 20 );
