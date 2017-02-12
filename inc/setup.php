@@ -78,6 +78,7 @@ function tni_setup() {
 
     register_nav_menus( array(
     	'social'   => esc_html__( 'Social Menu', 'tni' ),
+      'mobile'   => esc_html__( 'Mobile Menu', 'tni' ),
     	'footer'   => esc_html__( 'Footer Menu', 'tni' ),
     ) );
 
