@@ -97,7 +97,7 @@ function gridbox_post_image_single( $size = 'full' ) {
     $theme_options = gridbox_theme_options();
 
     // Display Post Thumbnail if activated.
-    if ( true === $theme_options['featured_image'] ) {
+    if ( true === $theme_options['featured_image'] && has_post_thumbnail() ) {
 
         $caption = get_post( get_post_thumbnail_id() )->post_excerpt;
         $meta = wp_get_attachment_metadata( get_post_thumbnail_id() );

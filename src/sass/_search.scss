@@ -1,0 +1,46 @@
+/**
+ * Global Search Bar
+ */
+.search-form {
+  button,
+  button:active,
+  button:focus {
+    background-color: $color__gray;
+    min-width: auto;
+  }
+}
+
+/**
+ * Show/Hide Search Bar
+ */
+.top-search {
+
+  &.collapsed {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    max-height: 0;
+    transition: max-height 1s, opacity 500ms;
+    -webkit-transition: max-height 1s, opacity 500ms;
+  }
+  &.expanded {
+    opacity: 1;
+    max-height: 200px;
+    margin-bottom: .5em;
+    transition: max-height 1s, opacity 500ms;
+    -webkit-transition: max-height 1s, opacity 500ms;
+  }
+
+  button,
+  button:active,
+  button:focus {
+    background-color: $color__gray;
+    min-width: auto;
+  }
+}
+
+.search {
+  .entry-title {
+    font-size: 1.25rem;
+  }
+}
