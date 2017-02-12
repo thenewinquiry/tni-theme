@@ -2,8 +2,8 @@
 Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
-Tested up to: 4.7.1
-Version: 0.1.9
+Tested up to: 4.7.2
+Version: 0.1.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,9 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
 
-= 0.1.9 February 10, 2017 =
+= 0.1.10 February 12, 2017 =
+
+= 0.1.9 February 11, 2017 =
 * Fixed responsive header
 * Added scrolled menu styling
 * Fixed responsive column widths
