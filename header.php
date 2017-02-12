@@ -31,6 +31,8 @@
 
 			<div class="header-main container clearfix">
 
+				<button id="main-navigation-toggle" class="main-navigation-toggle"><span class="screen-reader-text"><?php _e( 'Menu', 'tni' ) ?></span></button>
+
 				<div id="logo" class="site-branding clearfix">
 
 					<?php gridbox_site_logo(); ?>
@@ -64,6 +66,24 @@
 							);
 					?>
 				</nav><!-- #social-navigation -->
+
+				<nav id="mobile-navigation" class="mobile-navigation navigation clearfix" role="navigation">
+				 <?php
+					 // Display Mobile Navigation.
+					 wp_nav_menu(
+							 array(
+								 'theme_location'  => 'mobile',
+								 'container'       => 'div',
+								 'container_id'    => 'menu-mobile',
+								 'container_class' => 'menu',
+								 'menu_id'         => 'menu-mobile-items',
+								 'menu_class'      => 'menu-items',
+								 'depth'           => 1,
+								 'fallback_cb'     => '',
+							 )
+						 );
+				 ?>
+				</nav><!-- #mobile-navigation -->
 
 				<nav id="main-navigation" class="primary-navigation navigation clearfix" role="navigation">
 					<?php

@@ -25,24 +25,16 @@
 }
 
 
-.home,
-.archive,
-.page-template-page-blogs {
-  .articles-list {
-    * {
-      box-sizing: border-box;
-    }
+.post-layout-four-columns .post-wrapper .post-column {
+  @include breakpoint(sm) {
+    width: 50%;
+  }
 
-    @include breakpoint(md) {
-      @include columns(2);
-    }
-    @include breakpoint(lg)  {
-      @include columns(3);
-      .current-issue {}
-    }
-    @include breakpoint(xl) {
-      @include columns(4);
-      .current-issue {}
-    }
+  @include breakpoint(md) {
+    width: 33.33333%;
+  }
+
+  @include breakpoint(lg) {
+    width: 25%;
   }
 }

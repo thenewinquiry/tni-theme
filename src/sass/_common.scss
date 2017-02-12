@@ -82,15 +82,27 @@ i.icon:after {
 }
 
 .highlight {
-  background-color: $color__accent;
-  border-radius: 6px;
-  text-align: center;
   a,
   a:link,
   a:visited,
   a:hover,
   a:focus {
+    display: inline-block;
+    padding: .5em;
+    background-color: $color__accent;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
     color: $color__text-inverted !important;
+
+    @include breakpoint(sm) {
+      font-size: 12px;
+    }
+
+    @include breakpoint(md) {
+
+    }
   }
 }
 
