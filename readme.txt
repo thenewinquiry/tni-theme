@@ -15,6 +15,10 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 = 0.1.9 February 10, 2017 =
 * Fixed responsive header
+* Added scrolled menu styling
+* Fixed responsive column widths
+* Added mobile menu
+* Replaced parent navigation JS
 
 = 0.1.8.2 February 10, 2017 =
 * Removed top-margin from `post-thumbnail`
