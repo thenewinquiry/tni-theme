@@ -16,7 +16,7 @@ nav ul {
 
   float: none;
   display: flex !important;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: column;
 
   li {
@@ -51,6 +51,7 @@ nav ul {
 
     a {
       padding-bottom: 0;
+      display: inline-block;
 
       &::before {
         font-family: $font__icon;

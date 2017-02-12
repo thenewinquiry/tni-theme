@@ -33,27 +33,34 @@
     //Menu Toggle
     .main-navigation-toggle {
       float: none;
+      display: block;
       padding: 0;
       margin: 0;
       order: 1;
-      flex: 0 1 50px;
+      flex: 0 1 24px;
       min-width: auto;
+      align-self: center;
       text-align: left;
+
+      @include breakpoint(sm) {
+        flex: 0 1 80px;
+      }
+
     }
 
     //Logo
     .site-branding {
       float: none;
       order: 2;
-      text-align: center;
       flex: 1 1 auto;
+      align-self: center;
+      text-align: center;
     }
 
     //Mobile Menu
     .mobile-navigation {
       order: 3;
-      flex: 1 1 100%;
-      text-align: center;
+      flex: 0 1 80px;
 
       ul {
         display: flex;
@@ -71,6 +78,7 @@
 
       @include breakpoint(sm) {
         flex: 0 1 50px;
+        text-align: left;
 
         ul {
           justify-content: flex-end;
@@ -132,22 +140,26 @@
 
        //Logo
        .site-branding {
-         flex: 1 0 auto;
+         flex: 1 1 auto;
          order: 1;
          text-align: left;
+
+         .custom-logo {
+           margin: 0;
+         }
        }
 
        //Header Widget (usually newsletter sign-up)
        .header-widget {
          display: block;
-         flex: 1 0 auto;
+         flex: 0 1 auto;
          order: 2;
        }
 
        //Social Menu
        .social-navigation {
          display: block;
-         flex: 1 0 15%;
+         flex: 0 1 auto;
          order: 3;
        }
 
@@ -206,29 +218,27 @@
      }
   }
 
-}
-
-/**
- * Show/Hide Search Bar
- */
-.top-search {
-
-  &.collapsed {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    max-height: 0;
-    transition: max-height 1s, opacity 500ms;
-    -webkit-transition: max-height 1s, opacity 500ms;
-  }
-  &.expanded {
-    opacity: 1;
-    max-height: 200px;
-    transition: max-height 1s, opacity 500ms;
-    -webkit-transition: max-height 1s, opacity 500ms;
+  .custom-logo {
+    display: block;
+    margin: 0;
+    width: 100%;
+    max-width: 120px;
+    margin: 0 auto;
+    transition: max-width 1s linear;
   }
 
-  button {
-    background-color: $color__gray;
+  @include breakpoint(sm) {
+    .custom-logo {
+      max-width: 200px;
+      transition: max-width 1s linear;
+    }
   }
+
+   @include breakpoint(md) {
+     .custom-logo {
+       max-width: 280px;
+       transition: max-width 1s linear;
+     }
+   }
+   
 }
