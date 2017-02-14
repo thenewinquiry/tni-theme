@@ -1,3 +1,40 @@
 .post-thumbnail {
   background-color: $color__gray-light;
 }
+
+.gallery,
+.gallery-columns-4 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .gallery-item {
+    display: block;
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+
+    @include breakpoint(sm) {
+      flex: 1 1 50%;
+      width: 50%;
+      max-width: 50%;
+
+      img {
+        width: 95%;
+      }
+    }
+
+    @include breakpoint(md) {
+      flex: 1 1 33.33333%;
+      width: 33.33333%;
+      max-width: 33.33333%;
+    }
+
+    @include breakpoint(lg) {
+      flex: 1 1 25%;
+      width: 25%;
+      max-width: 25%;
+    }
+  }
+
+}
