@@ -106,7 +106,8 @@ i.icon:after {
   }
 }
 
-.first-word {
+.first-word,
+.drop-cap {
   color: $color__text-dark;
   font-family: $font__work-sans;
   text-transform: uppercase;
@@ -115,4 +116,8 @@ i.icon:after {
 	line-height: 1em;
 	padding-right: 4px;
   font-weight: 900;
+}
+
+.show-more-label {
+  @extend .more-link;
 }
