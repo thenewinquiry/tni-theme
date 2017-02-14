@@ -11,6 +11,7 @@
 function tni_parent_theme_enqueue_styles() {
 
     wp_deregister_style( 'jetpack_related-posts' );
+    wp_dequeue_style( 'jetpack_related-posts' );
     wp_dequeue_style( 'gridbox-default-fonts' );
     wp_deregister_style( 'gridbox-default-fonts'  );
     wp_dequeue_style( 'themezee-related-posts' );

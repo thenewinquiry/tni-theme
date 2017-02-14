@@ -1,8 +1,11 @@
 .site-header {
   background-color: $color__white;
-
+  width: 100%;
 
   &.fixed-header {
+    position: fixed;
+    background-color: $color__white;
+    z-index: 10;
     -webkit-box-shadow: 1px 2px 2px 0px rgba(50, 50, 50, 0.5);
     -moz-box-shadow:    1px 2px 2px 0px rgba(50, 50, 50, 0.5);
     box-shadow:         1px 2px 2px 0px rgba(50, 50, 50, 0.5);
@@ -22,9 +25,17 @@
   .header-main {
     display: flex;
     flex-wrap: wrap;
+    padding-top: .5em;
+    padding-bottom: .5em;
 
     justify-content: space-between;
     align-items: center;
+
+    position: relative;
+
+    @include breakpoint(sm) {
+      position: initial;
+    }
 
     &> * {
       transition: flex-grow 0.8s linear;
@@ -37,13 +48,19 @@
       padding: 0;
       margin: 0;
       order: 1;
-      flex: 0 1 24px;
+      flex: 0 1 80px;
       min-width: auto;
       align-self: center;
       text-align: left;
 
+      position: absolute;
+      left: 1.5em;
+      top: 1.25em;
+
       @include breakpoint(sm) {
-        flex: 0 1 80px;
+        flex: 0 1 15%;
+
+        position: initial;
       }
 
     }
@@ -62,6 +79,10 @@
       order: 3;
       flex: 0 1 80px;
 
+      position: absolute;
+      right: 1.5em;
+      top: 1.25em;
+
       ul {
         display: flex;
         justify-content: center;
@@ -77,8 +98,10 @@
       }
 
       @include breakpoint(sm) {
-        flex: 0 1 50px;
+        flex: 0 1 15%;
         text-align: left;
+
+        position: initial;
 
         ul {
           justify-content: flex-end;
@@ -222,7 +245,7 @@
     display: block;
     margin: 0;
     width: 100%;
-    max-width: 120px;
+    max-width: 180px;
     margin: 0 auto;
     transition: max-width 1s linear;
   }
@@ -240,5 +263,5 @@
        transition: max-width 1s linear;
      }
    }
-   
+
 }
