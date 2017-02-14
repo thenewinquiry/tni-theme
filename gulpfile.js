@@ -52,6 +52,7 @@ gulp.task( 'styles', function() {
             sort: true
         }),
     ]))
+    .pipe( gulp.dest( paths.stylesOutput ) )
     .pipe( minifycss() )
     .pipe(sourcemaps.write())
     .pipe( rename( { suffix: '.min' } ) )

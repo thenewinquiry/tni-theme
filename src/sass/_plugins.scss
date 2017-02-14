@@ -56,3 +56,10 @@
 .relatedposts-post-title {
   @extend .entry-title;
 }
+
+.sharedaddy {
+  margin-top: 1em;
+  .sd-social-icon  a.sd-button {
+    background-color: $color__gray !important;
+  }
+}
