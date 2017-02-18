@@ -469,6 +469,20 @@ nav ul {
     font-weight: bold;
     font-style: italic; }
 
+.single .margin-right,
+.single .margin-left {
+  width: 33.3333%;
+  margin: 1em;
+  overflow: hidden; }
+
+.single .margin-right {
+  float: right;
+  margin-right: 0; }
+
+.single .margin-left {
+  float: left;
+  margin-left: 0; }
+
 .single-magazines .hentry {
   max-width: none; }
   .single-magazines .hentry .single-post-thumbnail {
@@ -937,6 +951,14 @@ a.button {
 @media screen and (min-width: 960px) {
   .post-layout-four-columns .post-wrapper .post-column {
     width: 33.33333%; }
+  .single .margin-right,
+  .single .margin-left {
+    width: 300px;
+    margin: 2em; }
+  .single .margin-right {
+    margin-right: -150px; }
+  .single .margin-left {
+    margin-left: -150px; }
   .single-magazines .entry-header {
     box-sizing: border-box;
     display: -ms-flexbox;

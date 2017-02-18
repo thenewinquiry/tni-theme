@@ -93,6 +93,39 @@
       font-style: italic;
     }
   }
+
+  .margin-right,
+  .margin-left {
+    width: 33.3333%;
+    margin: 1em;
+    overflow: hidden;
+  }
+  .margin-right {
+    float: right;
+    margin-right: 0;
+  }
+  .margin-left {
+    float: left;
+    margin-left: 0;
+  }
+
+  @include breakpoint(md) {
+
+    .margin-right,
+    .margin-left {
+      width: 300px;
+      margin: 2em;
+    }
+
+    .margin-right {
+      margin-right: -150px;
+    }
+    .margin-left {
+      margin-left: -150px;
+    }
+
+  }
+
 }
 
 .single-magazines {
