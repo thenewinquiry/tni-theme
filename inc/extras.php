@@ -143,6 +143,13 @@ function tni_nav_class( $classes, $item ){
 add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
 
 /**
+ * Prevent JetPack CSS Concatenation
+ *
+ * 
+ */
+add_filter( 'jetpack_implode_frontend_css', '__return_false' );
+
+/**
  * Customize Related Post Options
  * Change number of posts
  * Hide date
