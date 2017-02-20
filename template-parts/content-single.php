@@ -40,12 +40,6 @@
 
 		<?php the_content(); ?>
 
-		<?php if( is_active_sidebar( 'content-footer' ) ) : ?>
-			<div class="content-footer-widget">
-				<?php dynamic_sidebar( 'content-footer' ); ?>
-			</div><!-- .header-widget -->
-		<?php endif; ?>
-
 		<?php wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gridbox' ),
 			'after'  => '</div>',
@@ -56,7 +50,12 @@
 	<footer class="entry-footer">
 
 		<?php gridbox_entry_tags(); ?>
-		<?php gridbox_post_navigation(); ?>
+
+		<?php if( is_active_sidebar( 'content-footer' ) ) : ?>
+			<div class="content-footer-widget">
+				<?php dynamic_sidebar( 'content-footer' ); ?>
+			</div><!-- .header-widget -->
+		<?php endif; ?>
 
 	</footer><!-- .entry-footer -->
 
