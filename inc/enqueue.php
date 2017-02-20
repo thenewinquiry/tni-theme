@@ -19,7 +19,7 @@ function tni_parent_theme_enqueue_styles() {
     wp_dequeue_script( 'gridbox-jquery-navigation' );
     wp_deregister_script( 'gridbox-jquery-navigation' );
 
-    wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Droid+Serif|Work+Sans:900|PT+Sans' );
+    wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i|Work+Sans:900|PT+Sans' );
 
     wp_register_script( 'tni-scripts', get_stylesheet_directory_uri() . '/js/app.js', array( 'jquery' ), null, true );
 

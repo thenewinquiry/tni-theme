@@ -22,8 +22,29 @@
   }
 }
 
-#jp-relatedposts h3.jp-relatedposts-headline em {
-    font-weight: normal;
+/**
+ * JetPack Related Posts
+ */
+.jp-relatedposts-post-thumbs {
+  &> .jp-relatedposts-post-a {
+    position: relative;
+    display: block;
+    background-color: $color__gray-light;
+    width: 100%;
+    margin-top: 0;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      object-fit: cover;
+    }
+  }
+
 }
 
 .jp-relatedposts-headline em,
@@ -38,15 +59,15 @@
 .jp-relatedposts-grid,
 .relatedposts-grid {
 
-  @include breakpoint( md ) {
+  @include breakpoint( sm ) {
     @include columns(2);
   }
 
-  @include breakpoint( lg ) {
+  @include breakpoint( md ) {
     @include columns(3);
   }
 
-  @include breakpoint( xlg ) {
+  @include breakpoint( lg ) {
     @include columns(4);
   }
 
@@ -54,7 +75,18 @@
 
 .jp-relatedposts-post-title,
 .relatedposts-post-title {
-  @extend .entry-title;
+  // @extend .entry-title;
+  margin-top: .75em;
+  margin-bottom: .25em;
+  font-family: $font__droid-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.jp-relatedposts-post-context {
+  margin-top: .25em;
+  margin-bottom: .25em;
 }
 
 .sharedaddy {

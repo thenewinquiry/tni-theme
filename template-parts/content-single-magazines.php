@@ -66,7 +66,6 @@
 	<footer class="entry-footer">
 
 		<?php gridbox_entry_tags(); ?>
-		<?php gridbox_post_navigation(); ?>
 
 	</footer><!-- .entry-footer -->
 

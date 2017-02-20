@@ -4,7 +4,8 @@
 
 .single {
 
-  .hentry {
+  .entry-header,
+  .entry-content {
     max-width: $size__content-width;
     margin-right: auto;
     margin-left: auto;
@@ -16,7 +17,7 @@
 
   .entry-title {
     display: block;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
   }
 
   .entry-subhead {
@@ -48,12 +49,13 @@
   }
 
   .entry-meta {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
 
     .meta-date a,
     .meta-date a:link,
     .meta-date a:visited {
       color: $color__text-dark;
+      text-transform: uppercase;
     }
   }
 
@@ -109,10 +111,16 @@
     margin-left: 0;
   }
 
+  .margin-right,
+  .margin-left {
+    @include visually-hidden;
+  }
+
   @include breakpoint(md) {
 
     .margin-right,
     .margin-left {
+      @include visually-displayed;
       width: 300px;
       margin: 2em;
     }
@@ -215,30 +223,6 @@
     .issue-note {}
 
   }
-
-  .relatedposts-post-title,
-  .relatedposts-post-excerpt {
-    font-family: $font__pt-sans;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: uppercase;
-    color: $color__text-light;
-    a {
-      color: $color__text-light;
-    }
-  }
-
-  .relatedposts-post-title {
-    margin-bottom: 0;
-  }
-  .relatedposts-post-excerpt {
-    margin-top: 0;
-  }
-
-  .relatedposts-headline {
-    @include visually-hidden;
-  }
-
 
 }
 
