@@ -143,6 +143,34 @@ function tni_nav_class( $classes, $item ){
 add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
 
 /**
+ * Prevent JetPack CSS Concatenation
+ *
+ * @since 0.3.1
+ *
+ * @uses jetpack_implode_frontend_css filter
+ *
+ * @return false
+ */
+add_filter( 'jetpack_implode_frontend_css', '__return_false' );
+
+/**
+ * Modify JetPack Related Posts Thumbnail Size
+ *
+ * @uses jetpack_relatedposts_filter_thumbnail_size filter
+ *
+ * @since 0.3.1
+ * @param  array $thumbnail_size
+ * @return array $thumbnail_size
+ */
+function tni_jetpack_change_image_size( $thumbnail_size ) {
+  $thumbnail_size['width'] = 250;
+  $thumbnail_size['height'] = 250;
+  $thumbnail_size['crop'] = true;
+  return $thumbnail_size;
+}
+add_filter( 'jetpack_relatedposts_filter_thumbnail_size', 'tni_jetpack_change_image_size' );
+
+/**
  * Customize Related Post Options
  * Change number of posts
  * Hide date
