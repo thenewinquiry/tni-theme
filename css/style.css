@@ -127,6 +127,17 @@ i.icon:after {
   padding-right: 4px;
   font-weight: 900; }
 
+blockquote {
+  margin-right: 15%;
+  margin-left: 15%;
+  padding-left: 0;
+  border-left: none;
+  font-style: normal;
+  font-size: 1rem;
+  color: #333333; }
+  blockquote p {
+    font-size: 1rem; }
+
 .container {
   max-width: 1080px; }
 
@@ -423,10 +434,11 @@ nav ul {
   font-family: Georgia, serif;
   font-size: 1.26rem; }
   .single .entry-content p,
-  .single .entry-content blockquote,
   .single .entry-content li {
     line-height: 1.5em;
     font-size: 1.26rem; }
+  .single .entry-content blockquote p {
+    font-size: 1rem; }
 
 .single .single-post-thumbnail {
   margin-right: auto;
@@ -471,7 +483,8 @@ nav ul {
 .single .margin-left {
   width: 33.3333%;
   margin: 1em;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 1rem; }
 
 .single .margin-right {
   float: right;
@@ -854,17 +867,24 @@ a.button {
 /**
  * JetPack Infinite Scroll
  */
-.infinite-scroll #infinite-handle span {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  background-color: transparent;
-  color: #9e9e9e;
-  text-transform: uppercase;
-  font-size: 2.5em;
-  font-family: "PT Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 300; }
-  .infinite-scroll #infinite-handle span:hover, .infinite-scroll #infinite-handle spanfocus {
-    background-color: transparent; }
+.infinite-scroll #infinite-handle {
+  margin-bottom: 2em; }
+  .infinite-scroll #infinite-handle span {
+    width: 266px;
+    height: 61px;
+    margin: 0;
+    background-image: url("../images/load-more.png");
+    background-size: contain;
+    background-color: transparent;
+    border: none; }
+    .infinite-scroll #infinite-handle span:hover, .infinite-scroll #infinite-handle span:focus {
+      background-color: transparent; }
+    .infinite-scroll #infinite-handle span button {
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      position: absolute !important; }
 
 /**
  * JetPack Related Posts

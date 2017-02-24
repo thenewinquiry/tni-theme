@@ -121,3 +121,17 @@ i.icon:after {
 .show-more-label {
   @extend .more-link;
 }
+
+blockquote {
+  margin-right: 15%;
+  margin-left: 15%;
+  padding-left: 0;
+  border-left: none;
+  font-style: normal;
+  font-size: 1rem;
+  color: $color__text-primary;
+
+  p {
+    font-size: 1rem;
+  }
+}

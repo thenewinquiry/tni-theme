@@ -30,10 +30,13 @@
     font-size: 1.26rem;
 
     p,
-    blockquote,
     li {
       line-height: 1.5em;
       font-size: 1.26rem;
+    }
+
+    blockquote p {
+      font-size: 1rem;
     }
   }
 
@@ -101,6 +104,7 @@
     width: 33.3333%;
     margin: 1em;
     overflow: hidden;
+    font-size: 1rem;
   }
   .margin-right {
     float: right;

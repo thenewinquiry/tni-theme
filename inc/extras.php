@@ -81,11 +81,8 @@ add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
  */
 function tni_jetpack_infinite_scroll_button_text( $settings ) {
 
-    if( is_post_type_archive( 'magazines' ) ) {
-        $settings['text'] = __( 'Load More Issues', 'tni' );
-    } else {
-        $settings['text'] = __( 'Load More Articles', 'tni' );
-    }
+  $settings['text'] = __( 'Load More', 'tni' );
+
 	return $settings;
 }
 add_filter( 'infinite_scroll_js_settings', 'tni_jetpack_infinite_scroll_button_text' );
