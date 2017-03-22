@@ -195,15 +195,37 @@
         transform: rotate(-10deg);
       }
     }
-    .magazine-sidebar {}
+    .magazine-sidebar {
+      h3 {
+        color: $color__accent;
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin: 0;
+        font-family: $font__sans-serif;
+      }
+      .textwidget {
+        font-size: 1.3rem;
+        line-height: 1.4;
+        font-weight: 300;
+        margin: 1em 0 1.5em;
+        a, a:visited {
+          color: $color__accent;
+        }
+      }
+    }
 
     @include breakpoint( md ) {
       @include columns(2);
+      width: 100%;
+      margin-left: 0;
+      max-width: none;
     }
-
   }
 
   .entry-content {
+    max-width: none;
+    width: 100%;
+    padding: 0 1em;
 
     .issue-header {}
     .issue-content {}
@@ -217,6 +239,14 @@
     .issue-content {
       @include breakpoint( md ) {
         @include columns(2, 3em);
+        .editors-note {
+          max-width: 60%;
+          flex: 2 1 60%;
+        }
+        .issue-toc {
+          max-width: 40%;
+          flex: 2 1 40%;
+        }
       }
 
       p {

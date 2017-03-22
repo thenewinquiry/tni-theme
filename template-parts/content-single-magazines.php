@@ -35,7 +35,7 @@
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 			<div class="entry-meta">
-				<span class="issue-number"><?php echo get_post_meta( get_the_ID(), 'issue', true ); ?></span>
+				<span class="issue-number"><?php echo get_post_meta( get_the_ID(), 'issue', true ); ?></span> | 
 				<span class="issue-date"><?php the_date(); ?></span>
 			</div>
 		</header>

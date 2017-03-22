@@ -47,3 +47,7 @@
   border-bottom: 1px solid $color__gray-light;
 }
 
+/* For expanding the editor's notes */
+.show-more-section  input#show-more:checked + .hide {
+  max-height: 1000em !important;
+}
