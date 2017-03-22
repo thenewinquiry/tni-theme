@@ -51,11 +51,21 @@
 
 		<?php gridbox_entry_tags(); ?>
 
-		<?php if( is_active_sidebar( 'content-footer' ) ) : ?>
-			<div class="content-footer-widget">
-				<?php dynamic_sidebar( 'content-footer' ); ?>
-			</div><!-- .header-widget -->
-		<?php endif; ?>
+        <div class="content-footer-widget">
+            <div class="single-subscribe-widget">
+                <div class="single-subscribe-widget-info">
+                    <h4>Subscribe</h4>
+                    <p>Support<br/>The New Inquiry</p>
+                </div>
+                <form>
+                    <fieldset>
+                        <label for="email">Your Email</label>
+                        <input type="email" name="email" />
+                    </fieldset>
+                    <input type="submit" value="Continue" />
+                </form>
+            </div>
+        </div><!-- .footer-widget -->
 
 	</footer><!-- .entry-footer -->
 

@@ -1,6 +1,19 @@
 input[type="submit"] {
   background-color: $color__accent;
   font-family: $font__sans-serif;
+  border-radius: 6px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  label {
+    display: block;
+    font-family: $font__sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 }
 
 button,
@@ -38,11 +51,16 @@ a.button {
   }
 }
 
-input[type="email"].newsletter-email {
-  font-size: 0.9em;
+input[type="email"] {
   padding: 0.1em 0.6em 0em;
-  margin-left: 0.4em;
+  border-radius: 3px;
   &::placeholder {
     color: $color__text-xlight;
   }
+
+  &.newsletter-email {
+    font-size: 0.9em;
+    margin-left: 0.4em;
+  }
 }
+

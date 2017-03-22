@@ -89,14 +89,40 @@
   }
 
   .content-footer-widget {
-    border-top: 1px solid $color__gray-light;
+    border-top: 1px solid $color__gray-lighter;
+    border-bottom: 1px solid $color__gray-lighter;
+    text-align: center;
+    margin: 1em 0 2em 0;
+  }
 
-    .textwidget {
-      text-align: center;
-      font-family: $font__droid-serif;
-      font-weight: bold;
-      font-style: italic;
-      padding-top: 0.3em;
+  .single-subscribe-widget {
+    display: inline-block;
+    margin: 2em 1em 1em;
+    form, fieldset {
+      display: inline-block;
+      text-align: left;
+    }
+
+    form {
+      padding-left: 1em;
+    }
+
+    input[type="email"] {
+      padding: 0.2em 0.6em 0.2em;
+    }
+  }
+  .single-subscribe-widget-info {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    width: 9em;
+    h4 {
+      margin-top: 0;
+      line-height: 1.4;
+      color: $color__accent;
+      text-transform: uppercase;
+      font-family: $font__sans-serif;
+      font-size: 18px;
     }
   }
 
