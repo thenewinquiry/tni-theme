@@ -1,5 +1,6 @@
 input[type="submit"] {
   background-color: $color__accent;
+  font-family: $font__sans-serif;
 }
 
 button,
@@ -37,9 +38,10 @@ a.button {
   }
 }
 
-.newsletter-email {
+input[type="email"].newsletter-email {
   font-size: 0.9em;
   padding: 0.1em 0.6em 0em;
+  margin-left: 0.4em;
   &::placeholder {
     color: $color__text-xlight;
   }
