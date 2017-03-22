@@ -6,9 +6,22 @@
     position: fixed;
     background-color: $color__white;
     z-index: 10;
-    -webkit-box-shadow: 1px 2px 2px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    1px 2px 2px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         1px 2px 2px 0px rgba(50, 50, 50, 0.5);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow:    1px 2px 5px 0px rgba(50, 50, 50, 0.1);
+    box-shadow:         1px 2px 5px 0px rgba(50, 50, 50, 0.1);
+    .custom-logo {
+      max-height: 24px;
+      width: auto;
+    }
+    .site-branding {
+      margin: 0.3em 0;
+    }
+    .main-navigation-menu li:not(.subscribe) a {
+      padding-left: 0;
+    }
+    .main-navigation-menu li.subscribe {
+      margin-top: 1em;
+    }
   }
 
   .site-title {
@@ -95,6 +108,11 @@
         li + li {
           margin-left: .5em;
         }
+      }
+
+      .subscribe-2 {
+        font-weight: bold;
+        letter-spacing: 0.55px;
       }
 
       @include breakpoint(sm) {

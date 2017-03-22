@@ -30,7 +30,7 @@ $color__white: #fff;
 $color__primary:        #598fb6;
 $color__primary-light:  lighten( $color__primary, 20% );
 $color__primary-dark:   darken( $color__primary, 20% );
-$color__accent:         #E50102;
+$color__accent:         #ff0000;
 
 $color__gray-lightest:  #f5f5f5;
 $color__gray-light:     #aeaeae;
@@ -69,7 +69,7 @@ $color__border:         #bdbdbd;
 /**
  * Typography Variables
  */
-$font__sans-serif:  Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$font__sans-serif:  'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 $font__serif:       Georgia, serif;
 $font__mono:        Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 

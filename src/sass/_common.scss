@@ -88,13 +88,17 @@ i.icon:after {
   a:hover,
   a:focus {
     display: inline-block;
-    padding: .5em;
+    padding: 0.3em 0.8em;
     background-color: $color__accent;
     border-radius: 6px;
     text-align: center;
     text-transform: uppercase;
     font-size: 10px;
     color: $color__text-inverted !important;
+
+    &:hover {
+      background-color: darken( $color__accent, 2% );
+    }
 
     @include breakpoint(sm) {
       font-size: 12px;

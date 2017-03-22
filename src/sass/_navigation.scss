@@ -13,7 +13,6 @@ nav ul {
 }
 
 .main-navigation-menu {
-
   float: none;
   display: flex !important;
   flex-wrap: nowrap;
@@ -24,8 +23,11 @@ nav ul {
     text-align: left;
 
     a {
-      font-size: 12px;
+      font-size: 11px;
       text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.55px;
+      line-height: 1.5em;
     }
 
     a,
@@ -43,6 +45,14 @@ nav ul {
       font-weight: bold;
       text-decoration: none;
       border-bottom: 3px solid $color__black;
+    }
+
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    &.subscribe {
+      font-weight: bold;
     }
   }
 
