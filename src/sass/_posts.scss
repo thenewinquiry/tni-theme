@@ -300,15 +300,13 @@
 }
 .relatedposts-post-title {
   margin-top: 0.5em !important;
-  a, a:visited {
-    font-family: $font__sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-  }
 }
 .relatedposts-headline {
   font-size: 1.8rem;
+}
+
+article.magazines {
+  margin-bottom: 2em;
 }
 
 .post-layout-four-columns {
