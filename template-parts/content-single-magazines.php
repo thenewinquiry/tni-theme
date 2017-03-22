@@ -47,7 +47,7 @@
 			</div>
 
 			<div class="issue-toc">
-				<h2 class="issue-features"><?php _e( 'Features', 'tni' ); ?></h2>
+				<h2 class="issue-features"><?php _e( 'Featuring', 'tni' ); ?></h2>
 				<?php echo apply_filters( 'meta_content', get_post_meta( get_the_ID(), 'issue_toc', true ) ); ?>
 			</div>
 		</div>

@@ -233,6 +233,9 @@
       &> p:first-child {
         margin-top: 0;
       }
+      p {
+        font-size: 0.9rem;
+      }
     }
     .issue-gallery {}
 
@@ -265,25 +268,47 @@
       text-transform: uppercase;
       font-size: 1.2rem;
     }
-
-    .entry-title,
-    .issue-note,
-    .issue-features {
-      color: $color__text-dark;
-      font-family: $font__work-sans;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-      line-height: 1em;
-      padding-right: 4px;
-      font-style: normal;
-      font-weight: 800;
-    }
-
     .entry-title {}
     .issue-note {}
 
   }
 
+  .entry-content .entry-title,
+  .issue-note,
+  .issue-features,
+  .relatedposts-headline {
+    color: $color__text-dark;
+    font-family: $font__work-sans;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    line-height: 1em;
+    padding-right: 4px;
+    font-style: normal;
+    font-weight: 800;
+  }
+}
+
+.relatedposts-post-excerpt, .relatedposts-post-title {
+  margin: 0 !important;
+  font-family: $font__sans-serif;
+}
+.relatedposts-post-excerpt {
+  font-weight: 300;
+  .issue-date {
+    text-transform: uppercase;
+  }
+}
+.relatedposts-post-title {
+  margin-top: 0.5em !important;
+  a, a:visited {
+    font-family: $font__sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+}
+.relatedposts-headline {
+  font-size: 1.8rem;
 }
 
 .post-layout-four-columns {
