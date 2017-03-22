@@ -31,18 +31,18 @@
   }
 
   .entry-content {
-    line-height: 1.5em;
+    line-height: 1.7em;
     font-family: $font__serif;
-    font-size: 1.26rem;
+    font-size: 1.1rem;
 
     p,
     li {
-      line-height: 1.5em;
-      font-size: 1.26rem;
+      line-height: 1.7em;
+      font-size: 1.1rem;
     }
 
     blockquote p {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 
@@ -230,7 +230,6 @@
     }
 
     .entry-meta {
-      font-family: $font__pt-sans;
       color: $color__text-light;
       font-weight: normal;
       text-transform: uppercase;

@@ -71,17 +71,14 @@ $color__border:         #bdbdbd;
  * Typography Variables
  */
 $font__sans-serif:  'Work Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-$font__serif:       Georgia, serif;
+$font__serif:       'Libre Baskerville', 'Droid Serif', serif;
 $font__mono:        Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
 $font__code:        $font__mono;
 $font__pre:         "Courier 10 Pitch", Courier, monospace;
 
 $font__icon:        'Genericons';
-$font__droid-serif: 'Droid Serif', serif;
-$font__pt-sans:     'PT Sans', $font__sans-serif;
-$font__kanit-sans:  'Kanit', $font__sans-serif;
-$font__work-sans:  'Work Sans', $font__sans-serif;
+$font__work-sans:   'Work Sans', $font__sans-serif;
 
 $font__heading:     $font__sans-serif;
 

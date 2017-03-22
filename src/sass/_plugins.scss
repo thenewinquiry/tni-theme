@@ -54,7 +54,7 @@
 
 .jp-relatedposts-headline em,
 .relatedposts-headline em {
-  font-family: $font__pt-sans;
+  font-family: $font__sans-serif;
   color: $color__gray;
   font-size: 1.25rem;
   font-style: normal;
@@ -83,7 +83,7 @@
   // @extend .entry-title;
   margin-top: .75em;
   margin-bottom: .25em;
-  font-family: $font__droid-serif;
+  font-family: $font__serif;
   font-weight: normal;
   font-style: italic;
   font-size: 1.25rem;

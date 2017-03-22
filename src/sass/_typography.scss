@@ -8,7 +8,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: $font__droid-serif;
+  font-family: $font__serif;
   color: $color__text-dark;
   line-height: 1.2;
 }
@@ -16,7 +16,7 @@ h4 {
 .page-header {
   text-align: center;
   .archive-title {
-    font-family: $font__pt-sans;
+    font-family: $font__sans-serif;
     color: $color__gray;
     font-weight: normal;
     font-size: 1.5em;
@@ -25,7 +25,7 @@ h4 {
 }
 
 .entry-title {
-  font-family: $font__droid-serif;
+  font-family: $font__serif;
   font-weight: normal;
   font-style: italic;
 }
@@ -35,7 +35,7 @@ h1.entry-title {
 }
 
 .entry-subhead {
-  font-family: $font__pt-sans;
+  font-family: $font__sans-serif;
   font-weight: 100;
   font-size: 1.3em;
   letter-spacing: 0.7px;
@@ -45,14 +45,26 @@ h1.entry-title {
   font-family: $font__serif;
 }
 
+.post-wrapper .type-post {
+  .entry-excerpt {
+    font-size: 0.9rem;
+  }
+  .entry-title {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+}
+
 .entry-meta {
-  font-family: $font__pt-sans;
-  font-size: 0.85rem;
-	letter-spacing: 0.3px;
+  font-family: $font__sans-serif;
+  font-size: 0.8rem;
+	letter-spacing: 0.55px;
+  font-weight: 300;
 }
 
 .wp-caption-text {
-  font-family: $font__droid-serif;
+  font-family: $font__serif;
   font-style: italic;
   font-size: .8em;
 }

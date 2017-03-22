@@ -26,7 +26,7 @@
 
 		<?php if( !empty( $subhead ) ) : ?>
 			<h2 class="entry-subhead">
-				<?php echo esc_attr( $subhead ); ?>
+				<?php echo $subhead; ?>
 			</h2>
 		<?php endif; ?>
 
