@@ -228,6 +228,63 @@ function tni_jetpack_related_posts_default_image( $media, $post_id, $args ) {
 add_filter( 'jetpack_images_get_images', 'tni_jetpack_related_posts_default_image', 10, 3 );
 
 /**
+ * Custom JetPack Related Posts
+ *
+ * @since
+ *
+ * @uses Jetpack_RelatedPosts
+ * @link https://jetpack.com/support/related-posts/customize-related-posts/
+ *
+ * @return string
+ */
+function tni_custom_jetpack_related_posts( $atts ) {
+    $related_html = '';
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $related = Jetpack_RelatedPosts::init_raw()
+            ->get_for_post_id(
+                get_the_ID(),
+                array( 'size' => 4 )
+            );
+
+        if ( $related ) {
+            foreach ( $related as $result ) {
+                $related_post = get_post( $result[ 'id' ] );
+                $thumb = get_the_post_thumbnail( $related_post->ID, 'thumbnail' );
+                $category = get_the_category( $related_post->ID )[0];
+                $author = get_the_author_meta( 'display_name', $related_post->post_author );
+                $author_url = get_author_posts_url( $related_post->post_author );
+                $subhead = get_post_meta( $related_post->ID, 'post_subhead', true );
+                if ( !$subhead ) {
+                    $subhead = get_the_excerpt($related_post->ID);
+                }
+                $permalink = get_permalink( $related_post->ID );
+                $related_html .= '<div class="post-column clearfix"><article class="related-post type-post">'
+                    . '<figure class="post-thumbnail"><a href="' . $permalink . '" rel="bookmark">'
+                        . $thumb
+                    . '</a></figure>'
+			        . '<div class="entry-meta">'
+                        . '<span class="meta-category"><a href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag">' . esc_html( $category->name ) . '</a></span>'
+                    . '</div>'
+                    . '<h2 class="entry-title">'
+                        . '<a href="' . $permalink . '" rel="bookmark">'
+                    . $related_post->post_title . '</a>'
+                    . '</h2>'
+			        . '<div class="entry-meta">'
+                        . '<span class="meta-author"><span class="author vcard">'
+                            . 'By <a href="' . $author_url . '" class="url fn n">' . $author . '</a>'
+                        . '</span></span>'
+                    . '</div>'
+                    . '<div class="entry-content entry-excerpt clearfix">' . $subhead . '</div>'
+                . '</div></article>';
+            }
+        }
+    }
+    return '<div class="related-posts post-wrapper">' . $related_html . '</div>';
+}
+add_shortcode( 'jetpack-custom-related', 'tni_custom_jetpack_related_posts' );
+
+
+/**
  * Modify Image Markup
  * When image is inserted into post content without a caption, alter markup produced
  *

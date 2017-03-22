@@ -13,6 +13,12 @@
 
   .entry-header {
     text-align: center;
+
+    .meta-category {
+      a {
+        color: $color__text-dark;
+      }
+    }
   }
 
   .entry-title {
@@ -62,12 +68,6 @@
     }
   }
 
-  .meta-category {
-    a {
-      color: $color__text-dark;
-    }
-  }
-
   .meta-author a  {
     text-transform: uppercase;
   }
@@ -96,6 +96,7 @@
       font-family: $font__droid-serif;
       font-weight: bold;
       font-style: italic;
+      padding-top: 0.3em;
     }
   }
 
@@ -248,7 +249,8 @@
  * Archives
  */
 .archive,
-.home {
+.home,
+.related-posts {
   .hentry {}
   h2.entry-title {
     margin-top: .25em;

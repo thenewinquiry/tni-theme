@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php get_template_part( 'template-parts/content-single', get_post_type() ); ?>
 
 			<?php if ( class_exists( 'Jetpack_RelatedPosts' ) && 'post' == get_post_type() ) : ?>
-				<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>
+				<?php echo do_shortcode( '[jetpack-custom-related]' ); ?>
 			<?php elseif( 'magazines' == get_post_type() ) : ?>
 				<?php get_template_part( 'template-parts/content', 'related-posts-loop' ); ?>
 			<?php endif; ?>
