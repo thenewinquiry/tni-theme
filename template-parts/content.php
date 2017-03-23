@@ -33,9 +33,9 @@
 		<div class="entry-content entry-excerpt clearfix">
 			<?php $subhead = get_post_meta( get_the_ID(), 'post_subhead', true ); ?>
 			<?php if( $subhead ) : ?>
-				<?php echo $subhead; ?>
+                <?php echo wp_trim_words(strip_shortcodes($subhead), 18); ?>
 			<?php else : ?>
-				<?php the_excerpt(); ?>
+                <?php echo wp_trim_words(strip_shortcodes(get_the_excerpt()), 18); ?>
 			<?php endif; ?>
 		</div><!-- .entry-content -->
 
