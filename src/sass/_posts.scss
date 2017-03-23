@@ -309,6 +309,32 @@ article.magazines {
   margin-bottom: 2em;
 }
 
+.blog-post {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto 4em;
+  padding: 0 2em 2em 0em;
+  border-bottom: 1px solid $color__gray-lighter;
+  .entry-header h2.entry-title {
+    font-size: 2em;
+  }
+  .single-post-thumbnail {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .entry-excerpt {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: $color__text-light;
+  }
+  .entry-readmore {
+    display: block;
+    margin: 1em 0 2em 0;
+    font-family: $font__sans-serif;
+    color: $color__text-light;
+  }
+}
+
 .post-layout-four-columns {
   .post-wrapper {
     .type-post,
