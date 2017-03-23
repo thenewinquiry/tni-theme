@@ -22,7 +22,7 @@
 				<?php the_title(); ?></a>
 		</h4>
 		<p class="relatedposts-post-excerpt">
-			<span class="issue-number">Vol. <?php echo get_post_meta( get_the_ID(), 'issue', true ); ?></span> | <span class="issue-date"><?php the_date(); ?></span>
+            <span class="issue-number"><?php _e('Vol.', 'tni'); ?> <?php echo get_post_meta( get_the_ID(), 'issue', true ); ?></span> | <span class="issue-date"><?php the_date(); ?></span>
 		</p>
 
 </div>
