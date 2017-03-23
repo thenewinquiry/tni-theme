@@ -42,13 +42,14 @@
     }
 
     blockquote p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 
   .single-post-thumbnail {
     margin-right: auto;
     margin-left: auto;
+    margin-top: 4em;
 
     img {
       width: 100%;
@@ -344,6 +345,10 @@ article.magazines {
   }
 }
 
+.tax-blog-types .page-header {
+  margin-bottom: 3.5em;
+}
+
 .post-layout-four-columns {
   .post-wrapper {
     .type-post,
@@ -356,6 +361,51 @@ article.magazines {
 
 .post-column {
   margin-bottom: 1em;
+}
+
+.post-featured {
+  .entry-thumbnail {
+    height: 284px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    box-shadow: none;
+  }
+  article {
+    background: $color__gray-lightest;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  }
+  .entry-content-wrapper {
+    padding: 0 1em 1em 1em;
+    display: flex;
+  }
+}
+
+.post-latest-issue {
+  .entry-title {
+    font-family: $font__sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+}
+
+.entry-thumbnail, .post-thumbnail {
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    margin-top: 0;
+    img {
+      margin: 0;
+      display: block;
+    }
+}
+
+.highlight.issue-download a {
+  padding: 0.15em 0.6em 0.1em;
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0.5em 0 0 0;
+  border-radius: 0.3em;
 }
 
 /**
@@ -395,7 +445,7 @@ article.magazines {
   .type-post,
   .type-blogs {
     .entry-meta {
-      margin: .25em 0 .5em 0;
+      margin: .25em 0 0em 0;
     }
   }
 }
