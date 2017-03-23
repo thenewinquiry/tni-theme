@@ -333,6 +333,15 @@ article.magazines {
     font-family: $font__sans-serif;
     color: $color__text-light;
   }
+  .entry-meta .meta-date {
+    height: auto;
+    width: auto;
+    overflow: visible;
+    position: relative !important;
+    a, a:visited {
+      color: $color__text-primary;
+    }
+  }
 }
 
 .post-layout-four-columns {
