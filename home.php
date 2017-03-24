@@ -34,14 +34,18 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
 					<?php $count = 1; ?>
 					<?php while ( have_posts() ) : the_post(); ?>
+						<?php if( 1 == $count ) : ?>
 
-						<?php if( 4 == $count ) : ?>
+                            <?php get_template_part( 'template-parts/content', 'featured' ); ?>
 
-							<?php get_template_part( 'template-parts/content', 'home-ad' ); ?>
+                            <?php $post = get_posts(array('post_type'=>'magazines'))[1]; // should be 0, but testing ?>
+						    <?php get_template_part( 'template-parts/content', 'latest-issue' ); ?>
 
-						<?php endif; ?>
+						<?php else : ?>
 
-						<?php get_template_part( 'template-parts/content' ); ?>
+						    <?php get_template_part( 'template-parts/content' ); ?>
+
+                        <?php endif; ?>
 
 						<?php $count++; ?>
 
