@@ -17,6 +17,7 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 * Separated JetPack customization functions into separate file (`inc/jetpack.php`)
 * Moved JetPack custom related posts to core plugin
 * Reverted `content-footer` widget to single posts
+* Registered `footer` sidebar and added to footer
 
 = 0.3.2 February 24, 2017 =
 * #6 Updated margin note styling

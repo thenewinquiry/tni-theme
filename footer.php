@@ -23,6 +23,10 @@
 				</div><!-- .site-info -->
 			<?php endif; ?>
 
+			<?php if( is_active_sidebar( 'footer' ) ) : ?>
+					<?php dynamic_sidebar( 'footer' ); ?>
+			<?php endif; ?>
+
 			<?php
 				// Display Main Navigation.
 				wp_nav_menu( array(
