@@ -117,3 +117,23 @@ function gridbox_post_image_single( $size = 'full' ) {
 
     }
 }
+
+/**
+ * Display Custom Excerpt
+ * Conditionally display `post_subhead`, if it exists
+ *
+ * @since 0.4.0
+ *
+ * @param  int $post_id
+ * @return void
+ */
+function tni_custom_excerpt( $post_id = null ) {
+  $post_id = ( $post_id ) ? intval( $post_id ) : get_the_ID();
+  $subhead = get_post_meta( get_the_ID(), 'post_subhead', true );
+
+  if( $subhead ) {
+    echo $subhead;
+  } else {
+    the_excerpt();
+  }
+}
