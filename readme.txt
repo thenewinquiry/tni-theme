@@ -18,6 +18,7 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 * Moved JetPack custom related posts to core plugin
 * Reverted `content-footer` widget to single posts
 * Registered `footer` sidebar and added to footer
+* Added template tag for adding conditional excerpt `tni_custom_excerpt()` ( accepts params $post_id = null, $limit = null, $more = '' )
 
 = 0.3.2 February 24, 2017 =
 * #6 Updated margin note styling

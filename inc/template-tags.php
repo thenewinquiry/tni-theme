@@ -125,15 +125,19 @@ function gridbox_post_image_single( $size = 'full' ) {
  * @since 0.4.0
  *
  * @param  int $post_id
+ * @param int $limit
+ * @param string $more
  * @return void
  */
-function tni_custom_excerpt( $post_id = null ) {
-  $post_id = ( $post_id ) ? intval( $post_id ) : get_the_ID();
-  $subhead = get_post_meta( get_the_ID(), 'post_subhead', true );
+function tni_custom_excerpt( $post_id = null, $limit = null, $more = '' ) {
+  $default_limit = 55;
+  $post_id = ( $post_id ) ? (int) $post_id : get_the_ID();
+  $limit = ( $limit ) ? (int) $limit : $default_limit;
+  $subhead = get_post_meta( $post_id, 'post_subhead', true );
 
   if( $subhead ) {
-    echo $subhead;
+    echo wp_trim_words( strip_shortcodes( $subhead ), $limit, $more );
   } else {
-    the_excerpt();
+    echo wp_trim_words( strip_shortcodes( get_the_excerpt() ), $limit, $more );
   }
 }
