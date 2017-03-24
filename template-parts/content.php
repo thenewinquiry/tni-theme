@@ -31,12 +31,7 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content entry-excerpt clearfix">
-			<?php $subhead = get_post_meta( get_the_ID(), 'post_subhead', true ); ?>
-			<?php if( $subhead ) : ?>
-                <?php echo wp_trim_words(strip_shortcodes($subhead), 18); ?>
-			<?php else : ?>
-                <?php echo wp_trim_words(strip_shortcodes(get_the_excerpt()), 18); ?>
-			<?php endif; ?>
+			<?php tni_custom_excerpt(); ?>
 		</div><!-- .entry-content -->
 
 	</article>
