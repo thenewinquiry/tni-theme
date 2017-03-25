@@ -309,6 +309,9 @@
 
 article.magazines {
   margin-bottom: 2em;
+  .single-post-thumbnail {
+    margin-bottom: 0;
+  }
 }
 
 .blog-post {
@@ -328,6 +331,7 @@ article.magazines {
     font-style: italic;
     font-size: 1.1rem;
     color: $color__text-light;
+    margin: 1em 0 2em 0;
   }
   .entry-readmore {
     display: block;
