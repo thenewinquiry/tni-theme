@@ -309,6 +309,9 @@
 
 article.magazines {
   margin-bottom: 2em;
+  .single-post-thumbnail {
+    margin-bottom: 0;
+  }
 }
 
 .blog-post {
@@ -328,6 +331,7 @@ article.magazines {
     font-style: italic;
     font-size: 1.1rem;
     color: $color__text-light;
+    margin: 1em 0 2em 0;
   }
   .entry-readmore {
     display: block;
@@ -365,20 +369,35 @@ article.magazines {
 }
 
 .post-featured {
+  article {
+    display: flex;
+    border-left: 8px solid $color__black;
+    > a, .entry-info {
+      flex: 1;
+    }
+  }
+
+  .type-post .entry-header .entry-title {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  .entry-info {
+    padding: 0 2em;
+    position: relative;
+  }
+
+  .entry-excerpt {
+    position: absolute;
+    bottom: 1em;
+  }
+
   .entry-thumbnail {
-    height: 284px;
+    margin: 0;
+    height: 320px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
-    box-shadow: none;
-  }
-  article {
-    background: $color__gray-lightest;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
-  }
-  .entry-content-wrapper {
-    padding: 0 1em 1em 1em;
-    display: flex;
   }
 }
 
