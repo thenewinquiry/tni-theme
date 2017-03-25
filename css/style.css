@@ -148,13 +148,16 @@ blockquote {
   max-width: 1080px; }
 
 .site-content {
-  padding-top: 1.5em; }
+  padding-top: 0; }
 
 .page-header {
   margin-bottom: 1.5em; }
 
 .no-sidebar .content-single {
   max-width: none; }
+
+.post-layout-four-columns .post-wrapper .post-featured {
+  width: 100%; }
 
 body {
   font-size: 16px;
@@ -637,6 +640,8 @@ nav ul {
 
 article.magazines {
   margin-bottom: 2em; }
+  article.magazines .single-post-thumbnail {
+    margin-bottom: 0; }
 
 .blog-post {
   width: 100%;
@@ -652,7 +657,8 @@ article.magazines {
   .blog-post .entry-excerpt {
     font-style: italic;
     font-size: 1.1rem;
-    color: #9e9e9e; }
+    color: #9e9e9e;
+    margin: 1em 0 2em 0; }
   .blog-post .entry-readmore {
     display: block;
     margin: 1em 0 2em 0;
@@ -672,21 +678,32 @@ article.magazines {
 .post-column {
   margin-bottom: 1em; }
 
+.post-featured article {
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 8px solid #2a2a2a; }
+  .post-featured article > a, .post-featured article .entry-info {
+    -ms-flex: 1;
+        flex: 1; }
+
+.post-featured .type-post .entry-header .entry-title {
+  font-size: 3rem;
+  line-height: 1.2; }
+
+.post-featured .entry-info {
+  padding: 0 2em;
+  position: relative; }
+
+.post-featured .entry-excerpt {
+  position: absolute;
+  bottom: 1em; }
+
 .post-featured .entry-thumbnail {
-  height: 284px;
+  margin: 0;
+  height: 320px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
-  box-shadow: none; }
-
-.post-featured article {
-  background: #f5f5f5;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); }
-
-.post-featured .entry-content-wrapper {
-  padding: 0 1em 1em 1em;
-  display: -ms-flexbox;
-  display: flex; }
+  background-position: top center; }
 
 .post-latest-issue .entry-title {
   font-family: "Work Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -1180,8 +1197,6 @@ iframe {
     font-size: 13px; }
   .post-layout-four-columns .post-wrapper .post-column {
     width: 50%; }
-  .post-layout-four-columns .post-wrapper .post-featured {
-    width: 100%; }
   .gallery .gallery-item,
       .gallery-columns-4 .gallery-item {
     -ms-flex: 1 1 50%;
@@ -1231,8 +1246,6 @@ iframe {
 @media screen and (min-width: 960px) {
   .post-layout-four-columns .post-wrapper .post-column {
     width: 33.33333%; }
-  .post-layout-four-columns .post-wrapper .post-featured {
-    width: 66.66666%; }
   .single .margin-right,
   .single .margin-left {
     clip: auto;
@@ -1371,8 +1384,6 @@ iframe {
 @media screen and (min-width: 70em) {
   .post-layout-four-columns .post-wrapper .post-column {
     width: 25%; }
-  .post-layout-four-columns .post-wrapper .post-featured {
-    width: 75%; }
   .gallery .gallery-item,
       .gallery-columns-4 .gallery-item {
     -ms-flex: 1 1 25%;
