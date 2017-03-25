@@ -3,7 +3,7 @@
 }
 
 .site-content {
-  padding-top: 1.5em;
+  padding-top: 0;
 }
 
 .page-header {
@@ -40,15 +40,5 @@
 }
 
 .post-layout-four-columns .post-wrapper .post-featured {
-  @include breakpoint(sm) {
-    width: 100%;
-  }
-
-  @include breakpoint(md) {
-    width: 66.66666%;
-  }
-
-  @include breakpoint(lg) {
-    width: 75%;
-  }
+  width: 100%;
 }

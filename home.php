@@ -38,6 +38,8 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
                             <?php get_template_part( 'template-parts/content', 'featured' ); ?>
 
+                        <?php elseif ( 5 == $count ) : ?>
+
                             <?php $post = get_posts(array('post_type'=>'magazines'))[1]; // should be 0, but testing ?>
 						    <?php get_template_part( 'template-parts/content', 'latest-issue' ); ?>
 
