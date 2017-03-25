@@ -29,12 +29,12 @@
   @include breakpoint(md) {
 
     .site-info {
-      flex-basis: 50%;
+      flex-basis: 25%;
       padding: 2em 0;
       display: flex;
     }
     .footer-menu {
-      flex-basis: 50%;
+      flex-basis: 25%;
       padding: 2em 0;
 
       justify-content: flex-end;
