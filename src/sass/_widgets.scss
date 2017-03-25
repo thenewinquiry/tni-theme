@@ -13,20 +13,22 @@
 .widget_mc4wp_form_widget {
   display: flex;
   justify-content: center;
+  flex-basis: 50%;
+  margin: 0;
+  padding: 0.9em 0 0 0;
 
   .widget-title {
     line-height: 1;
     flex-basis: 25%;
     padding-top: 0.2em;
   }
-  .mc4wp-form {}
+  .mc4wp-form {
+    font-size: 1.1rem;
+  }
 
   input[type="submit"] {
-    background-color: transparent;
-    color: $color__gray;
-    text-decoration: underline;
-    font-weight: normal;
     font-size: 0.8em;
+    padding: 0.2em 0.5em;
   }
 }
 
@@ -38,8 +40,31 @@
 }
 
 .header-widget {
-  .widget_mc4wp_form_widget {
+  .widget_latest_tweets_widget {
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 300;
     margin-bottom: 0;
+    max-width: 500px; /* todo */
+    &::before {
+      content: '\f202';
+      font-family: $font__icon;
+      font-size: 16px;
+      color: $color__text-light;
+      margin-top: 0.3em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    .tweet-text {
+      margin: 0;
+    }
+    .tweet-details {
+      display: none;
+    }
+    ul {
+      list-style-type: none;
+    }
   }
 }
 
