@@ -17,6 +17,10 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 * Separated JetPack customization functions into separate file (`inc/jetpack.php`)
 * Moved JetPack custom related posts to core plugin
 * Reverted `content-footer` widget to single posts
+* Registered `footer` sidebar and added to footer
+* Added template tag for adding conditional excerpt `tni_custom_excerpt()` ( accepts params $post_id = null, $limit = null, $more = '' )
+* Excluded '&,Meanwhile' category from loops and search, and post navigation (even though post navigation isn't currently displayed)
+* Disabled infinite scroll
 
 = 0.3.2 February 24, 2017 =
 * #6 Updated margin note styling
