@@ -99,7 +99,8 @@
   .single-subscribe-widget {
     display: inline-block;
     margin: 2em 1em 1em;
-    form, fieldset {
+    form, fieldset,
+    .caldera-grid {
       display: inline-block;
       text-align: left;
     }
