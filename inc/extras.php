@@ -191,6 +191,26 @@ function tni_modify_image_caption_markup( $empty, $attr, $content ){
 add_filter( 'img_caption_shortcode', 'tni_modify_image_caption_markup', 10, 3 );
 
 /**
+ * Exclude Posts from Category
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_exclude_category( $query ) {
+
+  $excluded = get_terms( array(
+    'taxonomy'  => 'category',
+    'slug'      => 'meanwhile',
+    'fields'    => 'ids'
+  ) );
+
+  if( ! is_admin() ) {
+    set_query_var( 'category__not_in', $excluded );
+  }
+}
+add_action( 'pre_get_posts', 'tni_exclude_category' );
+
+/**
  * Add Filters to `meta_content`
  * Ensures that `meta_content` is return like `the_content`
  *

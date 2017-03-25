@@ -119,6 +119,32 @@ function gridbox_post_image_single( $size = 'full' ) {
 }
 
 /**
+ * Override Parent Post navigation
+ *
+ * @since 0.4.0
+ */
+function gridbox_post_navigation() {
+
+  // Get theme options from database.
+  $theme_options = gridbox_theme_options();
+  $excluded = get_terms( array(
+    'taxonomy'  => 'category',
+    'slug'      => 'meanwhile',
+    'fields'    => 'ids'
+  ) );
+
+  if ( true === $theme_options['post_navigation'] || is_customize_preview() ) {
+
+    the_post_navigation( array(
+      'prev_text'       => '<span class="screen-reader-text">' . esc_html_x( 'Previous Post:', 'post navigation', 'gridbox' ) . '</span>%title',
+      'next_text'       => '<span class="screen-reader-text">' . esc_html_x( 'Next Post:', 'post navigation', 'gridbox' ) . '</span>%title',
+      'excluded_terms'  => $excluded
+    ) );
+
+  }
+}
+
+/**
  * Display Custom Excerpt
  * Conditionally display `post_subhead`, if it exists
  *
