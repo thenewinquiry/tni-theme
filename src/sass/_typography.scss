@@ -47,7 +47,9 @@ h1.entry-title {
 
 .post-wrapper .type-post {
   .entry-excerpt {
-    font-size: 0.9rem;
+    font-family: $font__sans-serif;
+    font-weight: 300;
+    margin-top: 0.5em;
   }
   .entry-title {
     font-size: 1.5rem;
