@@ -163,8 +163,11 @@
         height: auto;
         position: absolute;
         top: 180px;
-        left: -40px;
+        left: -20px;
         transform: rotate(-10deg);
+        @include breakpoint(sm) {
+          left: -40px;
+        }
       }
     }
     .magazine-sidebar {
@@ -252,6 +255,10 @@
       font-weight: normal;
       text-transform: uppercase;
       font-size: 1.2rem;
+      display: block;
+      @include breakpoint(sm) {
+        display: inline;
+      }
     }
     .entry-title {}
     .issue-note {}
@@ -341,6 +348,12 @@ article.magazines {
   }
 }
 
+article.blogs {
+  .thumbnail {
+    text-align: center;
+  }
+}
+
 .tax-blog-types .page-header {
   margin-bottom: 3.5em;
 }
@@ -360,27 +373,30 @@ article.magazines {
 }
 
 .post-featured {
-  article {
-    display: flex;
-    border-left: 8px solid $color__black;
-    > a, .entry-info {
-      flex: 1;
-    }
-  }
-
   .type-post .entry-header .entry-title {
     font-size: 3rem;
     line-height: 1.2;
   }
 
-  .entry-info {
-    padding: 0 2em;
-    position: relative;
-  }
+  @include breakpoint(md) {
+    article {
+      display: flex;
+      flex-direction: row-reverse;
+      border-left: 8px solid $color__black;
+      > a, .entry-info {
+        flex: 1;
+      }
+    }
 
-  .entry-excerpt {
-    position: absolute;
-    bottom: 1em;
+    .entry-info {
+      padding: 0 2em;
+      position: relative;
+    }
+
+    .entry-excerpt {
+      position: absolute;
+      bottom: 1em;
+    }
   }
 
   .entry-thumbnail {
@@ -389,6 +405,7 @@ article.magazines {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    margin-bottom: 1em;
   }
 }
 

@@ -61,20 +61,12 @@
       padding: 0;
       margin: 0;
       order: 1;
-      flex: 0 1 80px;
       min-width: auto;
       align-self: center;
       text-align: left;
 
-      position: absolute;
-      left: 1.5em;
-      top: 1.25em;
-
-      @include breakpoint(sm) {
-        flex: 0 1 15%;
-
-        position: initial;
-      }
+      flex: 0 1 15%;
+      position: initial;
 
     }
 
@@ -90,15 +82,15 @@
     //Mobile Menu
     .mobile-navigation {
       order: 3;
-      flex: 0 1 80px;
+      flex: 0 1 15%;
 
-      position: absolute;
       right: 1.5em;
       top: 1.25em;
+      position: initial;
 
       ul {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
 
         li {
@@ -114,18 +106,6 @@
         font-weight: bold;
         letter-spacing: 0.55px;
       }
-
-      @include breakpoint(sm) {
-        flex: 0 1 15%;
-        text-align: left;
-
-        position: initial;
-
-        ul {
-          justify-content: flex-end;
-        }
-      };
-
     }
 
     /**
