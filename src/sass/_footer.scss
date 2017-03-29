@@ -1,7 +1,5 @@
 .site-footer,
 .footer-wrap {
-  background: $color__white;
-
   color: $color__black;
   font-size: 11px;
   letter-spacing: 0.55px;
@@ -14,30 +12,27 @@
   }
 }
 
-.site-footer {
-  display: flex;
+.footer-wrap {
+  border-top: 2px solid $color__gray-lighter;
+  background: none;
+}
 
+.site-footer {
   .site-info {
-    flex-basis: 100%;
     padding: 0;
+    font-size: 1.6em;
   }
   .footer-menu {
-    flex-basis: 100%;
     padding: 0;
   }
 
   @include breakpoint(md) {
 
     .site-info {
-      flex-basis: 25%;
       padding: 2em 0;
-      display: flex;
     }
     .footer-menu {
-      flex-basis: 25%;
       padding: 2em 0;
-
-      justify-content: flex-end;
     }
   }
 }
@@ -45,11 +40,33 @@
 .footer-menu {
   @include no-bullets;
 
-  display: flex;
   font-weight: 700;
+  columns: 2;
 
   li {
-    padding-left: 1em;
     text-transform: uppercase;
   }
+}
+
+.footer-head {
+    position: absolute;
+    left: 0;
+    width: 320px;
+    z-index: -1;
+}
+
+.footer-menus {
+  display: flex;
+  font-size: 1.2em;
+
+  .social-navigation {
+    padding: 2em 0 0 4em;
+    #menu-social li a::before {
+      font-size: 22px;
+    }
+  }
+}
+
+.footer-content {
+  padding-left: 320px;
 }

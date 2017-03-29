@@ -8,14 +8,14 @@
   line-height: 1.5em;
   font-weight: normal;
   text-transform: uppercase;
+  padding-left: 0;
 }
 
 .widget_mc4wp_form_widget {
   display: flex;
-  justify-content: center;
   flex-basis: 50%;
   margin: 0;
-  padding: 0.9em 0 0 0;
+  padding: 3em 0 0 0;
 
   .widget-title {
     line-height: 1;
