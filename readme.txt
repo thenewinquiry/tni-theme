@@ -21,6 +21,7 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 * Added template tag for adding conditional excerpt `tni_custom_excerpt()` ( accepts params $post_id = null, $limit = null, $more = '' )
 * Excluded '&,Meanwhile' category from loops and search, and post navigation (even though post navigation isn't currently displayed)
 * Disabled infinite scroll
+* #20 Added setting for home page posts per page
 
 = 0.3.2 February 24, 2017 =
 * #6 Updated margin note styling
