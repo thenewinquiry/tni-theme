@@ -10,6 +10,28 @@
  */
 
 /**
+ * Home Page Posts per Page
+ * Display number of posts on home page as defined in settings
+ *
+ * @since 0.4.0
+ *
+ * @uses pre_get_posts filter
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_home_posts_per_page_query_filter( $query ) {
+
+  if ( $query->is_home() && $query->is_main_query() ) {
+    $default = 13;
+    $posts_per_page = get_option( 'home-posts-per-page', $default );
+    $query->set( 'posts_per_page', $posts_per_page );
+  }
+
+}
+add_action( 'pre_get_posts', 'tni_home_posts_per_page_query_filter' );
+
+/**
  * Add Search to Main Nav
  *
  * @since 0.0.1
