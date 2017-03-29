@@ -43,4 +43,7 @@
   .entry-title {
     font-size: 1.25rem;
   }
+  .meta-date {
+    @include visually-hidden;
+  }
 }
