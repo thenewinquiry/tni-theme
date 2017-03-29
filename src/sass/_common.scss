@@ -10,6 +10,13 @@ a {
   }
 }
 
+::selection {
+  background: $color__highlight;
+}
+::-moz-selection {
+  background: $color__highlight;
+}
+
 .wp-caption-text {
   text-align: right;
   color: $color__text-light;
@@ -124,6 +131,7 @@ i.icon:after {
 
 .show-more-label {
   @extend .more-link;
+  font-size: 1rem;
 }
 
 blockquote {

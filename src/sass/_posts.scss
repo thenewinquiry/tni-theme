@@ -96,43 +96,13 @@
     margin: 1em 0 2em 0;
   }
 
-  .single-subscribe-widget {
-    display: inline-block;
-    margin: 2em 1em 1em;
-    form, fieldset {
-      display: inline-block;
-      text-align: left;
-    }
-
-    form {
-      padding-left: 1em;
-    }
-
-    input[type="email"] {
-      padding: 0.2em 0.6em 0.2em;
-    }
-  }
-  .single-subscribe-widget-info {
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-    width: 9em;
-    h4 {
-      margin-top: 0;
-      line-height: 1.4;
-      color: $color__accent;
-      text-transform: uppercase;
-      font-family: $font__sans-serif;
-      font-size: 18px;
-    }
-  }
-
   .margin-right,
   .margin-left {
     width: 33.3333%;
     margin: 1em;
     overflow: hidden;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    clear: both;
   }
   .margin-right {
     float: right;
@@ -213,6 +183,19 @@
         a, a:visited {
           color: $color__accent;
         }
+      }
+      form {
+        margin: 3em 2em;
+      }
+      label {
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      input[type="email"] {
+        display: block;
+        margin: 0 auto 1em auto;
+        width: 100%;
+        font-family: $font__sans-serif;
       }
     }
 
@@ -471,4 +454,8 @@ article.magazines {
       margin: .25em 0 0em 0;
     }
   }
+}
+
+#comments {
+  display: none;
 }
