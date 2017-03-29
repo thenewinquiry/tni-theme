@@ -17,8 +17,6 @@
 
 		<footer id="colophon" class="site-footer container clearfix" role="contentinfo">
 
-            <img class="footer-head" src="<?php echo get_stylesheet_directory_uri(); ?>/images/head.png" />
-
             <div class="footer-content">
                 <?php if( is_active_sidebar( 'copyleft' ) ) : ?>
                     <div id="footer-text" class="site-info">
@@ -66,6 +64,8 @@
                         <?php dynamic_sidebar( 'footer' ); ?>
                 <?php endif; ?>
             </div>
+
+            <img class="footer-head" src="<?php echo get_stylesheet_directory_uri(); ?>/images/head.png" />
 
 		</footer><!-- #colophon -->
 

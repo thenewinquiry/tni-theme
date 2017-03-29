@@ -28,6 +28,7 @@ nav ul {
       font-weight: 500;
       letter-spacing: 0.55px;
       line-height: 1.5em;
+      padding-left: 0;
     }
 
     a,
@@ -61,7 +62,6 @@ nav ul {
     .screen-reader-text:before {}
 
     a {
-      padding-bottom: 0;
       display: inline-block;
 
       &::before {

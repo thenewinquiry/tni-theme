@@ -11,6 +11,10 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+        <a href="<?php the_permalink() ?>" title="<?php the_title() ?>">
+            <figure class="entry-thumbnail" style="background-image:url('<?php echo get_the_post_thumbnail_url( null, 'full' ); ?>');"></figure>
+        </a>
+
         <div class="entry-info">
 
             <header class="entry-header">
@@ -23,10 +27,6 @@
             </div><!-- .entry-content -->
 
         </div>
-
-        <a href="<?php the_permalink() ?>" title="<?php the_title() ?>">
-            <figure class="entry-thumbnail" style="background-image:url('<?php echo get_the_post_thumbnail_url( null, 'full' ); ?>');"></figure>
-        </a>
 
 	</article>
 

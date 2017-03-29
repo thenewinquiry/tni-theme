@@ -112,8 +112,11 @@
   .starburst {
     position: absolute;
     top: 40px;
-    left: -40px;
+    left: -20px;
     width: 80px;
+    @include breakpoint(sm) {
+      left: -40px;
+    }
   }
 }
 
