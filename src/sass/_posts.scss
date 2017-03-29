@@ -289,6 +289,14 @@
 .relatedposts-headline {
   font-size: 1.8rem;
 }
+.relatedposts-title {
+  font-family: $font__sans-serif;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color__gray;
+  margin-bottom: 1.5em;
+}
 
 article.magazines {
   margin-bottom: 2em;

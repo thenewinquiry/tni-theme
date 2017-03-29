@@ -15,6 +15,7 @@ get_header(); ?>
 			<?php get_template_part( 'template-parts/content-single', get_post_type() ); ?>
 
 			<?php if ( class_exists( 'Jetpack_RelatedPosts' ) && 'post' == get_post_type() ) : ?>
+                <h2 class="relatedposts-title"><?php _e('Further Reading', 'tni'); ?></h2>
 				<?php echo do_shortcode( '[jetpack-custom-related]' ); ?>
 			<?php elseif( 'magazines' == get_post_type() ) : ?>
 				<?php get_template_part( 'template-parts/loop', 'related-posts' ); ?>
