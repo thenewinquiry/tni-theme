@@ -1,5 +1,8 @@
 .page {
   .entry-content {
+    font-family: $font__sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
 
     h3 {
       border-bottom: 1px solid $color__gray-light;
@@ -13,4 +16,14 @@
     }
 
   }
+
+  .entry-header {
+    margin-bottom: 2em;
+  }
+}
+
+.page-title {
+  font-size: 1.6em;
+  font-family: $font__sans-serif;
+  text-transform: uppercase;
 }

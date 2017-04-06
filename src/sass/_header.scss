@@ -6,9 +6,22 @@
     position: fixed;
     background-color: $color__white;
     z-index: 10;
-    -webkit-box-shadow: 1px 2px 2px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    1px 2px 2px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         1px 2px 2px 0px rgba(50, 50, 50, 0.5);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow:    1px 2px 5px 0px rgba(50, 50, 50, 0.1);
+    box-shadow:         1px 2px 5px 0px rgba(50, 50, 50, 0.1);
+    .custom-logo {
+      max-height: 24px;
+      width: auto;
+    }
+    .site-branding {
+      margin: 0.3em 0;
+    }
+    .main-navigation-menu li:not(.subscribe) a {
+      padding-left: 0;
+    }
+    .main-navigation-menu li.subscribe {
+      margin-top: 1em;
+    }
   }
 
   .site-title {
@@ -48,20 +61,12 @@
       padding: 0;
       margin: 0;
       order: 1;
-      flex: 0 1 80px;
       min-width: auto;
       align-self: center;
       text-align: left;
 
-      position: absolute;
-      left: 1.5em;
-      top: 1.25em;
-
-      @include breakpoint(sm) {
-        flex: 0 1 15%;
-
-        position: initial;
-      }
+      flex: 0 1 15%;
+      position: initial;
 
     }
 
@@ -77,15 +82,15 @@
     //Mobile Menu
     .mobile-navigation {
       order: 3;
-      flex: 0 1 80px;
+      flex: 0 1 15%;
 
-      position: absolute;
       right: 1.5em;
       top: 1.25em;
+      position: initial;
 
       ul {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
 
         li {
@@ -97,17 +102,10 @@
         }
       }
 
-      @include breakpoint(sm) {
-        flex: 0 1 15%;
-        text-align: left;
-
-        position: initial;
-
-        ul {
-          justify-content: flex-end;
-        }
-      };
-
+      .subscribe-2 {
+        font-weight: bold;
+        letter-spacing: 0.55px;
+      }
     }
 
     /**
@@ -218,7 +216,7 @@
 
 .site-branding {
   .site-title {
-    font-family: $font__droid-serif;
+    font-family: $font__serif;
     color: $color__text-light;
     a {
       font-weight: normal;

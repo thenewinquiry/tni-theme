@@ -1,12 +1,9 @@
 .site-footer,
 .footer-wrap {
-  background: $color__white;
-
   color: $color__black;
   font-size: 11px;
   letter-spacing: 0.55px;
   line-height: 1.5em;
-  font-weight: 700;
 
   a,
   a:link,
@@ -15,40 +12,65 @@
   }
 }
 
-.site-footer {
-  display: flex;
+.footer-wrap {
+  border-top: 2px solid $color__gray-lighter;
+  background: none;
+  position: relative;
+  margin-top: 2em;
+}
 
+.site-footer {
+  padding: 0 2em;
   .site-info {
-    flex-basis: 100%;
-    padding: 0;
+    padding: 2em 0;
+    font-size: 1.6em;
   }
   .footer-menu {
-    flex-basis: 100%;
-    padding: 0;
-  }
-
-  @include breakpoint(md) {
-
-    .site-info {
-      flex-basis: 50%;
-      padding: 2em 0;
-    }
-    .footer-menu {
-      flex-basis: 50%;
-      padding: 2em 0;
-
-      justify-content: flex-end;
-    }
+    padding: 2em 0;
   }
 }
 
 .footer-menu {
   @include no-bullets;
 
-  display: flex;
+  font-weight: 700;
+  columns: 2;
 
   li {
-    padding-left: 1em;
     text-transform: uppercase;
+  }
+}
+
+.footer-head {
+  width: 320px;
+  display: none;
+
+  @include breakpoint(sm) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    display: block
+  }
+}
+
+.footer-menus {
+  display: flex;
+  font-size: 1.2em;
+
+  .social-navigation {
+    padding: 2em 0 0 4em;
+    #menu-social li a::before {
+      font-size: 22px;
+    }
+  }
+}
+
+.footer-content {
+  padding-left: 0;
+  padding-bottom: 6em;
+  @include breakpoint(sm) {
+    padding-left: 180px;
+    padding-bottom: 0;
   }
 }

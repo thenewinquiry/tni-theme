@@ -26,7 +26,7 @@
 
 		<?php if( !empty( $subhead ) ) : ?>
 			<h2 class="entry-subhead">
-				<?php echo esc_attr( $subhead ); ?>
+				<?php echo $subhead; ?>
 			</h2>
 		<?php endif; ?>
 
@@ -54,7 +54,7 @@
 		<?php if( is_active_sidebar( 'content-footer' ) ) : ?>
 			<div class="content-footer-widget">
 				<?php dynamic_sidebar( 'content-footer' ); ?>
-			</div><!-- .header-widget -->
+			</div><!-- .footer-widget -->
 		<?php endif; ?>
 
 	</footer><!-- .entry-footer -->

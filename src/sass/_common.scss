@@ -10,6 +10,13 @@ a {
   }
 }
 
+::selection {
+  background: $color__highlight;
+}
+::-moz-selection {
+  background: $color__highlight;
+}
+
 .wp-caption-text {
   text-align: right;
   color: $color__text-light;
@@ -25,7 +32,7 @@ a {
   a,
   a:link,
   a:visited {
-    color: $color__link;
+    color: darken($color__link, 10%);
   }
 
   .meta-date {
@@ -46,7 +53,7 @@ a {
     a:visited {
       padding: 0;
       background-color: transparent;
-      font-family: $font__pt-sans;
+      font-family: $font__sans-serif;
       color: $color__text-light;
       font-weight: normal;
       text-decoration: underline;
@@ -60,7 +67,7 @@ a {
 .more-link:visited {
   padding: 0;
   background-color: transparent;
-  font-family: $font__pt-sans;
+  font-family: $font__sans-serif;
   color: $color__text-light;
   font-weight: normal;
   text-decoration: underline;
@@ -88,7 +95,7 @@ i.icon:after {
   a:hover,
   a:focus {
     display: inline-block;
-    padding: .5em;
+    padding: 0.3em 0.8em;
     background-color: $color__accent;
     border-radius: 6px;
     text-align: center;
@@ -96,8 +103,12 @@ i.icon:after {
     font-size: 10px;
     color: $color__text-inverted !important;
 
+    &:hover {
+      background-color: darken( $color__accent, 2% );
+    }
+
     @include breakpoint(sm) {
-      font-size: 12px;
+      font-size: 13px;
     }
 
     @include breakpoint(md) {
@@ -120,6 +131,7 @@ i.icon:after {
 
 .show-more-label {
   @extend .more-link;
+  font-size: 1rem;
 }
 
 blockquote {

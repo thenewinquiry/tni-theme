@@ -17,13 +17,12 @@
 				<img src="<?php get_stylesheet_directory_uri(); ?>/images/tni-placeholder.png">
 			<?php endif; ?>
 		</a>
-		<h4 class="relatedposts-post-title">
+		<h4 class="relatedposts-post-title entry-title">
 			<a class="relatedposts-post-a" href="<?php the_permalink(); ?>" title="<?php get_the_title(); ?>" rel="nofollow" data-origin="<?php the_ID(); ?>" data-position="0">
 				<?php the_title(); ?></a>
 		</h4>
 		<p class="relatedposts-post-excerpt">
-			<span class="issue-number"><?php echo get_post_meta( get_the_ID(), 'issue', true ); ?></span>
-				<span class="issue-date"><?php the_date(); ?></span>
+            <span class="issue-number"><?php _e('Vol.', 'tni'); ?> <?php echo get_post_meta( get_the_ID(), 'issue', true ); ?></span> | <span class="issue-date"><?php the_date(); ?></span>
 		</p>
 
 </div>

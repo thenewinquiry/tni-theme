@@ -30,9 +30,11 @@ $color__white: #fff;
 $color__primary:        #598fb6;
 $color__primary-light:  lighten( $color__primary, 20% );
 $color__primary-dark:   darken( $color__primary, 20% );
-$color__accent:         #E50102;
+$color__accent:         #ff0000;
+$color__highlight:      #ffff8c;
 
 $color__gray-lightest:  #f5f5f5;
+$color__gray-lighter:   #dddddd;
 $color__gray-light:     #aeaeae;
 $color__gray:           #9e9e9e;
 $color__gray-dark:      #616161;
@@ -69,18 +71,15 @@ $color__border:         #bdbdbd;
 /**
  * Typography Variables
  */
-$font__sans-serif:  Arial, 'Helvetica Neue', Helvetica, sans-serif;
-$font__serif:       Georgia, serif;
+$font__sans-serif:  'Work Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$font__serif:       'Libre Baskerville', serif;
 $font__mono:        Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
 $font__code:        $font__mono;
 $font__pre:         "Courier 10 Pitch", Courier, monospace;
 
 $font__icon:        'Genericons';
-$font__droid-serif: 'Droid Serif', serif;
-$font__pt-sans:     'PT Sans', $font__sans-serif;
-$font__kanit-sans:  'Kanit', $font__sans-serif;
-$font__work-sans:  'Work Sans', $font__sans-serif;
+$font__work-sans:   'Work Sans', $font__sans-serif;
 
 $font__heading:     $font__sans-serif;
 

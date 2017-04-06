@@ -13,7 +13,6 @@ nav ul {
 }
 
 .main-navigation-menu {
-
   float: none;
   display: flex !important;
   flex-wrap: nowrap;
@@ -24,8 +23,12 @@ nav ul {
     text-align: left;
 
     a {
-      font-size: 12px;
+      font-size: 11px;
       text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.55px;
+      line-height: 1.5em;
+      padding-left: 0;
     }
 
     a,
@@ -44,13 +47,21 @@ nav ul {
       text-decoration: none;
       border-bottom: 3px solid $color__black;
     }
+
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    &.subscribe a {
+      font-size: 13px;
+      font-weight: bold;
+    }
   }
 
   .menu-search-icon {
     .screen-reader-text:before {}
 
     a {
-      padding-bottom: 0;
       display: inline-block;
 
       &::before {
@@ -202,11 +213,30 @@ nav ul {
     a:visited {
       padding: 0;
       background-color: transparent;
-      font-family: $font__pt-sans;
+      font-family: $font__sans-serif;
       color: $color__gray;
       font-weight: normal;
       text-decoration: underline;
       text-transform: uppercase;
     }
+  }
+}
+.nav-links {
+  text-align: center;
+}
+
+.pagination {
+  font-family: $font__sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+
+  .current, .dots,
+  a, a:link, a:visited, a:hover {
+    color: $color__text-light;
+    background: none;
+  }
+
+  .current, a:hover {
+    color: $color__text-primary;
   }
 }

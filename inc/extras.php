@@ -10,6 +10,28 @@
  */
 
 /**
+ * Home Page Posts per Page
+ * Display number of posts on home page as defined in settings
+ *
+ * @since 0.4.0
+ *
+ * @uses pre_get_posts filter
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_home_posts_per_page_query_filter( $query ) {
+
+  if ( $query->is_home() && $query->is_main_query() ) {
+    $default = 13;
+    $posts_per_page = get_option( 'home-posts-per-page', $default );
+    $query->set( 'posts_per_page', $posts_per_page );
+  }
+
+}
+add_action( 'pre_get_posts', 'tni_home_posts_per_page_query_filter' );
+
+/**
  * Add Search to Main Nav
  *
  * @since 0.0.1
@@ -21,13 +43,6 @@ function tni_add_top_search_menu( $items, $args ) {
     return $items;
 }
 //add_filter( 'wp_nav_menu_items', 'tni_add_top_search_menu', 10, 2 );
-
-/**
- * Related Posts for Blog Posts
- *
- * @since 0.0.1
- */
-add_filter( 'jetpack_relatedposts_filter_post_context', '__return_empty_string' );
 
 /**
  * Modify Archive Title
@@ -75,32 +90,6 @@ function tni_custom_post_author_archive( $query ) {
 add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
 
 /**
- * Change Button Text
- * @param  array $settings
- * @return array $settings
- */
-function tni_jetpack_infinite_scroll_button_text( $settings ) {
-
-  $settings['text'] = __( 'Load More', 'tni' );
-
-	return $settings;
-}
-add_filter( 'infinite_scroll_js_settings', 'tni_jetpack_infinite_scroll_button_text' );
-
-/**
- * Disable Infinite Scroll on Blogs Listing
- *
- * @since 0.1.2
- *
- * @uses infinite_scroll_archive_supported filter
- */
-function tni_remove_infinite_scroll_blogs_archive() {
-	return current_theme_supports( 'infinite-scroll' ) && ( !is_post_type_archive( 'blogs' ) );
-}
-add_filter( 'infinite_scroll_archive_supported', 'tni_remove_infinite_scroll_blogs_archive' );
-
-
-/**
  * Modify Date Display for Magazines
  * @param  obj $the_date
  * @param  string $d
@@ -140,94 +129,6 @@ function tni_nav_class( $classes, $item ){
 add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
 
 /**
- * Prevent JetPack CSS Concatenation
- *
- * @since 0.3.1
- *
- * @uses jetpack_implode_frontend_css filter
- *
- * @return false
- */
-add_filter( 'jetpack_implode_frontend_css', '__return_false' );
-
-/**
- * Modify JetPack Related Posts Thumbnail Size
- *
- * @uses jetpack_relatedposts_filter_thumbnail_size filter
- *
- * @since 0.3.1
- * @param  array $thumbnail_size
- * @return array $thumbnail_size
- */
-function tni_jetpack_change_image_size( $thumbnail_size ) {
-  $thumbnail_size['width'] = 250;
-  $thumbnail_size['height'] = 250;
-  $thumbnail_size['crop'] = true;
-  return $thumbnail_size;
-}
-add_filter( 'jetpack_relatedposts_filter_thumbnail_size', 'tni_jetpack_change_image_size' );
-
-/**
- * Customize Related Post Options
- * Change number of posts
- * Hide date
- *
- * @since
- * @param  array $options
- * @return array $options modified
- */
-function tni_jetpack_customize_related_posts( $options ) {
-    $options['size'] = 4;
-    $options['show_date'] = false;
-    return $options;
-}
-add_filter( 'jetpack_relatedposts_filter_options', 'tni_jetpack_customize_related_posts' );
-
-/**
- * Remove Auto-inserted Related Posts
- *
- * @since 0.0.6
- *
- * @uses Jetpack_RelatedPosts
- * @link https://jetpack.com/support/related-posts/customize-related-posts/
- *
- * @return void
- */
-function tni_remove_jetpack_related_posts() {
-    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-        $jprp = Jetpack_RelatedPosts::init();
-        $callback = array( $jprp, 'filter_add_target_to_dom' );
-        remove_filter( 'the_content', $callback, 40 );
-    }
-}
-add_filter( 'wp', 'tni_remove_jetpack_related_posts', 20 );
-
-/**
- * Modify Default JetPack Related Posts Default Image
- * @param  array $media
- * @param  int $post_id
- * @param  array $args
- * @return array $media
- */
-function tni_jetpack_related_posts_default_image( $media, $post_id, $args ) {
-    if ( $media ) {
-        return $media;
-    } else {
-        $permalink = get_permalink( $post_id );
-        $image = get_stylesheet_directory_uri() . '/images/tni-placeholder.jpg';
-        $url = apply_filters( 'jetpack_photon_url', $image );
-
-        return array( array(
-            'type'  => 'image',
-            'from'  => 'custom_fallback',
-            'src'   => esc_url( $url ),
-            'href'  => $permalink,
-        ) );
-    }
-}
-add_filter( 'jetpack_images_get_images', 'tni_jetpack_related_posts_default_image', 10, 3 );
-
-/**
  * Modify Image Markup
  * When image is inserted into post content without a caption, alter markup produced
  *
@@ -265,7 +166,7 @@ add_filter( 'image_send_to_editor', 'tni_modify_embedded_image_markup', 10, 8 );
  * @param  string $attr
  * @return string
  */
-function tni_modify_thumbnail_markup( $html, $id, $thumbnail_id, $size, $attr ) {
+function tni_modify_thumbnail_markup( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
   if( current_theme_supports( 'html5' ) ) {
     $html = sprintf( '<figure class="single-post-thumbnail">%s</figure>',
       $html
@@ -273,8 +174,7 @@ function tni_modify_thumbnail_markup( $html, $id, $thumbnail_id, $size, $attr ) 
   }
   return $html;
 }
-apply_filters( 'post_thumbnail_html', 'tni_modify_thumbnail_markup' );
-
+add_filter( 'post_thumbnail_html', 'tni_modify_thumbnail_markup', 1, 5 );
 
 /**
  * Modify Image Caption Markup
@@ -311,6 +211,26 @@ function tni_modify_image_caption_markup( $empty, $attr, $content ){
 	. '</figure>';
 }
 add_filter( 'img_caption_shortcode', 'tni_modify_image_caption_markup', 10, 3 );
+
+/**
+ * Exclude Posts from Category
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_exclude_category( $query ) {
+
+  $excluded = get_terms( array(
+    'taxonomy'  => 'category',
+    'slug'      => 'meanwhile',
+    'fields'    => 'ids'
+  ) );
+
+  if( ! is_admin() ) {
+    set_query_var( 'category__not_in', $excluded );
+  }
+}
+add_action( 'pre_get_posts', 'tni_exclude_category' );
 
 /**
  * Add Filters to `meta_content`

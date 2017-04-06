@@ -13,7 +13,18 @@ if ( have_posts() ) : ?>
 
 	<header class="page-header clearfix">
 
-		<?php the_archive_title( '<h1 class="archive-title">', '</h1>' ); ?>
+        <?php
+            $term_id = get_queried_object()->term_id;
+            $image_id = get_term_meta( $term_id, 'image', true );
+            $image_data = wp_get_attachment_image_src( $image_id, 'post_thumbnail' );
+            $image = $image_data[0];
+        ?>
+        <?php if ( ! empty( $image ) ) : ?>
+            <img src="<?php echo esc_url( $image ); ?>" title="<?php the_archive_title() ?>"/>
+        <?php else : ?>
+            <img class="image-placeholder" src="<?php echo get_stylesheet_directory_uri(); ?>/images/tni-placeholder.png" alt="" />
+        <?php endif; ?>
+
 		<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 
 	</header>
@@ -30,7 +41,7 @@ if ( have_posts() ) : ?>
 
 					<?php while ( have_posts() ) : the_post();
 
-						get_template_part( 'template-parts/content' );
+						get_template_part( 'template-parts/content', 'blog' );
 
 					endwhile; ?>
 

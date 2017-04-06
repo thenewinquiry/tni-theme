@@ -15,7 +15,18 @@ function tni_setup() {
         'id' => 'header',
         'description' => esc_html__( 'Header widget', 'tni' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
+        'after_widget' => '</div><!-- .header -->',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
+        )
+    );
+
+    register_sidebar( array(
+        'name' => esc_html__( 'Footer', 'tni' ),
+        'id' => 'footer',
+        'description' => esc_html__( 'Footer widget', 'tni' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div><!-- .footer -->',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>'
         )
@@ -67,14 +78,14 @@ function tni_setup() {
 
     remove_theme_support( 'infinite-scroll' );
 
-    add_theme_support( 'infinite-scroll', array(
-      'type'           => 'click',
-      'container'      => 'post-wrapper',
-      'footer_widgets' => 'footer',
-      'wrapper'        => false,
-      'render'         => 'gridbox_infinite_scroll_render',
-      'posts_per_page' => 8,
-  	) );
+    // add_theme_support( 'infinite-scroll', array(
+    //   'type'           => 'click',
+    //   'container'      => 'post-wrapper',
+    //   'footer_widgets' => 'footer',
+    //   'wrapper'        => false,
+    //   'render'         => 'gridbox_infinite_scroll_render',
+    //   'posts_per_page' => 8,
+  	// ) );
 
     register_nav_menus( array(
     	'social'   => esc_html__( 'Social Menu', 'tni' ),

@@ -3,7 +3,7 @@
 }
 
 .site-content {
-  padding-top: 1.5em;
+  padding-top: 0;
 }
 
 .page-header {
@@ -37,4 +37,8 @@
   @include breakpoint(lg) {
     width: 25%;
   }
+}
+
+.post-layout-four-columns .post-wrapper .post-featured {
+  width: 100%;
 }
