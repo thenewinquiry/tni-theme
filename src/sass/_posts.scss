@@ -278,6 +278,10 @@
     font-style: normal;
     font-weight: 800;
   }
+
+  .single-post-thumbnail {
+    margin-top: 0;
+  }
 }
 
 .relatedposts-post-excerpt, .relatedposts-post-title {
@@ -295,6 +299,19 @@
 }
 .relatedposts-headline {
   font-size: 1.8rem;
+}
+.relatedposts-header {
+  display: flex;
+  .relatedposts-headline {
+    flex: 2;
+    margin-bottom: 0;
+  }
+  .view-all-link {
+    flex: 1;
+    text-align: right;
+    margin-top: 2.2em;
+    text-transform: uppercase;
+  }
 }
 .relatedposts-title {
   font-family: $font__sans-serif;
