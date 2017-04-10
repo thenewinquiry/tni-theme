@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.7.2
-Version: 0.4.0
+Version: 0.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,11 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
 
-= 0.4.0 WIP =
+== 0.4.1 April 10, 2017 =
+* #30 Show all posts on magazine archive page
+* #31 Add "All Past Issues" link to Recent Issues section
+
+= 0.4.0 =
 * Separated JetPack customization functions into separate file (`inc/jetpack.php`)
 * Moved JetPack custom related posts to core plugin
 * Reverted `content-footer` widget to single posts
