@@ -32,6 +32,27 @@ function tni_home_posts_per_page_query_filter( $query ) {
 add_action( 'pre_get_posts', 'tni_home_posts_per_page_query_filter' );
 
 /**
+ * Magazine Posts per Page
+ * Display all magazine posts on magazine archive
+ *
+ * @since 0.4.1
+ *
+ * @uses pre_get_posts filter
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_magazines_posts_per_page_query_filter( $query ) {
+
+  if ( $query->is_post_type_archive( 'magazines' ) && $query->is_main_query() ) {
+    $posts_per_page = -1;
+    $query->set( 'posts_per_page', $posts_per_page );
+  }
+
+}
+add_action( 'pre_get_posts', 'tni_magazines_posts_per_page_query_filter' );
+
+/**
  * Add Search to Main Nav
  *
  * @since 0.0.1
