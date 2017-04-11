@@ -268,7 +268,8 @@
   .entry-content .entry-title,
   .issue-note,
   .issue-features,
-  .relatedposts-headline {
+  .relatedposts-headline,
+  .view-all-link {
     color: $color__text-dark;
     font-family: $font__work-sans;
     text-transform: uppercase;
@@ -297,20 +298,20 @@
 .relatedposts-post-title {
   margin-top: 0.5em !important;
 }
-.relatedposts-headline {
+.relatedposts-headline,
+.view-all-link {
   font-size: 1.8rem;
 }
 .relatedposts-header {
   display: flex;
-  .relatedposts-headline {
+  .relatedposts-headline,
+  .view-all-link {
     flex: 2;
     margin-bottom: 0;
   }
   .view-all-link {
     flex: 1;
     text-align: right;
-    margin-top: 2.2em;
-    text-transform: uppercase;
   }
 }
 .relatedposts-title {

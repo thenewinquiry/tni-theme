@@ -25,7 +25,7 @@ $posts = get_posts( $args );
 	<div id="relatedposts" class="relatedposts">
         <div class="relatedposts-header">
             <h3 class="relatedposts-headline"><?php _e( 'Recent Issues', 'tni' ); ?></h3>
-            <div class="view-all-link"><a href="<?php echo get_post_type_archive_link( 'magazines' ); ?>"><?php _e( 'All Past Issues', 'tni' ); ?></a></div>
+            <h3 class="view-all-link"><a href="<?php echo get_post_type_archive_link( 'magazines' ); ?>"><?php _e( 'All Past Issues', 'tni' ); ?></a></h3>
         </div>
 		<div class="relatedposts-items relatedposts-items-visual relatedposts-grid">
 
