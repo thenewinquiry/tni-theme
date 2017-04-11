@@ -44,20 +44,29 @@ function gridbox_entry_meta() {
 
 /**
  * Override Parent Theme Author Meta
+ * If Co-authors Plus is active, return co-author links
  *
- * @since 1.0.0
+ * @since 0.5.0
+ *
+ * @uses coauthors_posts_links()
+ * @uses get_author_posts_url()
+ * @uses get_the_author()
  *
  * @return void
  */
 function gridbox_meta_author() {
 
-    $author_string = sprintf( '<span class="author vcard">%s<a class="url fn n" href="%s" title="%s" rel="author">%s</a></span>',
-        __( 'By ', 'tni' ),
-        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-        esc_attr( sprintf( esc_html__( 'View all posts by %s', 'tni' ),
-        get_the_author() ) ),
-        esc_html( get_the_author() )
-    );
+    if( function_exists( 'coauthors_posts_links' ) ) {
+      $author_string = coauthors_posts_links( ', ', __( ' and ', 'tni' ), '<span class="author vcard">' . __( 'By ', 'tni' ), '</span>', false );
+    } else {
+      $author_string = sprintf( '<span class="author vcard">%s<a class="url fn n" href="%s" title="%s" rel="author">%s</a></span>',
+          __( 'By ', 'tni' ),
+          esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+          esc_attr( sprintf( esc_html__( 'View all posts by %s', 'tni' ),
+          get_the_author() ) ),
+          esc_html( get_the_author() )
+      );
+    }
 
     return '<span class="meta-author"> ' . $author_string . '</span>';
 }
@@ -82,7 +91,6 @@ function gridbox_post_image( $size = 'thumbnail', $attr = array() ) {
   <?php
   endif;
 }
-
 
 /**
  * Override Parent Image Function
