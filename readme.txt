@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.7.2
-Version: 0.4.1
+Version: 0.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
+
+== 0.5.0 April 11, 2017 =
+* Add Co-authors Plus support - `gridbox_entry_meta()` template tag will use coauthor plus function if it is active
+
+== 0.4.2 April 11, 2017 =
+* Updated style
+* Changed markup for "All Past Issues" link in `template-parts/content-magazines.php`
 
 == 0.4.1 April 10, 2017 =
 * #30 Show all posts on magazine archive page
