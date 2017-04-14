@@ -149,5 +149,7 @@ blockquote {
 }
 
 .site {
-  margin-top: 1em;
+  @include breakpoint(md) {
+    margin-top: 1em;
+  }
 }

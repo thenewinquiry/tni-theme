@@ -74,7 +74,7 @@
     .site-branding {
       float: none;
       order: 2;
-      flex: 1 1 auto;
+      flex: 1;
       align-self: center;
       text-align: center;
     }
@@ -161,7 +161,7 @@
 
        //Logo
        .site-branding {
-         flex: 1 1 auto;
+         flex: 1;
          order: 1;
          text-align: left;
 
@@ -173,7 +173,7 @@
        //Header Widget (usually newsletter sign-up)
        .header-widget {
          display: block;
-         flex: 0 1 auto;
+         flex: 1.5;
          order: 2;
        }
 
