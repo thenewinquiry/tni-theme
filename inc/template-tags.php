@@ -175,3 +175,54 @@ function tni_custom_excerpt( $post_id = null, $limit = null, $more = '' ) {
     echo wp_trim_words( strip_shortcodes( get_the_excerpt() ), $limit, $more );
   }
 }
+
+/**
+ * Display Magazine Download Link
+ *
+ * @since 0.6.0
+ *
+ * @param  int $post_id
+ * @return void
+ */
+function tni_the_magazine_pdf( $post_id = null ) {
+  $post_id = ( $post_id ) ? (int) $post_id : get_the_id();
+  $post_meta = get_post_meta( $post_id, 'magazine_pdf', true );
+
+  if( $post_meta ) {
+    $url = wp_get_attachment_url( intval( $post_meta ) );
+    $output = sprintf( '<a href="%s" title="%s" class="download-link">%s</a>',
+      esc_url( $url ),
+      __( 'Download Issue', 'tni' ),
+      __( 'Download PDF', 'tni' )
+    );
+    echo $output;
+  }
+
+}
+
+/**
+ * Display Magazine TOC
+ *
+ * @since 0.6.0
+ *
+ * @param  int $post_id
+ * @return void
+ */
+function tni_the_magazine_toc( $post_id = null ) {
+  $post_id = ( $post_id ) ? (int) $post_id : get_the_id();
+  $posts = get_post_meta( $post_id, 'related_articles', true );
+
+  if( !empty( $posts ) ) {
+    global $post;
+
+    echo '<ul class="magazine-toc">';
+
+    foreach( $posts as $post ) {
+      setup_postdata( $post );
+
+      get_template_part( 'template-parts/content', 'magazine-article' );
+
+    }
+    echo '</ul>';
+  }
+}
