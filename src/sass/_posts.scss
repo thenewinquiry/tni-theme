@@ -44,6 +44,11 @@
     blockquote p {
       font-size: 1rem;
     }
+
+    p img {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   .single-post-thumbnail {
@@ -215,11 +220,6 @@
     max-width: none;
     width: 100%;
     padding: 0 1em;
-
-    p img {
-      display: block;
-      margin: 0 auto;
-    }
 
     .issue-header {}
     .issue-content {}
