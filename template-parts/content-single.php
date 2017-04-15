@@ -32,7 +32,7 @@
 
 		<?php gridbox_entry_meta(); ?>
 
-		<?php gridbox_post_image_single( 'full' ); ?>
+		<?php the_post_thumbnail( 'full' ); ?>
 
 	</header><!-- .entry-header -->
 
