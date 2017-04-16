@@ -61,7 +61,6 @@
       height: auto;
       max-height: 400px;
     }
-
   }
 
   .entry-meta {
@@ -152,6 +151,9 @@
     .single-post-thumbnail {
       max-width: 100% !important;
       margin-top: 0;
+      img {
+        max-height: none;
+      }
     }
   }
 
@@ -183,6 +185,21 @@
         font-size: 3rem;
         margin: 0;
         font-family: $font__sans-serif;
+      }
+      .pdf-download {
+        margin-top: 8em;
+        display: block;
+        font-weight: 900;
+        color: $color__highlight-alt;
+        text-transform: uppercase;
+        font-size: 2em;
+        &:hover {
+          color: darken( $color__highlight-alt, 10% );
+        }
+        img {
+          height: 0.8em;
+          vertical-align: middle
+        }
       }
       .textwidget {
         font-size: 1.3rem;

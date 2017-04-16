@@ -21,7 +21,15 @@
 
 		<?php endif; ?>
 
-		<?php if( is_active_sidebar( 'magazine-single' ) ) : ?>
+        <?php if ( tni_core_check_auth() ) : ?>
+			<div class="magazine-sidebar">
+				<?php $pdf_id = get_post_meta( get_the_ID(), 'magazine_pdf', true ); ?>
+                <a class="pdf-download" href="<?php echo wp_get_attachment_url( $pdf_id ); ?>">
+                    <?php _e('Download PDF', 'tni'); ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/download.svg" title="<?php _e( 'Download PDF', 'tni' ); ?>" />
+                </a>
+            </div>
+		<?php elseif ( is_active_sidebar( 'magazine-single' ) ) : ?>
 			<div class="magazine-sidebar">
 				<?php dynamic_sidebar( 'magazine-single' ); ?>
 			</div><!-- .header-widget -->
