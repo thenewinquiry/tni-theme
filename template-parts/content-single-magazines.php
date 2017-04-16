@@ -37,11 +37,7 @@
                     </div>
                 </header>
 
-				<?php $pdf_id = get_post_meta( get_the_ID(), 'magazine_pdf', true ); ?>
-                <a class="pdf-download" href="<?php echo wp_get_attachment_url( $pdf_id ); ?>">
-                    <?php _e('Download PDF', 'tni'); ?>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/download.svg" title="<?php _e( 'Download PDF', 'tni' ); ?>" />
-                </a>
+				<?php tni_the_magazine_pdf(); ?>
                 <div class="issue-toc">
                     <?php echo apply_filters( 'meta_content', get_post_meta( get_the_ID(), 'issue_toc', true ) ); ?>
                 </div>

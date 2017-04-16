@@ -190,10 +190,11 @@ function tni_the_magazine_pdf( $post_id = null ) {
 
   if( $post_meta ) {
     $url = wp_get_attachment_url( intval( $post_meta ) );
-    $output = sprintf( '<a href="%s" title="%s" class="download-link">%s</a>',
+    $output = sprintf( '<a href="%s" title="%s" class="download-link">%s %s</a>',
       esc_url( $url ),
       __( 'Download Issue', 'tni' ),
-      __( 'Download PDF', 'tni' )
+      __( 'Download PDF', 'tni' ),
+      '<img src="' . get_stylesheet_directory_uri() . '/images/download.svg">'
     );
     echo $output;
   }
