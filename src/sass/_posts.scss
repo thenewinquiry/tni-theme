@@ -151,7 +151,7 @@
     .single-post-thumbnail {
       max-width: 100% !important;
       margin-top: 0;
-      padding: 0.25em 0.5em 0 0;
+      padding: 0.25em 0.5em 0 0.5em;
       img {
         max-height: none;
       }
@@ -242,24 +242,35 @@
 
     .issue-header {}
     .issue-content {}
-    .issue-toc {
+    .magazine-toc {
       font-family: $font__sans-serif;
-      color: $color__text-light;
+      list-style-type: none;
+      padding: 0;
 
-      &> p:first-child {
-        margin-top: 0;
-      }
-      p {
+      li {
         font-size: 0.9rem;
         line-height: 1.2;
       }
-
       a {
         color: $color__highlight-alt;
       }
-      strong {
+      h3 {
         color: $color__text-primary;
-        font-size: 1.2em;
+        font-size: 1.4em;
+        text-transform: none;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.2em;
+      }
+      time {
+        display: none;
+      }
+      .entry-meta {
+        font-size: 1.1em;
+        color: $color__text-light;
+        a {
+          color: $color__text-light;
+        }
       }
     }
     .issue-gallery {}
@@ -279,6 +290,16 @@
 
       .editors-note {
         font-family: $font__serif;
+      }
+
+      .issue-toc-columns {
+        max-width: none;
+        .magazine-toc {
+          columns: 3;
+          li {
+            break-inside: avoid;
+          }
+        }
       }
     }
 

@@ -38,9 +38,7 @@
                 </header>
 
 				<?php tni_the_magazine_pdf(); ?>
-                <div class="issue-toc">
-                    <?php echo apply_filters( 'meta_content', get_post_meta( get_the_ID(), 'issue_toc', true ) ); ?>
-                </div>
+                <?php tni_the_magazine_toc(null, true); ?>
             </div>
 		<?php elseif ( is_active_sidebar( 'magazine-single' ) ) : ?>
 			<div class="magazine-sidebar">
@@ -63,15 +61,21 @@
             </header>
     
             <div class="issue-content">
-                <div class="editors-note">
-                    <h2 class="issue-note"><?php _e( 'Editors\' Note', 'tni' ); ?></h2>
-                    <?php the_content(); ?>
-                </div>
-    
-                <div class="issue-toc">
-                    <h2 class="issue-features"><?php _e( 'Featuring', 'tni' ); ?></h2>
-                    <?php echo strip_tags( apply_filters( 'meta_content', get_post_meta( get_the_ID(), 'issue_toc', true ) ), '<p><strong><br>' ); ?>
-                </div>
+                <?php if ( !empty(get_the_content()) ) : ?>
+                    <div class="editors-note">
+                        <h2 class="issue-note"><?php _e( 'Editors\' Note', 'tni' ); ?></h2>
+                        <?php the_content(); ?>
+                    </div>
+                    <div class="issue-toc">
+                        <h2 class="issue-features"><?php _e( 'Featuring', 'tni' ); ?></h2>
+                        <?php tni_the_magazine_toc(null, false); ?>
+                    </div>
+                <?php else : ?>
+                    <div class="issue-toc issue-toc-columns">
+                        <h2 class="issue-features"><?php _e( 'Featuring', 'tni' ); ?></h2>
+                        <?php tni_the_magazine_toc(null, false); ?>
+                    </div>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
 
@@ -87,9 +91,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-
-		<?php gridbox_entry_tags(); ?>
-
 	</footer><!-- .entry-footer -->
 
 </article>
