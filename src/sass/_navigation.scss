@@ -53,9 +53,16 @@ nav ul {
       padding-left: 0;
     }
 
-    &.subscribe a {
+    &.highlight a {
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 700;
+    }
+
+    &.my-library a {
+      background: $color__highlight-alt;
+      &:hover {
+        background: darken( $color__highlight-alt, 10% );
+      }
     }
   }
 
