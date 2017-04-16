@@ -234,9 +234,9 @@
       font-size: 1.2em;
     }
 
-     @include breakpoint(md) {
-       font-size: 1.6em;
-     }
+    @include breakpoint(md) {
+      font-size: 1.2em;
+    }
   }
 
   .custom-logo {
