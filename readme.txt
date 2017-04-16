@@ -17,6 +17,10 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 * Add subscriber content
 * Added `tni_the_magazine_pdf()` template tag
 
+== 0.5.1 April 15, 2017 =
+* Updated styles for images on single posts
+* Changed header thumbnail for single posts
+
 == 0.5.0 April 11, 2017 =
 * Add Co-authors Plus support - `gridbox_entry_meta()` template tag will use coauthor plus function if it is active
 

@@ -190,10 +190,11 @@ function tni_the_magazine_pdf( $post_id = null ) {
 
   if( $post_meta ) {
     $url = wp_get_attachment_url( intval( $post_meta ) );
-    $output = sprintf( '<a href="%s" title="%s" class="download-link">%s</a>',
+    $output = sprintf( '<a href="%s" title="%s" class="download-link">%s %s</a>',
       esc_url( $url ),
       __( 'Download Issue', 'tni' ),
-      __( 'Download PDF', 'tni' )
+      __( 'Download PDF', 'tni' ),
+      '<img src="' . get_stylesheet_directory_uri() . '/images/download.svg">'
     );
     echo $output;
   }
@@ -208,7 +209,7 @@ function tni_the_magazine_pdf( $post_id = null ) {
  * @param  int $post_id
  * @return void
  */
-function tni_the_magazine_toc( $post_id = null ) {
+function tni_the_magazine_toc( $post_id = null , $auth = false) {
   $post_id = ( $post_id ) ? (int) $post_id : get_the_id();
   $posts = get_post_meta( $post_id, 'related_articles', true );
 
@@ -220,7 +221,11 @@ function tni_the_magazine_toc( $post_id = null ) {
     foreach( $posts as $post ) {
       setup_postdata( $post );
 
-      get_template_part( 'template-parts/content', 'magazine-article' );
+      if ( $auth ) {
+        get_template_part( 'template-parts/content', 'magazine-article-subscribed' );
+      } else {
+        get_template_part( 'template-parts/content', 'magazine-article' );
+      }
 
     }
     echo '</ul>';

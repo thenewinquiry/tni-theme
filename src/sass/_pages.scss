@@ -3,18 +3,6 @@
     font-family: $font__sans-serif;
     font-weight: 300;
     font-size: 1.2em;
-
-    h3 {
-      border-bottom: 1px solid $color__gray-light;
-      font-family: $font__sans-serif;
-      color: $color__text-light;
-      font-size: 14px;
-      letter-spacing: 1.2px;
-      line-height: 1.5em;
-      font-weight: 300;
-      text-transform: uppercase;
-    }
-
   }
 
   .entry-header {
@@ -22,8 +10,39 @@
   }
 }
 
+.page .entry-content h3,
+.about-page-title {
+  border-bottom: 1px solid $color__gray-light;
+  font-family: $font__sans-serif;
+  color: $color__text-light;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  line-height: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
 .page-title {
   font-size: 1.6em;
   font-family: $font__sans-serif;
   text-transform: uppercase;
+}
+
+.editorial-title {
+  font-weight: bold;
+  font-family: $font__sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 0.4em;
+}
+.content-about {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    font-weight: 300;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  .about-contributors {
+    font-size: 1em;
+  }
 }
