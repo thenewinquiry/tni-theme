@@ -61,7 +61,6 @@
       height: auto;
       max-height: 400px;
     }
-
   }
 
   .entry-meta {
@@ -152,6 +151,10 @@
     .single-post-thumbnail {
       max-width: 100% !important;
       margin-top: 0;
+      padding: 0.25em 0.5em 0 0.5em;
+      img {
+        max-height: none;
+      }
     }
   }
 
@@ -183,6 +186,22 @@
         font-size: 3rem;
         margin: 0;
         font-family: $font__sans-serif;
+      }
+      .download-link {
+        display: block;
+        font-weight: 900;
+        color: $color__highlight-alt;
+        text-transform: uppercase;
+        font-size: 1.8em;
+        font-family: $font__sans-serif;
+        margin: 1em 0;
+        &:hover {
+          color: darken( $color__highlight-alt, 10% );
+        }
+        img {
+          height: 0.8em;
+          vertical-align: middle
+        }
       }
       .textwidget {
         font-size: 1.3rem;
@@ -223,12 +242,35 @@
 
     .issue-header {}
     .issue-content {}
-    .issue-toc {
-      &> p:first-child {
-        margin-top: 0;
-      }
-      p {
+    .magazine-toc {
+      font-family: $font__sans-serif;
+      list-style-type: none;
+      padding: 0;
+
+      li {
         font-size: 0.9rem;
+        line-height: 1.2;
+      }
+      a {
+        color: $color__highlight-alt;
+      }
+      h3 {
+        color: $color__text-primary;
+        font-size: 1.4em;
+        text-transform: none;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.2em;
+      }
+      time {
+        display: none;
+      }
+      .entry-meta {
+        font-size: 1.1em;
+        color: $color__text-light;
+        a {
+          color: $color__text-light;
+        }
       }
     }
     .issue-gallery {}
@@ -246,8 +288,18 @@
         }
       }
 
-      p {
+      .editors-note {
         font-family: $font__serif;
+      }
+
+      .issue-toc-columns {
+        max-width: none;
+        .magazine-toc {
+          columns: 3;
+          li {
+            break-inside: avoid;
+          }
+        }
       }
     }
 
@@ -284,6 +336,15 @@
     padding-right: 4px;
     font-style: normal;
     font-weight: 800;
+  }
+
+  .magazine-sidebar {
+    .entry-meta {
+      display: block;
+    }
+  }
+  .magazine-sidebar.entry-content {
+    text-align: left;
   }
 
   .single-post-thumbnail {

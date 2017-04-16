@@ -48,14 +48,24 @@ nav ul {
       text-decoration: none;
       border-bottom: 3px solid $color__black;
     }
+    &.current-menu-item.highlight > a {
+      border-bottom: none;
+    }
 
     &:first-child a {
       padding-left: 0;
     }
 
-    &.subscribe a {
+    &.highlight a {
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 700;
+    }
+
+    &.my-library a {
+      background: $color__highlight-alt;
+      &:hover {
+        background: darken( $color__highlight-alt, 10% );
+      }
     }
   }
 

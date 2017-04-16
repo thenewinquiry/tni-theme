@@ -150,6 +150,30 @@ function tni_nav_class( $classes, $item ){
 add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
 
 /**
+ * Toggle menu items based on authentication
+ *
+ * @since 0.5.2
+ */
+function tni_toggle_auth_menu_items( $items, $menu, $args ) {
+    if( !is_admin() ) {
+        $auth = tni_core_check_auth();
+        foreach ( $items as $key => $item ) {
+            if ( in_array( 'js-login', $item->classes ) && $auth ) {
+                unset( $items[$key] );
+            } else if ( in_array( 'subscribe', $item->classes ) && $auth) {
+                unset( $items[$key] );
+            } else if ( in_array( 'js-logout', $item->classes ) && !$auth) {
+                unset( $items[$key] );
+            } else if ( in_array( 'my-library', $item->classes ) && !$auth) {
+                unset( $items[$key] );
+            }
+        }
+    }
+    return $items;
+}
+add_filter( 'wp_get_nav_menu_items', 'tni_toggle_auth_menu_items', 10, 2 );
+
+/**
  * Modify Image Markup
  * When image is inserted into post content without a caption, alter markup produced
  *
