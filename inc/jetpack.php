@@ -95,14 +95,26 @@
   *
   * @return void
   */
- function tni_remove_jetpack_related_posts() {
+function tni_remove_jetpack_related_posts() {
      if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
          $jprp = Jetpack_RelatedPosts::init();
          $callback = array( $jprp, 'filter_add_target_to_dom' );
          remove_filter( 'the_content', $callback, 40 );
      }
  }
- add_filter( 'wp', 'tni_remove_jetpack_related_posts', 20 );
+add_filter( 'wp', 'tni_remove_jetpack_related_posts', 20 );
+
+/**
+ * Custom JetPack OpenGraphic Default Image
+ *
+ * @since 0.6.4
+ *
+ * @return string image path
+ */
+function tni_jetpack_default_image() {
+  return get_stylesheet_directory_uri() . '/images/tni-logo.png';
+}
+add_filter( 'jetpack_open_graph_image_default', 'tni_jetpack_default_image' );
 
  /**
   * Modify Default JetPack Related Posts Default Image
