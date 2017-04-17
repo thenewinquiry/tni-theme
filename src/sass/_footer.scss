@@ -8,7 +8,13 @@
   a,
   a:link,
   a:visited {
-    color: $color__gray-light;
+    color: $color__gray-dark;
+  }
+
+  .copyright {
+    a, a:link, a:visited {
+      color: $color__highlight-alt;
+    }
   }
 }
 
