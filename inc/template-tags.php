@@ -230,4 +230,5 @@ function tni_the_magazine_toc( $post_id = null , $auth = false) {
     }
     echo '</ul>';
   }
+  wp_reset_postdata();
 }
