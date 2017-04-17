@@ -220,10 +220,6 @@ function tni_modify_thumbnail_markup( $html, $post_id, $post_thumbnail_id, $size
         $html,
         ( $caption ) ? sprintf( '<figcaption class="wp-caption-text">%s</figcaption>', $caption ) : ''
       );
-    } else {
-      $html = sprintf( '<figure class="archive-post-thumbnail">%s</figure>',
-        $html
-      );
     }
   }
   return $html;
