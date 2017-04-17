@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.7.2
-Version: 0.6.1
+Version: 0.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
+
+== 0.6.3 April 17, 2017 =
+* #45 Reset postdata
 
 == 0.6.1 April 16, 2017 =
 * Added conditional to check for existence of `tni_core_check_auth` before calling
