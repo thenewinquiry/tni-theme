@@ -12,6 +12,13 @@ nav ul {
   border-top: 1px solid $color__gray;
 }
 
+.my-library a {
+  background: $color__highlight-alt !important;
+  &:hover {
+    background: darken( $color__highlight-alt, 10% ) !important;
+  }
+}
+
 .main-navigation-menu {
   float: none;
   display: flex !important;
@@ -61,12 +68,6 @@ nav ul {
       font-weight: 700;
     }
 
-    &.my-library a {
-      background: $color__highlight-alt;
-      &:hover {
-        background: darken( $color__highlight-alt, 10% );
-      }
-    }
   }
 
   .menu-search-icon {

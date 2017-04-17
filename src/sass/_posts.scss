@@ -33,12 +33,12 @@
   .entry-content {
     line-height: 1.7em;
     font-family: $font__serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
 
     p,
     li {
       line-height: 1.7em;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     blockquote p {
@@ -121,6 +121,14 @@
   .margin-right,
   .margin-left {
     @include visually-hidden;
+
+    &:first-child {
+      float: none;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 4em;
+      text-align: center;
+    }
   }
 
   @include breakpoint(md) {

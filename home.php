@@ -40,7 +40,7 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
                         <?php elseif ( 5 == $count ) : ?>
 
-                            <?php $post = get_posts(array('post_type'=>'magazines'))[1]; // should be 0, but testing ?>
+                            <?php $post = get_posts(array('post_type'=>'magazines'))[0]; ?>
 						    <?php get_template_part( 'template-parts/content', 'latest-issue' ); ?>
 
 						<?php else : ?>
