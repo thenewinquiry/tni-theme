@@ -107,21 +107,7 @@ function gridbox_post_image_single( $size = 'full' ) {
     // Display Post Thumbnail if activated.
     if ( true === $theme_options['featured_image'] && has_post_thumbnail() ) {
 
-        $caption = get_post( get_post_thumbnail_id() )->post_excerpt;
-        $meta = wp_get_attachment_metadata( get_post_thumbnail_id() );
-        $width = ( !empty( $meta ) ) ? $meta['width'] : '';
-
-        echo '<figure class="single-post-thumbnail" style="max-width:' . $width . 'px">';
-
-        the_post_thumbnail( $size );
-
-        if( !empty( $caption ) ) {
-          echo sprintf( '<figcaption class="wp-caption-text">%s</figcaption>',
-            $caption
-          );
-        }
-
-        echo '</figure>';
+      the_post_thumbnail( $size );
 
     }
 }
