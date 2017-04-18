@@ -213,9 +213,14 @@ add_filter( 'image_send_to_editor', 'tni_modify_embedded_image_markup', 10, 8 );
  */
 function tni_modify_thumbnail_markup( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
   if( current_theme_supports( 'html5' ) ) {
-    $html = sprintf( '<figure class="single-post-thumbnail">%s</figure>',
-      $html
-    );
+    if( is_singular() ) {
+      $caption = get_post( $post_thumbnail_id )->post_excerpt;
+
+      $html = sprintf( '<figure class="single-post-thumbnail">%s%s</figure>',
+        $html,
+        ( $caption ) ? sprintf( '<figcaption class="wp-caption-text">%s</figcaption>', $caption ) : ''
+      );
+    }
   }
   return $html;
 }
