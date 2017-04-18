@@ -283,6 +283,30 @@ function tni_exclude_category( $query ) {
 add_action( 'pre_get_posts', 'tni_exclude_category' );
 
 /**
+ * Modify Excerpt
+ * Don't strip shortcode content from excerpt
+ *
+ * @param string $text
+ * @return string $text
+ */
+function tni_excerpt_filter( $text = '' ) {
+    $limit = 55;
+    $raw_excerpt = $text;
+    if ( '' == $text ) {
+        $text = get_the_content( '' );
+        $text = strip_shortcodes( $text );
+        $text = do_shortcode( $text );
+        $text = apply_filters( 'the_content', $text );
+        $text = str_replace( ']]>', ']]>', $text );
+        $excerpt_length = apply_filters( 'excerpt_length', $limit );
+        $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+    }
+    return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
+}
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+add_filter( 'get_the_excerpt', 'tni_excerpt_filter' );
+
+/**
  * Add Filters to `meta_content`
  * Ensures that `meta_content` is return like `the_content`
  *

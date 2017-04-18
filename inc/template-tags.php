@@ -158,7 +158,7 @@ function tni_custom_excerpt( $post_id = null, $limit = null, $more = '' ) {
   if( $subhead ) {
     echo wp_trim_words( strip_shortcodes( $subhead ), $limit, $more );
   } else {
-    echo wp_trim_words( strip_shortcodes( get_the_excerpt() ), $limit, $more );
+    echo wp_trim_words( get_the_excerpt(), $limit, $more );
   }
 }
 
