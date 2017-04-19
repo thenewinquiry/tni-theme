@@ -12,16 +12,22 @@
 }
 
 .widget_mc4wp_form_widget {
-  display: flex;
-  flex-basis: 50%;
+  display: block;
   margin: 0;
   padding: 3em 0 0 0;
+
+  @include breakpoint(sm) {
+    display: flex;
+    flex-basis: 50%;
+  }
 
   .widget-title {
     line-height: 1;
     flex-basis: 25%;
     padding-top: 0.2em;
-    max-width: 10em;
+    @include breakpoint(sm) {
+      max-width: 10em;
+    }
   }
   .mc4wp-form {
     font-size: 1.1rem;
