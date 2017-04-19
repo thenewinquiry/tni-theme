@@ -13,6 +13,9 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
 
+== 0.6.12 April 18, 2017 ==
+* Fixed styling for footer on smaller screen sizes
+
 == 0.6.9 April 17, 2017 ==
 * Removed page-about.php template
 
