@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.7.2
-Version: 0.6.9
+Version: 0.6.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,12 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == 0.6.12 April 18, 2017 ==
 * Fixed styling for footer on smaller screen sizes
+
+== 0.6.11 April 18, 2017 ==
+* #54 Added filter to `get_the_excerpt` to allow shortcode content in excerpt.
+
+== 0.6.10 April 17, 2017 ==
+* Minor css fix for starburst image on single magazine page on smaller width screens
 
 == 0.6.9 April 17, 2017 ==
 * Removed page-about.php template

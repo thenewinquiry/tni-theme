@@ -62,13 +62,19 @@
 }
 
 .footer-menus {
-  display: flex;
   font-size: 1.2em;
+  display: block;
+  @include breakpoint(sm) {
+    display: flex;
+  }
 
   .social-navigation {
-    padding: 2em 0 0 4em;
+    padding: 1em 0;
     #menu-social li a::before {
       font-size: 22px;
+    }
+    @include breakpoint(sm) {
+      padding: 2em 0 0 4em;
     }
   }
 }
