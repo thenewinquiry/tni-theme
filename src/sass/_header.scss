@@ -87,6 +87,11 @@
       right: 1.5em;
       top: 1.25em;
       position: initial;
+      margin-top: -6px;
+
+      @include breakpoint(sm) {
+        margin-top: 0;
+      }
 
       ul {
         display: flex;
