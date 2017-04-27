@@ -323,3 +323,49 @@ add_filter( 'meta_content', 'convert_chars'      );
 add_filter( 'meta_content', 'wpautop'            );
 add_filter( 'meta_content', 'shortcode_unautop'  );
 add_filter( 'meta_content', 'prepend_attachment' );
+
+/**
+ * Get the Featured Post
+ * Get the featured post option or return latest post
+ *
+ * @since 0.7.0
+ *
+ * @return {object} $post || null
+ */
+function tni_get_featured_post() {
+
+  $feature = get_option( 'options_featured_article' );
+  $featured_args = array(
+    'posts_per_page' => 1,
+    'post_types'		 => array(
+      'post',
+      'blogs'
+    ),
+    'p'							=> ( $feature ) ? (int) $feature[0] : null
+  );
+  $featured_post = get_posts( $featured_args );
+
+  if( !empty( $featured_post ) && !is_wp_error( $featured_post ) ) {
+    return $featured_post[0];
+  }
+
+  return null;
+
+}
+
+/**
+ * Filter Name Homepage Query
+ * Don't display the featured article in the main post loop
+ *
+ * @since 0.7.0
+ *
+ * @param  {object} $query
+ * @return void
+ */
+function tni_home_pre_get_posts_filter( $query ) {
+  if ( $query->is_home() && $query->is_main_query() ) {
+    $post = tni_get_featured_post();
+    $query->set( 'post__not_in', array( $post->ID ) );
+  }
+}
+add_action( 'pre_get_posts', 'tni_home_pre_get_posts_filter' );
