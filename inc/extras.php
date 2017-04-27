@@ -328,7 +328,7 @@ add_filter( 'meta_content', 'prepend_attachment' );
  * Get the Featured Post
  * Get the featured post option or return latest post
  *
- * @since 1.1.0
+ * @since 0.7.0
  *
  * @return {object} $post || null
  */
@@ -357,7 +357,7 @@ function tni_get_featured_post() {
  * Filter Name Homepage Query
  * Don't display the featured article in the main post loop
  *
- * @since 1.1.0
+ * @since 0.7.0
  *
  * @param  {object} $query
  * @return void
