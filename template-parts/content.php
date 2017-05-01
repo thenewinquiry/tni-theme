@@ -20,7 +20,11 @@
 
 			<?php if( true === $theme_options['meta_category'] && !is_category() ) : ?>
 				<div class="entry-meta">
-					<?php echo gridbox_meta_category(); ?>
+					<?php if( 'blogs' == get_post_type() ) : ?>
+							<span class="meta-category"><?php echo get_the_term_list( $post->ID, 'blog-types', '', ', ' ); ?></span>
+					<?php else : ?>
+						<?php echo gridbox_meta_category(); ?>
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 
