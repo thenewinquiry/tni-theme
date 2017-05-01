@@ -53,6 +53,24 @@ function tni_magazines_posts_per_page_query_filter( $query ) {
 add_action( 'pre_get_posts', 'tni_magazines_posts_per_page_query_filter' );
 
 /**
+ * Filter Name Homepage Query
+ * Don't display the featured article in the main post loop
+ *
+ * @since 0.7.0
+ *
+ * @param  {object} $query
+ * @return void
+ */
+function tni_home_pre_get_posts_filter( $query ) {
+  if ( $query->is_home() && $query->is_main_query() ) {
+    $post = tni_get_featured_post();
+    $query->set( 'post__not_in', array( $post->ID ) );
+    $query->set( 'post_type', array( 'post', 'blogs' ) );
+  }
+}
+add_action( 'pre_get_posts', 'tni_home_pre_get_posts_filter' );
+
+/**
  * Add Search to Main Nav
  *
  * @since 0.0.1
@@ -352,20 +370,3 @@ function tni_get_featured_post() {
   return null;
 
 }
-
-/**
- * Filter Name Homepage Query
- * Don't display the featured article in the main post loop
- *
- * @since 0.7.0
- *
- * @param  {object} $query
- * @return void
- */
-function tni_home_pre_get_posts_filter( $query ) {
-  if ( $query->is_home() && $query->is_main_query() ) {
-    $post = tni_get_featured_post();
-    $query->set( 'post__not_in', array( $post->ID ) );
-  }
-}
-add_action( 'pre_get_posts', 'tni_home_pre_get_posts_filter' );
