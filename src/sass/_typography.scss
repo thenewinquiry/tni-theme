@@ -45,14 +45,16 @@ h1.entry-title {
   font-family: $font__serif;
 }
 
-.post-wrapper .type-post {
+.post-wrapper .type-post,
+.post-wrapper .type-blogs {
   .entry-excerpt {
     font-family: $font__sans-serif;
     font-weight: 300;
     margin-top: 0.5em;
+    font-size: 1rem;
   }
   .entry-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.4;
     margin-bottom: 0;
   }
