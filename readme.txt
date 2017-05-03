@@ -15,6 +15,7 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == 0.7.2 May 1, 2017 ==
 * #63 Show blog post titles on home page
+* Facebook pixel code
 
 == 0.7.1 April 30, 2017 ==
 * #63 Include `blogs` post type in home query
