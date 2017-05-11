@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.7.4
-Version: 0.7.3
+Version: 0.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,11 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
 
-== 0.7.3 May 19, 2017 ==
+== 0.7.4 May 11, 2017 ==
+* #68 Added default featured image in list views when no featured image is designated
+* #69 Added conditional to hide featured image on single posts when `hide_featured_image` is true
+
+== 0.7.3 May 9, 2017 ==
 * #21 Show author name and description on author page
 
 == 0.7.2 May 1, 2017 ==
