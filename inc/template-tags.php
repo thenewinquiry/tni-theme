@@ -74,23 +74,51 @@ function gridbox_meta_author() {
 /**
  * Override Parent Archive Image Function
  *
+ * @since 1.0.0
+ * @since
+ *
  * @param string $size Post thumbnail size.
  * @param array  $attr Post thumbnail attributes.
  */
-function gridbox_post_image( $size = 'thumbnail', $attr = array() ) {
+ function gridbox_post_image( $size = 'thumbnail', $attr = array() ) { ?>
 
-  // Display Post Thumbnail.
-  if ( has_post_thumbnail() ) : ?>
+   <figure class="post-thumbnail">
+     <a href="<?php the_permalink(); ?>" rel="bookmark">
 
-    <figure class="post-thumbnail">
-      <a href="<?php the_permalink(); ?>" rel="bookmark">
-        <?php the_post_thumbnail( $size, $attr ); ?>
-      </a>
-    </figure
+       <?php if ( has_post_thumbnail() ) : ?>
 
-  <?php
-  endif;
-}
+         <?php the_post_thumbnail( $size, $attr ); ?>
+
+       <?php elseif( 'blogs' === get_post_type() && wp_get_post_terms( get_the_id(), 'blog-types' ) ) : ?>
+
+         <?php
+         $terms = wp_get_post_terms( get_the_id(), 'blog-types', array( 'fields' => 'ids' ) );
+
+         if( $terms ) :
+           $blog_id = $terms[0];
+           $image_id = get_term_meta( $blog_id, 'image', true );
+           $image_data = wp_get_attachment_image_src( $image_id, $size );
+           $image = ( $image_data ) ? $image_data[0] : null;
+
+           if( $image ) : ?>
+
+             <img class="blog-image" src="<?php echo esc_url( $image ); ?>" />
+
+           <?php endif; ?>
+
+         <?php endif; ?>
+
+       <?php else : ?>
+
+         <img class="image-placeholder" src="<?php echo get_stylesheet_directory_uri(); ?>/images/head.png" alt="" />
+
+       <?php endif; ?>
+
+     </a>
+   </figure>
+
+ <?php
+ }
 
 /**
  * Override Parent Image Function
