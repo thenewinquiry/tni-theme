@@ -32,7 +32,12 @@
 
 		<?php gridbox_entry_meta(); ?>
 
-        <?php gridbox_post_image_single( 'full' ); ?>
+		<?php $hide_featured_image = get_post_meta( get_the_id(), 'hide_featured_image', true );
+		if( !$hide_featured_image ) : ?>
+
+	    <?php gridbox_post_image_single( 'full' ); ?>
+
+		<?php endif; ?>
 
 	</header><!-- .entry-header -->
 
