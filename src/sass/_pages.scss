@@ -46,3 +46,28 @@
     font-size: 1em;
   }
 }
+
+.author .archive-description {
+  font-weight: 300;
+  max-width: 620px;
+  margin: 1em auto 3em auto;
+}
+
+.contributors {
+  ul {
+    padding: 0;
+    columns: 1;
+    @include breakpoint(sm) {
+      columns: 2;
+    }
+    @include breakpoint(md) {
+      columns: 3;
+    }
+  }
+  li {
+    list-style-type: none;
+    font-size: 0.9em;
+    padding: 0 0 2em 0;
+    break-inside: avoid;
+  }
+}
