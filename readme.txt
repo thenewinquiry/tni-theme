@@ -13,6 +13,9 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
 
+== 0.7.6 May 16, 2017 ==
+* Fixed home page post loop skipping fourth post
+
 == 0.7.5 May 12, 2017 ==
 * Updated styling for contributors and authors pages
 
