@@ -54,11 +54,9 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 							<?php $post = get_posts( array( 'post_type' => 'magazines' ) )[0]; ?>
 							<?php get_template_part( 'template-parts/content', 'latest-issue' ); ?>
 
-						<?php else : ?>
+                        <?php endif; ?>
 
-						  <?php get_template_part( 'template-parts/content' ); ?>
-
-            <?php endif; ?>
+					    <?php get_template_part( 'template-parts/content' ); ?>
 
 						<?php $count++; ?>
 
