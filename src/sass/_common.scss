@@ -143,6 +143,10 @@ blockquote {
   font-size: 1rem;
   color: $color__text-primary;
 
+  i, em {
+    font-style: italic;
+  }
+
   p {
     font-size: 1rem;
   }
