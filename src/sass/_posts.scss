@@ -603,3 +603,12 @@ article.blogs {
 #comments {
   display: none;
 }
+
+.entry-project-link {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+  background: $color__highlight-alt;
+  padding: 0.3em 0.5em;
+  font-family: $font__sans-serif;
+}
