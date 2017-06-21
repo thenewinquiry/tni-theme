@@ -7,6 +7,15 @@
 
 ?>
 
+
+<?php
+    $auth = ( function_exists( 'tni_core_check_auth' ) ) ? tni_core_check_auth() : false;
+    if ( $auth ) {
+        global $query_string;
+        query_posts( $query_string . 'post_status' => array('publish','future') );
+    }
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
