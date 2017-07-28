@@ -94,5 +94,14 @@ function tni_setup() {
     ) );
 
     load_theme_textdomain( 'tni', get_template_directory() . '/languages' );
+
+    /*
+     * Enable support for Post Formats.
+     *
+     * See: https://codex.wordpress.org/Post_Formats
+     */
+    add_theme_support( 'post-formats', array(
+      'audio',
+    ) );
 }
 add_action( 'after_setup_theme', 'tni_setup', 20 );
