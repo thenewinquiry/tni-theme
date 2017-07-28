@@ -23,7 +23,12 @@
             </header><!-- .entry-header -->
 
             <div class="entry-content entry-excerpt clearfix">
-                            <?php tni_custom_excerpt( null, 18 ); ?>
+							<?php $seo_text = get_post_meta( $post->ID, 'seo_description', true ); ?>
+							<?php if( !empty( $seo_text ) ) : ?>
+								<?php esc_html_e( $seo_text ); ?>
+							<?php else : ?>
+								<?php tni_custom_excerpt( null, 18 ); ?>
+							<?php endif; ?>
             </div><!-- .entry-content -->
 
         </div>

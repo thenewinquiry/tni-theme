@@ -12,6 +12,12 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
+			<?php
+			/**
+			 * Add conditionals `tni_is_subscription_only` and `tni_core_check_auth` to serve alternate content to non-subscribers
+			 * Note: It could be a template-part or a page that you create
+			 */ ?>
+
 			<?php get_template_part( 'template-parts/content-single', get_post_type() ); ?>
 
 			<?php if ( class_exists( 'Jetpack_RelatedPosts' ) && 'post' == get_post_type() ) : ?>
