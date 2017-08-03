@@ -48,9 +48,9 @@
 
             <div class="entry-content-subscribe">
                 <?php $subscription_date = get_post_meta( get_the_ID(), 'subscriber_only_date', true ); ?>
-                <p>This essay is available only to subscribers until <?php echo date('F d, Y', strtotime($subscription_date)); ?>.</p>
-                <p class="highlight subscribe"><a href="https://members.thenewinquiry.com">Subscribe today for $2</a></p>
-                <p>We're grateful for the generous support of our readers.</p>
+                <?php _e( 'This essay is available only to subscribers until', 'tni' ); ?> <?php echo date( 'F d, Y', strtotime( $subscription_date ) ); ?>
+                <p class="highlight subscribe"><a href="https://members.thenewinquiry.com"><?php _e( 'Subscribe today for $2', 'tni' ); ?></a></p>
+                 <p><?php _e( 'We\'re grateful for the generous support of our readers.', 'tni' ); ?></p>
             </div>
 
         <?php else : ?>
@@ -58,7 +58,7 @@
             <?php the_content(); ?>
 
             <?php wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gridbox' ),
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tni' ),
                 'after'  => '</div>',
             ) ); ?>
 
