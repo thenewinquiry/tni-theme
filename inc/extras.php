@@ -172,17 +172,17 @@ add_filter( 'nav_menu_css_class' , 'tni_nav_class' , 10 , 2 );
  *
  * @since 0.5.2
  */
-function tni_toggle_auth_menu_items( $items, $menu, $args ) {
+function tni_toggle_auth_menu_items( $items, $menu, $args = [] ) {
     if( !is_admin() ) {
         $auth = tni_core_check_auth();
         foreach ( $items as $key => $item ) {
             if ( in_array( 'js-login', $item->classes ) && $auth ) {
                 unset( $items[$key] );
-            } else if ( in_array( 'subscribe', $item->classes ) && $auth) {
+            } elseif ( in_array( 'subscribe', $item->classes ) && $auth) {
                 unset( $items[$key] );
-            } else if ( in_array( 'js-logout', $item->classes ) && !$auth) {
+            } elseif ( in_array( 'js-logout', $item->classes ) && !$auth) {
                 unset( $items[$key] );
-            } else if ( in_array( 'my-library', $item->classes ) && !$auth) {
+            } elseif ( in_array( 'my-library', $item->classes ) && !$auth) {
                 unset( $items[$key] );
             }
         }
