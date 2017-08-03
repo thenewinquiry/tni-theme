@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.8
-Version: 0.7.12
+Version: 0.7.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
+
+== 0.7.13 August 3, 2017 ==
+* Change how advance essays are handled for subscribers
+* #77 - Unauthenticated users see prompt to subscribe for subscriber-only essays
 
 == 0.7.12 July 14, 2017 ==
 * #80 - Conditionally show `seo_description` on featured post
