@@ -120,9 +120,8 @@
 
   .margin-right,
   .margin-left {
-    @include visually-hidden;
-
     &:first-child {
+      width: 100%;
       float: none;
       margin-right: auto;
       margin-left: auto;

@@ -67,11 +67,12 @@
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-
-        <?php if( is_active_sidebar( 'content-footer' ) ) : ?>
-            <div class="content-footer-widget">
-                <?php dynamic_sidebar( 'content-footer' ); ?>
-            </div><!-- .footer-widget -->
+        <?php if ( !$auth ) : ?>
+            <?php if( is_active_sidebar( 'content-footer' ) ) : ?>
+                <div class="content-footer-widget">
+                    <?php dynamic_sidebar( 'content-footer' ); ?>
+                </div><!-- .footer-widget -->
+            <?php endif; ?>
         <?php endif; ?>
 
     </footer><!-- .entry-footer -->
