@@ -71,6 +71,64 @@ function tni_home_pre_get_posts_filter( $query ) {
 add_action( 'pre_get_posts', 'tni_home_pre_get_posts_filter' );
 
 /**
+ * Exclude Posts from Category
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_exclude_category( $query ) {
+
+  $excluded = get_terms( array(
+    'taxonomy'  => 'category',
+    'slug'      => 'meanwhile',
+    'fields'    => 'ids'
+  ) );
+
+  if( ! is_admin() ) {
+    $query->set( 'category__not_in', $excluded  );
+  }
+}
+add_action( 'pre_get_posts', 'tni_exclude_category' );
+
+/**
+ * Exclude Subscription Only Posts
+ *
+ * @since 0.7.15
+ *
+ * @uses tni_core_get_unauthorized_posts()
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_exclude_subscription_only( $query ) {
+  if( $query->is_admin() || ! ( $query->is_main_query() ) ) {
+    return;
+  }
+
+  if( function_exists( 'tni_core_get_unauthorized_posts' ) && !empty( $subscription_only =  tni_core_get_unauthorized_posts() ) ) {
+    $query->set( 'post__not_in', $subscription_only );
+  }
+}
+add_action( 'pre_get_posts', 'tni_exclude_subscription_only' );
+
+/**
+ * Include Blog Post Types on Author Pages
+ *
+ * @since 1.0.0
+ *
+ * @uses pre_get_posts filter
+ *
+ * @param  array $query
+ * @return void
+ */
+function tni_custom_post_author_archive( $query ) {
+    if ( !is_admin() && $query->is_author && $query->is_main_query() ) {
+        $query->set( 'post_type', array( 'post', 'blogs' ) );
+    }
+}
+add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
+
+/**
  * Add Search to Main Nav
  *
  * @since 0.0.1
@@ -110,23 +168,6 @@ function tni_modify_the_archive_title( $title ) {
     return $title;
 }
 add_filter( 'get_the_archive_title', 'tni_modify_the_archive_title' );
-
-/**
- * Include Blog Post Types on Author Pages
- *
- * @since 1.0.0
- *
- * @uses pre_get_posts filter
- *
- * @param  array $query
- * @return void
- */
-function tni_custom_post_author_archive( $query ) {
-    if ( !is_admin() && $query->is_author && $query->is_main_query() ) {
-        $query->set( 'post_type', array( 'post', 'blogs' ) );
-    }
-}
-add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
 
 /**
  * Modify Date Display for Magazines
@@ -279,26 +320,6 @@ function tni_modify_image_caption_markup( $empty, $attr, $content ){
 	. '</figure>';
 }
 add_filter( 'img_caption_shortcode', 'tni_modify_image_caption_markup', 10, 3 );
-
-/**
- * Exclude Posts from Category
- *
- * @param obj $query
- * @return void
- */
-function tni_exclude_category( $query ) {
-
-  $excluded = get_terms( array(
-    'taxonomy'  => 'category',
-    'slug'      => 'meanwhile',
-    'fields'    => 'ids'
-  ) );
-
-  if( ! is_admin() ) {
-    set_query_var( 'category__not_in', $excluded );
-  }
-}
-add_action( 'pre_get_posts', 'tni_exclude_category' );
 
 /**
  * Modify Excerpt
