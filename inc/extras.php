@@ -101,7 +101,7 @@ add_action( 'pre_get_posts', 'tni_exclude_category' );
  * @return void
  */
 function tni_exclude_subscription_only( $query ) {
-  if( $query->is_admin() || ! ( $query->is_main_query() ) ) {
+  if( is_admin() || ! ( $query->is_main_query() ) ) {
     return;
   }
 
