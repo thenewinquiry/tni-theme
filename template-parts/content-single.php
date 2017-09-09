@@ -57,7 +57,7 @@
 
             <?php $audio_url = get_post_meta( $post->ID, 'audio_url', true ); ?>
             <?php if ( $audio_url ) : ?>
-                <?php if ( !$auth ) : ?>
+                <?php if ( $auth ) : ?>
                     <a name="audio"></a>
                     <div class="audio-embed">
                         <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=<?php echo urlencode($audio_url); ?>&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>
