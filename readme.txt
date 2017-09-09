@@ -13,6 +13,9 @@ Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
 
+== 0.7.18 September 9, 2017 ==
+* Integrated curio.io embeds into posts
+
 == 0.7.17 August 23, 2017 ==
 * Change preference for featured post subhead
 
