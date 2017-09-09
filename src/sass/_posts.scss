@@ -620,3 +620,25 @@ article.blogs {
     font-weight: bold;
   }
 }
+
+.audio-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: text-top;
+  opacity: 0.5;
+}
+.entry-meta .audio-icon {
+  float: right;
+  margin-top: 4px;
+}
+.audio-embed {
+  margin: 2em 0 4em 0;
+}
+.audio-embed-caption {
+  font-style: italic;
+  color: $color__gray-light;
+  a {
+    color: $color__gray-light;
+    text-decoration: underline;
+  }
+}
