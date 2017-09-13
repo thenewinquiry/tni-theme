@@ -60,13 +60,16 @@
                 <?php if ( $auth ) : ?>
                     <a name="audio"></a>
                     <div class="audio-embed">
-                        <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=<?php echo urlencode($audio_url); ?>&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>
-                        <h5 class="audio-embed-caption"><?php _e( 'Listen to this essay as audio. Provided by <a href="https://www.curio.io/">curio.io</a> for our subscribers.'); ?></h5>
+						<a href="https://www.curio.io/"><img class="audio-source-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/curio.png" title="<?php _e( 'Audio version provided by curio.io', 'tni' ); ?>" /></a>
+                        <div class="audio-player">
+                            <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=<?php echo urlencode($audio_url); ?>&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>
+                            <h5 class="audio-embed-caption"><?php _e( 'Listen to this essay as audio. Provided by <a href="https://www.curio.io/">curio.io</a> for our subscribers.'); ?></h5>
+                        </div>
                     </div>
                 <?php else : ?>
                     <h5 class="audio-embed-caption">
 						<img class="audio-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/audio.png" title="<?php _e( 'Audio version available', 'tni' ); ?>" />
-                        <?php _e( 'An audio version of this essay is available to <a href="https://members.thenewinquiry.com">subscribers</a>.' ); ?>
+                        <?php _e( 'An audio version of this essay is available to <a href="https://members.thenewinquiry.com">subscribers</a>, provided by <a href="https://www.curio.io/">curio.io</a>.' ); ?>
                     </h5>
                 <?php endif; ?>
             <?php endif; ?>

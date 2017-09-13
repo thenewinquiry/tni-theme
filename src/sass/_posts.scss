@@ -633,12 +633,29 @@ article.blogs {
 }
 .audio-embed {
   margin: 2em 0 4em 0;
+  display: flex;
+  padding: 1em 1em 0.5em 1em;
+  background: #eee;
 }
 .audio-embed-caption {
   font-style: italic;
   color: $color__gray-light;
+  padding: 1em;
+  background: #eee;
   a {
     color: $color__gray-light;
     text-decoration: underline;
   }
+}
+.audio-player {
+  flex: 1;
+  .audio-embed-caption {
+    margin: 0.5em 0 0 0;
+    padding: 0;
+  }
+}
+.audio-source-icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 1em;
 }
