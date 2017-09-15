@@ -2,8 +2,8 @@
 Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
-Tested up to: 4.8
-Version: 0.7.19
+Tested up to: 4.8.1
+Version: 0.7.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
+
+== 0.7.20 September 15, 2017 ==
+* Exclude single posts from "subscriber-only" `pre_get_posts` action.
+* Consolidated `pre_get_posts` actions
 
 == 0.7.19 September 13, 2017 ==
 * Updated curio.io embed styling for proper credit

@@ -10,6 +10,93 @@
  */
 
 /**
+ * Filter Post Loops
+ * Exclude posts from post loop, based on criteria
+ *
+ * @since 0.7.20
+ *
+ * @uses pre_get_posts filter
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
+ * @link https://codex.wordpress.org/Conditional_Tags
+ *
+ * @param obj $query
+ * @return void
+ */
+function tni_pre_get_posts( $query ) {
+  if( is_admin() || ! ( $query->is_main_query() ) ) {
+    return;
+  }
+
+  /**
+   * Exclude Posts from Category
+   */
+  $excluded = get_terms( array(
+    'taxonomy'  => 'category',
+    'slug'      => 'meanwhile',
+    'fields'    => 'ids'
+  ) );
+
+  $query->set( 'category__not_in', $excluded  );
+
+  /**
+   * Home Page Posts per Page
+   * Display number of posts on home page as defined in settings
+   *
+   * @since 0.4.0
+   */
+  if ( $query->is_home() ) {
+    $default = 13;
+    $posts_per_page = get_option( 'home-posts-per-page', $default );
+    $query->set( 'posts_per_page', $posts_per_page );
+  }
+
+  /**
+   * Filter Name Homepage Query
+   * Don't display the featured article in the main post loop
+   *
+   * @since 0.7.0
+   */
+  if ( $query->is_home() ) {
+    $post = tni_get_featured_post();
+    $query->set( 'post__not_in', array( $post->ID ) );
+    $query->set( 'post_type', array( 'post', 'blogs' ) );
+  }
+
+  /**
+   * Magazine Posts per Page
+   * Display all magazine posts on magazine archive
+   *
+   * @since 0.4.1
+   */
+  if ( $query->is_post_type_archive( 'magazines' ) ) {
+    $posts_per_page = -1;
+    $query->set( 'posts_per_page', $posts_per_page );
+  }
+
+  /**
+   * Exclude Subscription Only Posts
+   *
+   * @since 0.7.15
+   */
+  if( !( $query->is_singular() ) ) {
+    if( function_exists( 'tni_core_get_unauthorized_posts' ) && !empty( $subscription_only =  tni_core_get_unauthorized_posts() ) ) {
+      $query->set( 'post__not_in', $subscription_only );
+    }
+  }
+
+  /**
+   * Include Blog Post Types on Author Pages
+   *
+   * @since 0.1.0
+   */
+  if ( $query->is_author() ) {
+      $query->set( 'post_type', array( 'post', 'blogs' ) );
+  }
+
+}
+add_action( 'pre_get_posts', 'tni_pre_get_posts' );
+
+/**
  * Home Page Posts per Page
  * Display number of posts on home page as defined in settings
  *
@@ -29,7 +116,7 @@ function tni_home_posts_per_page_query_filter( $query ) {
   }
 
 }
-add_action( 'pre_get_posts', 'tni_home_posts_per_page_query_filter' );
+// add_action( 'pre_get_posts', 'tni_home_posts_per_page_query_filter' );
 
 /**
  * Magazine Posts per Page
@@ -50,7 +137,7 @@ function tni_magazines_posts_per_page_query_filter( $query ) {
   }
 
 }
-add_action( 'pre_get_posts', 'tni_magazines_posts_per_page_query_filter' );
+// add_action( 'pre_get_posts', 'tni_magazines_posts_per_page_query_filter' );
 
 /**
  * Filter Name Homepage Query
@@ -68,7 +155,7 @@ function tni_home_pre_get_posts_filter( $query ) {
     $query->set( 'post_type', array( 'post', 'blogs' ) );
   }
 }
-add_action( 'pre_get_posts', 'tni_home_pre_get_posts_filter' );
+// add_action( 'pre_get_posts', 'tni_home_pre_get_posts_filter' );
 
 /**
  * Exclude Posts from Category
@@ -88,7 +175,7 @@ function tni_exclude_category( $query ) {
     $query->set( 'category__not_in', $excluded  );
   }
 }
-add_action( 'pre_get_posts', 'tni_exclude_category' );
+// add_action( 'pre_get_posts', 'tni_exclude_category' );
 
 /**
  * Exclude Subscription Only Posts
@@ -105,11 +192,14 @@ function tni_exclude_subscription_only( $query ) {
     return;
   }
 
-  if( function_exists( 'tni_core_get_unauthorized_posts' ) && !empty( $subscription_only =  tni_core_get_unauthorized_posts() ) ) {
-    $query->set( 'post__not_in', $subscription_only );
+  if( $query->is_singular() ) {
+    if( function_exists( 'tni_core_get_unauthorized_posts' ) && !empty( $subscription_only =  tni_core_get_unauthorized_posts() ) ) {
+      $query->set( 'post__not_in', $subscription_only );
+    }
   }
+
 }
-add_action( 'pre_get_posts', 'tni_exclude_subscription_only' );
+// add_action( 'pre_get_posts', 'tni_exclude_subscription_only' );
 
 /**
  * Include Blog Post Types on Author Pages
@@ -126,7 +216,7 @@ function tni_custom_post_author_archive( $query ) {
         $query->set( 'post_type', array( 'post', 'blogs' ) );
     }
 }
-add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
+// add_action( 'pre_get_posts', 'tni_custom_post_author_archive' );
 
 /**
  * Add Search to Main Nav
