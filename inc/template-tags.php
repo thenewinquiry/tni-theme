@@ -233,6 +233,7 @@ function tni_the_magazine_toc( $post_id = null , $auth = false) {
     echo '<ul class="magazine-toc">';
 
     foreach( $posts as $post ) {
+      $post = get_post( $post );
       setup_postdata( $post );
 
       if ( $auth ) {
