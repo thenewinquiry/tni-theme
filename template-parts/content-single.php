@@ -63,7 +63,7 @@
 						<a href="https://www.curio.io/"><img class="audio-source-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/curio.png" title="<?php _e( 'Audio version provided by curio.io', 'tni' ); ?>" /></a>
                         <div class="audio-player">
                             <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=<?php echo urlencode($audio_url); ?>&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>
-                            <h5 class="audio-embed-caption"><?php _e( 'Listen to this essay as audio. Provided by <a href="https://www.curio.io/">curio.io</a> for our subscribers.'); ?></h5>
+                            <h5 class="audio-embed-caption"><?php _e( 'Listen to this essay as audio. Provided by <a href="https://www.curio.io/">curio.io</a> for our subscribers. <a href="https://thenewinquiry.com/tag/audio/">Listen to more essays here</a>.'); ?></h5>
                         </div>
                     </div>
                 <?php else : ?>
