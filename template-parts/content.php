@@ -18,7 +18,7 @@
 			<?php // Get theme options from database.
 		    $theme_options = gridbox_theme_options(); ?>
 
-			<?php if( true === $theme_options['meta_category'] && !is_category() ) : ?>
+			<?php if( true === $theme_options['meta_category'] ) : ?>
 				<div class="entry-meta">
 					<?php if( 'blogs' == get_post_type() ) : ?>
 							<span class="meta-category"><?php echo get_the_term_list( $post->ID, 'blog-types', '', ', ' ); ?></span>
