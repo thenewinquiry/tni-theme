@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.8.1
-Version: 0.7.22
+Version: 0.7.23
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
+
+== 0.7.23 October 3, 2017 ==
+* #93 Added blogs post type to tag archive in `pre_get_posts` action @link https://github.com/thenewinquiry/tni-theme/issues/93
 
 == 0.7.22 October 2, 2017 ==
 * Fixed display of audio icons in category loops

@@ -85,11 +85,12 @@ function tni_pre_get_posts( $query ) {
   }
 
   /**
-   * Include Blog Post Types on Author Pages
+   * Include Blog Post Types on Author Pages and Tag Pages
    *
    * @since 0.1.0
+   * @since 0.7.23
    */
-  if ( $query->is_author() ) {
+  if ( $query->is_author() || $query->is_tag() ) {
       $query->set( 'post_type', array( 'post', 'blogs' ) );
   }
 
