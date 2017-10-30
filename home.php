@@ -29,10 +29,29 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
                 <?php if( $featured_bundle = get_option( 'options_featured_bundle' ) ) : // If featured bundle exists ?>
 
                     <?php if( ( function_exists( 'tni_core_get_featured_bundle_posts' ) ) && ( $bundle_posts = tni_core_get_featured_bundle_posts() ) ) : ?>
-                        <div class="featured-bundle-post-wrapper post-wrapper clearfix">
-                            <h2 class="featured-bundle-name"><?php echo get_term($featured_bundle, 'bundle')->name; ?></h2>
-                            <div class="featured-bundle-posts">
+                        <?php /* image id is stored as term meta */
+                        if( $image_id = get_term_meta( $featured_bundle, 'image', true ) ) : ?>
 
+                           <?php
+                            /* Replace `$image_size = 'thumbail'` with the size you want to use (probably 'full') */
+                           $image_data = wp_get_attachment_image_src( $image_id, $image_size = 'full' ); ?>
+
+                           <?php
+                            /* image data is stored in array; image `url` is the first item */
+                           $image = $image_data[0]; ?>
+
+                           <?php if( !empty( $image ) ) : ?>
+                             <div class="featured-bundle-post-wrapper post-wrapper clearfix" style="background:url('<?php echo esc_url( $image ); ?>');">
+                           <?php endif; ?>
+                        <?php else : ?>
+                            <div class="featured-bundle-post-wrapper post-wrapper clearfix">
+                        <?php endif; ?>
+
+                            <?php $bundle_term = get_term($featured_bundle, 'bundle'); ?>
+                            <h2 class="featured-bundle-name"><?php echo $bundle_term->name; ?></h2>
+                            <p class="featured-bundle-description"><?php echo $bundle_term->description; ?></p>
+                            <div class="featured-bundle-overlay"></div>
+                            <div class="featured-bundle-posts">
                                 <?php
                                 $args = array(
                                     'post__in'							 => $bundle_posts,

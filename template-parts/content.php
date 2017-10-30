@@ -21,9 +21,7 @@
 			<?php if( true === $theme_options['meta_category'] ) : ?>
 				<div class="entry-meta">
 
-					<?php if( ( $featured_bundle = get_option( 'options_featured_bundle' ) ) && ( has_term( $featured_bundle, 'bundle', $post->ID ) ) ) : /* @since 1.3.0 */ ?>
-						<span class="meta-category featured-bundle"><?php echo get_the_term_list( $post->ID, 'bundle', '', ', ' ); ?></span>
-					<?php elseif( 'blogs' == get_post_type() ) : ?>
+					<?php if( 'blogs' == get_post_type() ) : ?>
 						<span class="meta-category"><?php echo get_the_term_list( $post->ID, 'blog-types', '', ', ' ); ?></span>
 					<?php else : ?>
 						<?php echo gridbox_meta_category(); ?>
