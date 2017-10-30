@@ -3,7 +3,21 @@
     @include visually-hidden;
   }
 }
+
+.featured-bundle-post-wrapper {
+  margin: 0 0 4em 0;
+  padding: 1em;
+  background: #f2f2f2;
+  article {
+    margin-bottom: 0;
+  }
+}
 .featured-bundle-posts {
   display: flex;
   flex-wrap: wrap;
+}
+
+.featured-bundle-name {
+  font-family: $font__sans-serif;
+  margin-top: 0;
 }
