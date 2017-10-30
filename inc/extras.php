@@ -60,6 +60,19 @@ function tni_pre_get_posts( $query ) {
     $post = tni_get_featured_post();
     $query->set( 'post__not_in', array( $post->ID ) );
     $query->set( 'post_type', array( 'post', 'blogs' ) );
+
+    /**
+     * Filter ut Featured Bundle posts
+     * @since 
+     */
+    if( $featured_bundle = get_option( 'options_featured_bundle' ) ) {
+      $tax_query[] = array(
+        'taxonomy'    => 'bundle',
+        'field'       => 'term_id',
+        'term'        => (int) $featured_bundle
+      );
+      $query->set( 'tax_query', $tax_query );
+    }
   }
 
   /**
