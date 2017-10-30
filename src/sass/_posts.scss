@@ -484,6 +484,7 @@ article.blogs {
 
 .post-column {
   margin-bottom: 1em;
+  position: relative;
 }
 
 .post-featured {
@@ -619,30 +620,48 @@ article.blogs {
   }
 }
 
+.audio-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.15em 0.6em 0.2em 0.3em;
+  border-radius: 0 0 20em 0;
+  background: $color__highlight-alt;
+}
 .audio-icon {
   width: 14px;
   height: 14px;
   vertical-align: text-top;
-  opacity: 0.5;
-}
-.entry-meta .audio-icon {
-  float: right;
-  margin-top: 4px;
+  opacity: 1;
 }
 .audio-embed {
   margin: 2em 0 4em 0;
   display: flex;
   padding: 1em 1em 0.5em 1em;
   background: #eee;
+  border: 2px solid #e0e0e0;
+  .audio-embed-caption {
+    border: none;
+  }
 }
 .audio-embed-caption {
   font-style: italic;
   color: $color__gray-light;
   padding: 1em;
   background: #eee;
+  border: 2px solid #e0e0e0;
   a {
     color: $color__gray-light;
     text-decoration: underline;
+  }
+  .audio-icon {
+    background: $color__highlight-alt;
+    padding: 0.2em;
+    width: 18px;
+    height: 18px;
+    border-radius: 20em;
+    margin-right: 0.4em;
+    margin-top: -1px;
   }
 }
 .audio-player {

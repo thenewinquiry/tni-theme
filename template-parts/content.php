@@ -30,7 +30,7 @@
 					<?php endif; ?>
 
           <?php if ( get_post_meta( $post->ID, 'audio_url', true )) : ?>
-						<a href="<?php echo esc_url( get_permalink() . '#audio' ); ?>"><img class="audio-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/audio.png" title="<?php _e( 'Audio version available', 'tni' ); ?>" /></a>
+						<a class="audio-link" href="<?php echo esc_url( get_permalink() . '#audio' ); ?>"><img class="audio-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/audio.png" title="<?php _e( 'Audio version available', 'tni' ); ?>" /></a>
           <?php endif; ?>
 				</div>
 			<?php endif; ?>

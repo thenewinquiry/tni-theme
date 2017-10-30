@@ -39,6 +39,20 @@
   }
 }
 
+.post-layout-four-columns .featured-bundle-post-wrapper .post-column {
+  @include breakpoint(sm) {
+    width: 33.33333%;
+  }
+
+  @include breakpoint(md) {
+    width: 25%;
+  }
+
+  @include breakpoint(lg) {
+    width: 20%;
+  }
+}
+
 .post-layout-four-columns .post-wrapper .post-featured {
   width: 100%;
 }
