@@ -60,16 +60,23 @@ function tni_pre_get_posts( $query ) {
     $post = tni_get_featured_post();
     $query->set( 'post__not_in', array( $post->ID ) );
     $query->set( 'post_type', array( 'post', 'blogs' ) );
+  }
 
-    /**
-     * Filter ut Featured Bundle posts
-     * @since 
-     */
+  /**
+   * Filter ut Featured Bundle posts
+   * Don't display featured bundle posts in the main post loop
+   *
+   * @since 0.8.0
+   */
+  if ( $query->is_home() ) {
     if( $featured_bundle = get_option( 'options_featured_bundle' ) ) {
-      $tax_query[] = array(
-        'taxonomy'    => 'bundle',
-        'field'       => 'term_id',
-        'term'        => (int) $featured_bundle
+      $tax_query = array(
+        array(
+          'taxonomy'    => 'bundle',
+          'field'       => 'term_id',
+          'terms'       => array( (int) $featured_bundle ),
+          'operator'    => 'NOT IN'
+        )
       );
       $query->set( 'tax_query', $tax_query );
     }
