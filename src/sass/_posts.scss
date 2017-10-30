@@ -511,18 +511,16 @@ article.blogs {
     }
 
     .entry-excerpt {
-      position: absolute;
-      bottom: 1em;
+      margin-top: 2em
     }
   }
 
   .entry-thumbnail {
-    margin: 0;
+    margin: 0 0 1em 1em;
     height: 320px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
-    margin-bottom: 1em;
     box-shadow: none;
   }
 }

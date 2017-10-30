@@ -19,6 +19,9 @@ Custom theme for The New Inquiry, based on Gridbox theme.
   * Updated `template-parts/content.php` template to display linked bundle name in place of category
   * Filtered home page query to exclude featured bundle posts
 
+== 0.7.24 October 18, 2017 ==
+* Featured post CSS fixes
+
 == 0.7.23 October 3, 2017 ==
 * #93 Added blogs post type to tag archive in `pre_get_posts` action @link https://github.com/thenewinquiry/tni-theme/issues/93
 

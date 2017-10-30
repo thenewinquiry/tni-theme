@@ -3,3 +3,7 @@
     @include visually-hidden;
   }
 }
+.featured-bundle-posts {
+  display: flex;
+  flex-wrap: wrap;
+}
