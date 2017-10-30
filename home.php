@@ -26,6 +26,57 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
+                <?php if( $featured_bundle = get_option( 'options_featured_bundle' ) ) : // If featured bundle exists ?>
+
+                    <?php if( ( function_exists( 'tni_core_get_featured_bundle_posts' ) ) && ( $bundle_posts = tni_core_get_featured_bundle_posts() ) ) : ?>
+                        <?php /* image id is stored as term meta */
+                        if( $image_id = get_term_meta( $featured_bundle, 'image', true ) ) : ?>
+
+                           <?php
+                            /* Replace `$image_size = 'thumbail'` with the size you want to use (probably 'full') */
+                           $image_data = wp_get_attachment_image_src( $image_id, $image_size = 'full' ); ?>
+
+                           <?php
+                            /* image data is stored in array; image `url` is the first item */
+                           $image = $image_data[0]; ?>
+
+                           <?php if( !empty( $image ) ) : ?>
+                             <div class="featured-bundle-post-wrapper post-wrapper clearfix" style="background:url('<?php echo esc_url( $image ); ?>');">
+                           <?php endif; ?>
+                        <?php else : ?>
+                            <div class="featured-bundle-post-wrapper post-wrapper clearfix">
+                        <?php endif; ?>
+
+                            <?php $bundle_term = get_term($featured_bundle, 'bundle'); ?>
+                            <h2 class="featured-bundle-name"><?php echo $bundle_term->name; ?></h2>
+                            <p class="featured-bundle-description"><?php echo $bundle_term->description; ?></p>
+                            <div class="featured-bundle-overlay"></div>
+                            <div class="featured-bundle-posts">
+                                <?php
+                                $args = array(
+                                    'post__in'							 => $bundle_posts,
+                                    'ignore_sticky_posts'    => true,
+                                );
+                                $bundle_query = new WP_Query( $args );
+                                ?>
+        
+                                <?php if ( $bundle_query->have_posts() ) : ?>
+                                    <?php while ( $bundle_query->have_posts() ) : ?>
+                                    <?php $bundle_query->the_post(); ?>
+        
+                                        <?php get_template_part( 'template-parts/content' ); ?>
+        
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+        
+                                <?php wp_reset_postdata(); ?>
+                            </div>
+                        </div>
+
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
 
 			<?php
 			$feature = tni_get_featured_post();
@@ -42,38 +93,7 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 			<?php endif; ?>
 
 				<div id="post-wrapper" class="post-wrapper clearfix">
-
-					<div class="featured-bundle-posts">
-
-						<?php if( $featured_bundle = get_option( 'options_featured_bundle' ) ) : // If featured bundle exists ?>
-
-							<?php if( ( function_exists( 'tni_core_get_featured_bundle_posts' ) ) && ( $bundle_posts = tni_core_get_featured_bundle_posts() ) ) : ?>
-
-								<?php
-								$args = array(
-									'post__in'							 => $bundle_posts,
-									'ignore_sticky_posts'    => true,
-								);
-								$bundle_query = new WP_Query( $args );
-								?>
-
-								<?php if ( $bundle_query->have_posts() ) : ?>
-									<?php while ( $bundle_query->have_posts() ) : ?>
-									<?php $bundle_query->the_post(); ?>
-
-										<?php get_template_part( 'template-parts/content' ); ?>
-
-									<?php endwhile; ?>
-								<?php endif; ?>
-
-								<?php wp_reset_postdata(); ?>
-
-							<?php endif; ?>
-
-						<?php endif; ?>
-
-					</div>
-
+
 					<?php
 					if ( have_posts() ) : ?>
 

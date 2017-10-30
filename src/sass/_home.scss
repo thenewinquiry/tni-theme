@@ -3,7 +3,55 @@
     @include visually-hidden;
   }
 }
+
+.featured-bundle-post-wrapper {
+  margin: 0 0 4em 0;
+  padding: 1em;
+  background: #f2f2f2;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  display: block;
+  color: #fff;
+  article {
+    margin-bottom: 0;
+    .entry-meta,
+    .entry-title a {
+      color: #fff;
+    }
+    .entry-meta a {
+      color: $color__highlight-alt;
+    }
+  }
+}
 .featured-bundle-posts {
   display: flex;
   flex-wrap: wrap;
+}
+
+.featured-bundle-name {
+  font-family: $font__sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+}
+.featured-bundle-description {
+  margin-top: 0.2em;
+  a {
+    color: $color__highlight-alt;
+    text-decoration: underline;
+  }
+}
+.featured-bundle-description, .featured-bundle-name {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.featured-bundle-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
 }
