@@ -3,7 +3,7 @@ Theme URI: https://github.com/misfist/tni-theme
 Tags: Blog, Magazine
 Requires at least: 4.5.0
 Tested up to: 4.8.1
-Version: 0.8.1
+Version: 0.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Custom theme for The New Inquiry, based on Gridbox theme.
 
 == Changelog ==
+
+== 0.8.2 November 6, 2017 ==
+* Added `blogs` to featured bundle query. @link https://github.com/thenewinquiry/tni-core-functionality/issues/44
+  `'post_type'              => array( 'post', 'blogs' ),`
 
 == 0.8.1 October 30, 2017 ==
 * Featured bundled posts styling
