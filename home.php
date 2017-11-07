@@ -55,20 +55,21 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
                                 <?php
                                 $args = array(
                                     'post__in'							 => $bundle_posts,
+																		'post_type' 						 => array( 'post', 'blogs' ),
                                     'ignore_sticky_posts'    => true,
                                 );
                                 $bundle_query = new WP_Query( $args );
                                 ?>
-        
+
                                 <?php if ( $bundle_query->have_posts() ) : ?>
                                     <?php while ( $bundle_query->have_posts() ) : ?>
                                     <?php $bundle_query->the_post(); ?>
-        
+
                                         <?php get_template_part( 'template-parts/content' ); ?>
-        
+
                                     <?php endwhile; ?>
                                 <?php endif; ?>
-        
+
                                 <?php wp_reset_postdata(); ?>
                             </div>
                         </div>
