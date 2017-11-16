@@ -26,6 +26,21 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
+			<?php
+			$feature = tni_get_featured_post();
+			if( !empty( $feature ) ) : ?>
+			<?php
+				global $post;
+				$post = $feature;
+				setup_postdata( $post );
+			?>
+
+				<?php get_template_part( 'template-parts/content', 'featured' ); ?>
+
+			<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+
+
                 <?php if( $featured_bundle = get_option( 'options_featured_bundle' ) ) : // If featured bundle exists ?>
 
                     <?php if( ( function_exists( 'tni_core_get_featured_bundle_posts' ) ) && ( $bundle_posts = tni_core_get_featured_bundle_posts() ) ) : ?>
@@ -76,22 +91,7 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 
                     <?php endif; ?>
 
-                <?php endif; ?>
-
-
-			<?php
-			$feature = tni_get_featured_post();
-			if( !empty( $feature ) ) : ?>
-			<?php
-				global $post;
-				$post = $feature;
-				setup_postdata( $post );
-			?>
-
-				<?php get_template_part( 'template-parts/content', 'featured' ); ?>
-
-			<?php wp_reset_postdata(); ?>
-			<?php endif; ?>
+                <?php endif; ?>
 
 				<div id="post-wrapper" class="post-wrapper clearfix">
 
