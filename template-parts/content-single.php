@@ -48,7 +48,11 @@
 
             <div class="entry-content-subscribe">
                 <?php $subscription_date = get_post_meta( get_the_ID(), 'subscriber_only_date', true ); ?>
-                <?php _e( 'This essay is available only to subscribers until', 'tni' ); ?> <?php echo date( 'F d, Y', strtotime( $subscription_date ) ); ?>
+                <?php if ( $subscription_date ) : ?>
+                    <?php _e( 'This essay is available only to subscribers until', 'tni' ); ?> <?php echo date( 'F d, Y', strtotime( $subscription_date ) ); ?>
+                <?php else : ?>
+                    <?php _e( 'This essay is available only to subscribers, but only for a little while. Please check back soon.', 'tni' ); ?>
+                <?php endif; ?>
                 <p class="highlight subscribe"><a href="https://members.thenewinquiry.com"><?php _e( 'Subscribe today for $2', 'tni' ); ?></a></p>
                  <p><?php _e( 'We\'re grateful for the generous support of our readers.', 'tni' ); ?></p>
             </div>
