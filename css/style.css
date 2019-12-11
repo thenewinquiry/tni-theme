@@ -1186,6 +1186,7 @@ iframe {
   width: 100%; }
   .site-header.fixed-header {
     position: fixed;
+    top: 0;
     background-color: #fff;
     z-index: 10;
     box-shadow: 1px 2px 5px 0px rgba(50, 50, 50, 0.1); }
