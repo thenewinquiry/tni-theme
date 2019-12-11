@@ -40,6 +40,31 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
 			<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
 
+				<div id="post-wrapper" class="post-wrapper clearfix">
+
+					<?php
+					if ( have_posts() ) : ?>
+
+					<?php $count = 1; ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+
+						<?php if ( 4 == $count ) : ?>
+
+							<?php $prev_post = $post ?>
+							<?php $post = get_posts( array( 'post_type' => 'magazines' ) )[0]; ?>
+							<?php get_template_part( 'template-parts/content', 'latest-issue' ); ?>
+							<?php $post = $prev_post ?>
+            <?php endif; ?>
+
+				    <?php get_template_part( 'template-parts/content' ); ?>
+
+						<?php $count++; ?>
+
+					<?php endwhile; ?>
+
+				</div>
+
+				<?php gridbox_pagination(); ?>
 
                 <?php if( $featured_bundle = get_option( 'options_featured_bundle' ) ) : // If featured bundle exists ?>
 
@@ -92,32 +117,6 @@ if ( '' !== $theme_options['blog_title'] ) : ?>
                     <?php endif; ?>
 
                 <?php endif; ?>
-
-				<div id="post-wrapper" class="post-wrapper clearfix">
-
-					<?php
-					if ( have_posts() ) : ?>
-
-					<?php $count = 1; ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-
-						<?php if ( 4 == $count ) : ?>
-
-							<?php $prev_post = $post ?>
-							<?php $post = get_posts( array( 'post_type' => 'magazines' ) )[0]; ?>
-							<?php get_template_part( 'template-parts/content', 'latest-issue' ); ?>
-							<?php $post = $prev_post ?>
-            <?php endif; ?>
-
-				    <?php get_template_part( 'template-parts/content' ); ?>
-
-						<?php $count++; ?>
-
-					<?php endwhile; ?>
-
-				</div>
-
-				<?php gridbox_pagination(); ?>
 
 			<?php
 			else :
