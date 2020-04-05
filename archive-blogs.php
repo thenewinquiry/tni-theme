@@ -18,6 +18,37 @@ if ( have_posts() ) : ?>
 		'taxonomy' 	=> 'blog-types',
 		'number'	=> 0
 	));
+    $terms = sort_terms(get_most_recent_posts($terms));
+
+    // Get most recent post for term
+    function get_most_recent_posts($terms) {
+        // merge custom field into original taxonomy object
+        foreach ($terms as $index => $term) {
+            $post = get_posts(array(
+              'post_type' => 'post',
+              'numberposts' => 1,
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'blog-types',
+                  'field' => 'term_id',
+                  'terms' => $term->term_id,
+                  'include_children' => false
+                )
+              )
+            ))[0];
+            $datetime = get_post_datetime( $post, 'date', 'gmt' );
+            $terms[$index]->{'last_updated'} = $datetime->getTimestamp();
+        }
+        return $terms;
+    }
+
+    // sort field by custom field value
+    function sort_terms($terms) {
+        usort($terms, function ($a, $b) {
+            return $b->last_updated - $a->last_updated;
+        });
+        return $terms;
+    }
 	?>
 
 	<section id="primary" class="content-archive content-area">
